@@ -15,6 +15,7 @@
 <nav class="tabs">
   <button id="tab-new" class="tab active">新建订单</button>
   <button id="tab-list" class="tab">订单列表</button>
+  <button id="tab-cfg" class="tab">平台配置</button>
 </nav>
 
 <section id="panel-new" class="panel">
@@ -56,6 +57,27 @@
   <div id="order-list"></div>
 </section>
 
+<section id="panel-cfg" class="panel" hidden>
+  <div class="card">
+    <label>橘子平台（播放/转发下单）</label>
+    <input id="in-jz-acct" placeholder="橘子账号" class="ipt" autocomplete="off">
+    <input id="in-jz-pwd" type="password" placeholder="橘子密码" class="ipt" autocomplete="new-password">
+    <div class="grid2">
+      <div class="fld"><span>播放商品编码</span><input id="in-play-goods" placeholder="如 6862" class="ipt"></div>
+      <div class="fld"><span>转发商品编码</span><input id="in-share-goods" placeholder="如 9044" class="ipt"></div>
+    </div>
+  </div>
+  <div class="card">
+    <label>imt 平台（赞/爱心下单）</label>
+    <input id="in-imt-acct" placeholder="imt 账号/手机号" class="ipt" autocomplete="off">
+    <input id="in-imt-pwd" type="password" placeholder="imt 密码" class="ipt" autocomplete="new-password">
+  </div>
+  <button id="btn-save-cfg" class="btn primary">保存配置到服务器</button>
+  <p id="cfg-status" class="hint" style="margin-top:8px"></p>
+  <p class="msg" id="cfg-msg"></p>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/libsodium-wrappers@0.7.11"></script>
 <script src="app.js"></script>
 </body>
 </html>

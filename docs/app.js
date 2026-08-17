@@ -135,21 +135,101 @@ function orderCard(o) {
   </div>`;
 }
 
+/* ---------- 平台配置(写入 GitHub Secrets, 手机端管理) ---------- */
+const SECRETS = [
+  { name: "JUZI_ACCOUNT", el: "in-jz-acct", label: "橘子账号" },
+  { name: "JUZI_PASSWORD", el: "in-jz-pwd", label: "橘子密码" },
+  { name: "JUZI_PLAY_GOODS", el: "in-play-goods", label: "播放商品编码" },
+  { name: "JUZI_FORWARD_GOODS", el: "in-share-goods", label: "转发商品编码" },
+  { name: "IMT_ACCOUNT", el: "in-imt-acct", label: "imt账号" },
+  { name: "IMT_PASSWORD", el: "in-imt-pwd", label: "imt密码" },
+];
+async function ghApi(path, opts = {}) {
+  const res = await fetch("https://api.github.com" + path, {
+    ...opts,
+    headers: {
+      ...(opts.headers || {}),
+      "Authorization": `Bearer ${state.pat}`,
+      "Accept": "application/vnd.github+json",
+      "Content-Type": "application/json",
+    },
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `HTTP ${res.status}`);
+  }
+  return res;
+}
+async function loadSecretStatus() {
+  if (!state.owner || !state.repo || !state.pat) {
+    $("cfg-status").textContent = "请先在「新建订单」填写连接配置";
+    return;
+  }
+  try {
+    const res = await ghApi(`/repos/${state.owner}/${state.repo}/actions/secrets`);
+    const data = await res.json();
+    const names = new Set((data.secrets || []).map(s => s.name));
+    const list = SECRETS.map(s => (names.has(s.name) ? s.label : ""));
+    const done = list.filter(Boolean);
+    $("cfg-status").textContent = done.length
+      ? `已配置: ${done.join("、")}　未配置: ${SECRETS.filter(s => !names.has(s.name)).map(s => s.label).join("、") || "无"}`
+      : "尚未配置任何平台账号（密码不会回显，重新填写保存即可覆盖）";
+  } catch (e) {
+    $("cfg-status").textContent = `读取配置状态失败: ${e.message}`;
+  }
+}
+async function savePlatformCfg() {
+  saveCfg();
+  const msg = $("cfg-msg");
+  if (!state.owner || !state.repo || !state.pat) {
+    msg.textContent = "请先填写 GitHub 连接配置"; msg.className = "msg err"; return;
+  }
+  if (!window.sodium) { msg.textContent = "加密库未加载，请检查网络"; msg.className = "msg err"; return; }
+  await sodium.ready;
+  // 收集非空项
+  const items = SECRETS.filter(s => $(s.el).value.trim());
+  if (!items.length) { msg.textContent = "没有需要保存的内容"; msg.className = "msg err"; return; }
+  msg.textContent = "加密并保存中..."; msg.className = "msg";
+  try {
+    const pkRes = await ghApi(`/repos/${state.owner}/${state.repo}/actions/secrets/public-key`);
+    const pk = await pkRes.json();
+    const pubKey = sodium.from_base64(pk.key, sodium.base64_variants.ORIGINAL);
+    for (const s of items) {
+      const enc = sodium.crypto_box_seal(sodium.from_string($(s.el).value.trim()), pubKey);
+      const b64 = sodium.to_base64(enc, sodium.base64_variants.ORIGINAL);
+      await ghApi(`/repos/${state.owner}/${state.repo}/actions/secrets/${s.name}`, {
+        method: "PUT",
+        body: JSON.stringify({ encrypted_value: b64, key_id: pk.key_id }),
+      });
+    }
+    msg.textContent = "保存成功！下单时自动使用新配置";
+    msg.className = "msg ok";
+    ["in-jz-pwd", "in-imt-pwd"].forEach(id => { $(id).value = ""; });
+    loadSecretStatus();
+  } catch (e) {
+    msg.textContent = `保存失败: ${e.message}`;
+    msg.className = "msg err";
+  }
+}
+
 /* ---------- 初始化 ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   loadCfg();
   $("tab-new").onclick = () => switchTab("new");
   $("tab-list").onclick = () => switchTab("list");
+  $("tab-cfg").onclick = () => switchTab("cfg");
   $("btn-submit").onclick = submitOrder;
+  $("btn-save-cfg").onclick = savePlatformCfg;
   $("sel-status").onchange = renderOrders;
   ["in-owner", "in-repo", "in-pat"].forEach(id => $(id).addEventListener("change", saveCfg));
   loadOrders();
   setInterval(() => { if (!$("panel-list").hidden) loadOrders(); }, 30000);
 });
 function switchTab(which) {
-  $("tab-new").className = "tab" + (which === "new" ? " active" : "");
-  $("tab-list").className = "tab" + (which === "list" ? " active" : "");
-  $("panel-new").hidden = which !== "new";
-  $("panel-list").hidden = which !== "list";
+  ["new", "list", "cfg"].forEach(k => {
+    $(`tab-${k}`).className = "tab" + (k === which ? " active" : "");
+    $(`panel-${k}`).hidden = k !== which;
+  });
   if (which === "list") loadOrders();
+  if (which === "cfg") loadSecretStatus();
 }
