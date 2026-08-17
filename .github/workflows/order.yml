@@ -53,6 +53,10 @@ jobs:
         env:
           JUZI_ACCOUNT: ${{ secrets.JUZI_ACCOUNT }}
           JUZI_PASSWORD: ${{ secrets.JUZI_PASSWORD }}
+          JUZI_PLAY_GOODS: ${{ secrets.JUZI_PLAY_GOODS }}
+          JUZI_FORWARD_GOODS: ${{ secrets.JUZI_FORWARD_GOODS }}
+          IMT_ACCOUNT: ${{ secrets.IMT_ACCOUNT }}
+          IMT_PASSWORD: ${{ secrets.IMT_PASSWORD }}
 
       - name: 提交订单数据
         run: |

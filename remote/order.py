@@ -5,6 +5,7 @@ import time
 
 import config
 import db
+import imt
 import juzi
 import scraper
 
@@ -69,8 +70,11 @@ def process_order(url: str, targets: dict) -> dict:
         if not r["ok"]:
             ok_all = False
     if targets.get("like") or targets.get("heart"):
-        results.append("赞/爱心:imt平台暂未接入,请手动下单")
-        ok_all = False
+        qty = max(targets.get("like", 0), targets.get("heart", 0))
+        r = imt.order(url, qty)
+        results.append(f"赞/爱心:{r['message']}")
+        if not r["ok"]:
+            ok_all = False
     db.update_order(no, status=config.ST_SUBMITTED if ok_all else config.ST_FAILED,
                     platform="juzi" if (targets.get("play") or targets.get("share")) else "",
                     result=";".join(results),
