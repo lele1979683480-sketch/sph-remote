@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>SPH 下单助手</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <h1>SPH 下单助手</h1>
+  <div class="sub" id="cfg-hint">未配置</div>
+</header>
+
+<nav class="tabs">
+  <button id="tab-new" class="tab active">新建订单</button>
+  <button id="tab-list" class="tab">订单列表</button>
+</nav>
+
+<section id="panel-new" class="panel">
+  <div class="card">
+    <label>视频链接</label>
+    <input id="in-url" type="url" placeholder="https://weixin.qq.com/sph/xxxx" class="ipt">
+  </div>
+  <div class="card">
+    <label>下单项目（选填，不填为0）</label>
+    <div class="grid2">
+      <div class="fld"><span>👍 赞</span><input id="in-like" type="number" min="0" value="0" class="ipt"></div>
+      <div class="fld"><span>💗 爱心</span><input id="in-heart" type="number" min="0" value="0" class="ipt"></div>
+      <div class="fld"><span>▶️ 播放</span><input id="in-play" type="number" min="0" value="0" class="ipt"></div>
+      <div class="fld"><span>🔁 转发</span><input id="in-share" type="number" min="0" value="0" class="ipt"></div>
+    </div>
+  </div>
+  <div class="card">
+    <label>连接配置（填一次自动保存）</label>
+    <input id="in-owner" placeholder="GitHub 用户名" class="ipt">
+    <input id="in-repo" placeholder="仓库名" class="ipt">
+    <input id="in-pat" type="password" placeholder="GitHub Token(PAT)" class="ipt">
+    <p class="hint">PAT 需要 issues 写入权限；只保存在你手机本地。</p>
+  </div>
+  <button id="btn-submit" class="btn primary">提交下单</button>
+  <p id="msg" class="msg"></p>
+</section>
+
+<section id="panel-list" class="panel" hidden>
+  <div class="filter">
+    <select id="sel-status" class="ipt">
+      <option value="">全部状态</option>
+      <option value="pending">待处理</option>
+      <option value="processing">处理中</option>
+      <option value="submitted">已提交</option>
+      <option value="failed">失败</option>
+      <option value="completed">已达标</option>
+    </select>
+  </div>
+  <div id="order-list"></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>
