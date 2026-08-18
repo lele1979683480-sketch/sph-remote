@@ -9,10 +9,15 @@ def run() -> dict:
     """对所有未完成订单抓取数据并判断达标。返回汇总。"""
     orders = db.active_orders()
     report = {"checked": 0, "completed": 0, "failed": 0}
+    if not orders:
+        db.add_log("info", "达标检查: 暂无未完成订单")
+        return report
+    db.add_log("info", f"达标检查开始: {len(orders)} 单")
     for o in orders:
         data = scraper.scrape(o["url"])
         if not data:
             report["failed"] += 1
+            db.add_log("warn", f"订单{o['order_no']} 数据抓取失败")
             continue
         cur = {k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")}
         init = o.get("init") or {}
@@ -29,4 +34,8 @@ def run() -> dict:
         report["checked"] += 1
         if all_done:
             report["completed"] += 1
+            db.add_log("ok", f"订单{o['order_no']} 已达标 ✅ (当前={cur})")
+        else:
+            db.add_log("info", f"订单{o['order_no']} 检查中: 当前={cur}")
+    db.add_log("info", f"达标检查完成: 检查{report['checked']}单, 新达标{report['completed']}, 抓取失败{report['failed']}")
     return report

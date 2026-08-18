@@ -45,6 +45,7 @@ def process_order(url: str, targets: dict) -> dict:
     """创建订单并自动下单。返回订单记录。"""
     order = db.add_order(url, targets)
     no = order["order_no"]
+    db.add_log("order", f"收到新订单 {no}: {url} 目标={targets}")
     # 1. 抓取视频数据(博主名/标题/初始数据)
     data = scraper.scrape(url)
     if data:
@@ -53,30 +54,40 @@ def process_order(url: str, targets: dict) -> dict:
                         init={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
                         cur={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
                         status=config.ST_PROCESSING)
+        db.add_log("info", f"订单{no} 抓取成功: 博主={data.get('author')} 赞{data.get('like')} 爱心{data.get('heart')} 评论{data.get('comment')} 转发{data.get('share')}")
     else:
         db.update_order(no, status=config.ST_PROCESSING)
+        db.add_log("warn", f"订单{no} 视频数据抓取失败,继续下单")
     # 2. 自动下单
     results = []
     ok_all = True
     video_name = data.get("author") if data else ""
     if targets.get("play"):
+        db.add_log("order", f"订单{no} 播放下单中({config.JUZI_PLAY_GOODS})数量={targets['play']}...")
         r = juzi.order(config.JUZI_PLAY_GOODS, video_name, url, targets["play"])
         results.append(f"播放:{r['message']}")
+        db.add_log("ok" if r["ok"] else "error", f"订单{no} 播放下单: {r['message']}")
         if not r["ok"]:
             ok_all = False
     if targets.get("share"):
+        db.add_log("order", f"订单{no} 转发下单中({config.JUZI_FORWARD_GOODS})数量={targets['share']}...")
         r = juzi.order(config.JUZI_FORWARD_GOODS, video_name, url, targets["share"])
         results.append(f"转发:{r['message']}")
+        db.add_log("ok" if r["ok"] else "error", f"订单{no} 转发下单: {r['message']}")
         if not r["ok"]:
             ok_all = False
     if targets.get("like") or targets.get("heart"):
         qty = max(targets.get("like", 0), targets.get("heart", 0))
+        db.add_log("order", f"订单{no} imt 赞/爱心下单中数量={qty}...")
         r = imt.order(url, qty)
         results.append(f"赞/爱心:{r['message']}")
+        db.add_log("ok" if r["ok"] else "error", f"订单{no} 赞/爱心: {r['message']}")
         if not r["ok"]:
             ok_all = False
-    db.update_order(no, status=config.ST_SUBMITTED if ok_all else config.ST_FAILED,
+    status = config.ST_SUBMITTED if ok_all else config.ST_FAILED
+    db.update_order(no, status=status,
                     platform="juzi" if (targets.get("play") or targets.get("share")) else "",
                     result=";".join(results),
                     error="" if ok_all else ";".join(results))
+    db.add_log("ok" if ok_all else "error", f"订单{no} 完成: status={status} 结果={';'.join(results)}")
     return db.get_order(no)

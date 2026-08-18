@@ -49,3 +49,9 @@ body {
 .tgt .done { color: #07c160; }
 .tgt .undone { color: #e64340; }
 .empty { text-align: center; color: #999; padding: 40px 0; font-size: 14px; }
+.sys-state { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+.logline { font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f0f0f0;
+  line-height: 1.5; word-break: break-all; }
+.logline .lt { color: #999; margin-right: 6px; }
+.log-ok { color: #07c160; } .log-err { color: #e64340; }
+.log-warn { color: #faad14; } .log-order { color: #333; font-weight: 500; }

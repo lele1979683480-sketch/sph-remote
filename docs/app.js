@@ -97,6 +97,7 @@ async function loadOrders() {
     if (!res.ok) throw new Error("无法读取订单数据(可能还没有订单)");
     const data = await res.json();
     state.orders = (data.orders || []).slice().reverse();
+    state.logs = data.logs || [];
     renderOrders();
   } catch (e) {
     box.innerHTML = `<div class="empty">加载失败: ${e.message}</div>`;
@@ -184,8 +185,8 @@ async function savePlatformCfg() {
   if (!state.owner || !state.repo || !state.pat) {
     msg.textContent = "请先填写 GitHub 连接配置"; msg.className = "msg err"; return;
   }
-  if (!window.sodium) { msg.textContent = "加密库未加载，请检查网络"; msg.className = "msg err"; return; }
-  await sodium.ready;
+  if (!window.libsodium) { msg.textContent = "加密库未加载，请检查网络"; msg.className = "msg err"; return; }
+  await libsodium.ready;
   // 收集非空项
   const items = SECRETS.filter(s => $(s.el).value.trim());
   if (!items.length) { msg.textContent = "没有需要保存的内容"; msg.className = "msg err"; return; }
@@ -193,10 +194,10 @@ async function savePlatformCfg() {
   try {
     const pkRes = await ghApi(`/repos/${state.owner}/${state.repo}/actions/secrets/public-key`);
     const pk = await pkRes.json();
-    const pubKey = sodium.from_base64(pk.key, sodium.base64_variants.ORIGINAL);
+    const pubKey = libsodium.from_base64(pk.key, libsodium.base64_variants.ORIGINAL);
     for (const s of items) {
-      const enc = sodium.crypto_box_seal(sodium.from_string($(s.el).value.trim()), pubKey);
-      const b64 = sodium.to_base64(enc, sodium.base64_variants.ORIGINAL);
+      const enc = libsodium.crypto_box_seal(libsodium.from_string($(s.el).value.trim()), pubKey);
+      const b64 = libsodium.to_base64(enc, libsodium.base64_variants.ORIGINAL);
       await ghApi(`/repos/${state.owner}/${state.repo}/actions/secrets/${s.name}`, {
         method: "PUT",
         body: JSON.stringify({ encrypted_value: b64, key_id: pk.key_id }),
@@ -212,24 +213,101 @@ async function savePlatformCfg() {
   }
 }
 
+/* ---------- 日志 + 系统控制 ---------- */
+function escHtml(s) {
+  const d = document.createElement("div");
+  d.textContent = s || "";
+  return d.innerHTML;
+}
+function renderLogs() {
+  const box = $("log-list");
+  if (!state.logs || !state.logs.length) { box.innerHTML = '<div class="empty">暂无日志（有下单/检查动作后出现）</div>'; return; }
+  box.innerHTML = state.logs.slice().reverse().map(l => {
+    const cls = { ok: "log-ok", error: "log-err", warn: "log-warn", order: "log-order" }[l.kind] || "";
+    return `<div class="logline ${cls}"><span class="lt">${escHtml((l.time || "").slice(5, 19))}</span> ${escHtml(l.message)}</div>`;
+  }).join("");
+}
+async function loadLogs() {
+  if (!state.owner || !state.repo) { renderLogs(); return; }
+  try {
+    const res = await fetch(
+      `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/data/orders.json`,
+      { cache: "no-store" });
+    if (!res.ok) throw new Error("读取失败");
+    const data = await res.json();
+    state.logs = data.logs || [];
+  } catch (e) {
+    state.logs = [{ time: "", kind: "error", message: "日志读取失败: " + e.message }];
+  }
+  renderLogs();
+}
+async function loadPauseState() {
+  if (!state.owner || !state.repo || !state.pat) {
+    $("sys-state").textContent = "请先填写连接配置";
+    $("btn-pause").hidden = true; $("btn-resume").hidden = true;
+    return;
+  }
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${state.owner}/${state.repo}/contents/data/pause.flag`,
+      { headers: { Authorization: `Bearer ${state.pat}`, Accept: "application/vnd.github+json" } });
+    const paused = res.status === 200;
+    $("sys-state").textContent = paused ? "⏸️ 已暂停（新订单会被拒绝）" : "▶️ 运行中（正常接收订单）";
+    $("btn-pause").hidden = paused;
+    $("btn-resume").hidden = !paused;
+  } catch (e) {
+    $("sys-state").textContent = "状态读取失败: " + e.message;
+  }
+}
+async function pauseSystem() {
+  if (!state.owner || !state.repo || !state.pat) { alert("请先填写连接配置"); return; }
+  try {
+    await ghApi(`/repos/${state.owner}/${state.repo}/contents/data/pause.flag`, {
+      method: "PUT",
+      body: JSON.stringify({ message: "pause system [skip ci]", content: btoa(""), branch: "main" }),
+    });
+    loadPauseState();
+  } catch (e) { alert("停止失败: " + e.message); }
+}
+async function resumeSystem() {
+  if (!state.owner || !state.repo || !state.pat) { alert("请先填写连接配置"); return; }
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${state.owner}/${state.repo}/contents/data/pause.flag`,
+      { headers: { Authorization: `Bearer ${state.pat}`, Accept: "application/vnd.github+json" } });
+    if (res.status === 200) {
+      const meta = await res.json();
+      await ghApi(`/repos/${state.owner}/${state.repo}/contents/data/pause.flag`, {
+        method: "DELETE",
+        body: JSON.stringify({ message: "resume system [skip ci]", sha: meta.sha, branch: "main" }),
+      });
+    }
+    loadPauseState();
+  } catch (e) { alert("启动失败: " + e.message); }
+}
+
 /* ---------- 初始化 ---------- */
 document.addEventListener("DOMContentLoaded", () => {
   loadCfg();
   $("tab-new").onclick = () => switchTab("new");
   $("tab-list").onclick = () => switchTab("list");
   $("tab-cfg").onclick = () => switchTab("cfg");
+  $("tab-log").onclick = () => switchTab("log");
   $("btn-submit").onclick = submitOrder;
   $("btn-save-cfg").onclick = savePlatformCfg;
+  $("btn-pause").onclick = pauseSystem;
+  $("btn-resume").onclick = resumeSystem;
   $("sel-status").onchange = renderOrders;
   ["in-owner", "in-repo", "in-pat"].forEach(id => $(id).addEventListener("change", saveCfg));
   loadOrders();
   setInterval(() => { if (!$("panel-list").hidden) loadOrders(); }, 30000);
 });
 function switchTab(which) {
-  ["new", "list", "cfg"].forEach(k => {
+  ["new", "list", "cfg", "log"].forEach(k => {
     $(`tab-${k}`).className = "tab" + (k === which ? " active" : "");
     $(`panel-${k}`).hidden = k !== which;
   });
   if (which === "list") loadOrders();
   if (which === "cfg") loadSecretStatus();
+  if (which === "log") { loadLogs(); loadPauseState(); }
 }

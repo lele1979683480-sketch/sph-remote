@@ -16,6 +16,7 @@
   <button id="tab-new" class="tab active">新建订单</button>
   <button id="tab-list" class="tab">订单列表</button>
   <button id="tab-cfg" class="tab">平台配置</button>
+  <button id="tab-log" class="tab">日志</button>
 </nav>
 
 <section id="panel-new" class="panel">
@@ -75,6 +76,20 @@
   <button id="btn-save-cfg" class="btn primary">保存配置到服务器</button>
   <p id="cfg-status" class="hint" style="margin-top:8px"></p>
   <p class="msg" id="cfg-msg"></p>
+</section>
+
+<section id="panel-log" class="panel" hidden>
+  <div class="card">
+    <label>系统控制</label>
+    <div id="sys-state" class="sys-state">检查中...</div>
+    <button id="btn-pause" class="btn primary" hidden>⏸️ 停止下单</button>
+    <button id="btn-resume" class="btn primary" hidden>▶️ 启动下单</button>
+    <p class="hint">停止后新订单会被拒绝；达标检查继续运行。</p>
+  </div>
+  <div class="card">
+    <label>运行日志（最近200条）</label>
+    <div id="log-list"></div>
+  </div>
 </section>
 
 <script src="vendor/libsodium.js"></script>

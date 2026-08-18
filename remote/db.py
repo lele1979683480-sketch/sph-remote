@@ -87,3 +87,13 @@ def active_orders() -> list:
     """未完成订单(用于达标检查)"""
     data = load()
     return [o for o in data["orders"] if not o.get("completed")]
+
+
+def add_log(kind: str, message: str) -> None:
+    """追加一条运行日志(网页「日志」页显示),最多保留200条"""
+    data = load()
+    logs = data.setdefault("logs", [])
+    logs.append({"time": _now(), "kind": str(kind), "message": str(message)[:300]})
+    if len(logs) > 200:
+        del logs[: len(logs) - 200]
+    save(data)
