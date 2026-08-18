@@ -264,7 +264,7 @@ async function pauseSystem() {
   try {
     await ghApi(`/repos/${state.owner}/${state.repo}/contents/data/pause.flag`, {
       method: "PUT",
-      body: JSON.stringify({ message: "pause system [skip ci]", content: btoa(""), branch: "main" }),
+      body: JSON.stringify({ message: "pause system [skip ci]", content: btoa("paused"), branch: "main" }),
     });
     loadPauseState();
   } catch (e) { alert("停止失败: " + e.message); }

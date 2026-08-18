@@ -47,21 +47,20 @@ jobs:
               state: 'closed'
             });
 
-      - name: 已暂停则停止本工作流
-        if: ${{ env.PAUSED == 'yes' }}
-        run: exit 0
-
       - uses: actions/setup-python@v5
+        if: ${{ env.PAUSED != 'yes' }}
         with:
           python-version: '3.12'
 
       - name: 安装依赖
+        if: ${{ env.PAUSED != 'yes' }}
         run: |
           pip install playwright
           python -m playwright install chromium --with-deps
 
       - name: 解析订单参数
         id: parse
+        if: ${{ env.PAUSED != 'yes' }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "URL=${{ inputs.url }}" >> "$GITHUB_ENV"
@@ -75,6 +74,7 @@ jobs:
 
       - name: 自动下单
         id: run
+        if: ${{ env.PAUSED != 'yes' }}
         run: |
           python remote/main.py order "$URL" "$TARGETS" 2>&1 | tee /tmp/result.txt
         env:
@@ -86,6 +86,7 @@ jobs:
           IMT_PASSWORD: ${{ secrets.IMT_PASSWORD }}
 
       - name: 提交订单数据
+        if: ${{ env.PAUSED != 'yes' }}
         run: |
           git config user.name "sph-bot"
           git config user.email "sph-bot@users.noreply.github.com"
@@ -94,7 +95,7 @@ jobs:
           git push
 
       - name: 回写结果到 issue
-        if: ${{ github.event_name == 'issues' }}
+        if: ${{ github.event_name == 'issues' && env.PAUSED != 'yes' }}
         uses: actions/github-script@v7
         with:
           script: |
