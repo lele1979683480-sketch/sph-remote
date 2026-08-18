@@ -1,4 +1,11 @@
 {
   "orders": [],
-  "counter": {}
+  "counter": {},
+  "logs": [
+    {
+      "time": "2026-08-18 09:57:21",
+      "kind": "info",
+      "message": "达标检查: 暂无未完成订单"
+    }
+  ]
 }
