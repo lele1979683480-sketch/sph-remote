@@ -62,15 +62,20 @@ jobs:
         id: parse
         if: ${{ env.PAUSED != 'yes' }}
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "URL=${{ inputs.url }}" >> "$GITHUB_ENV"
-            echo "TARGETS=${{ inputs.targets }}" >> "$GITHUB_ENV"
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            echo "URL=$INPUT_URL" >> "$GITHUB_ENV"
+            echo "TARGETS=$INPUT_TARGETS" >> "$GITHUB_ENV"
           else
-            URL="${{ github.event.issue.title }}"
-            URL="${URL#order: }"
+            URL="${ISSUE_TITLE#order: }"
             echo "URL=$URL" >> "$GITHUB_ENV"
-            echo "TARGETS=${{ github.event.issue.body }}" >> "$GITHUB_ENV"
+            echo "TARGETS=$ISSUE_BODY" >> "$GITHUB_ENV"
           fi
+        env:
+          EVENT: ${{ github.event_name }}
+          INPUT_URL: ${{ inputs.url }}
+          INPUT_TARGETS: ${{ inputs.targets }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          ISSUE_BODY: ${{ github.event.issue.body }}
 
       - name: 自动下单
         id: run
@@ -91,7 +96,9 @@ jobs:
           git config user.name "sph-bot"
           git config user.email "sph-bot@users.noreply.github.com"
           git add data/orders.json
-          git diff --cached --quiet || git commit -m "order update [skip ci]"
+          git diff --cached --quiet && exit 0
+          git commit -m "order update [skip ci]"
+          git pull --rebase origin main || true
           git push
 
       - name: 回写结果到 issue
