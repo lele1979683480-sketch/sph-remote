@@ -51,6 +51,11 @@ async function submitOrder() {
   if (Object.values(targets).every(v => !v)) {
     showMsg("请至少填写一个下单项目数量", false); return;
   }
+  // 用无引号的文本格式提交,避免 GitHub Actions 对 JSON 引号的处理问题
+  const bodyText = Object.entries(targets)
+    .filter(([, v]) => v > 0)
+    .map(([k, v]) => `${k}:${v}`)
+    .join(";");
   showMsg("正在提交...", true);
   try {
     const res = await fetch(`https://api.github.com/repos/${state.owner}/${state.repo}/issues`, {
@@ -59,7 +64,7 @@ async function submitOrder() {
         "Content-Type": "application/json", "Accept": "application/vnd.github+json" },
       body: JSON.stringify({
         title: `order: ${url}`,
-        body: JSON.stringify(targets),
+        body: bodyText,
       }),
     });
     if (!res.ok) {
