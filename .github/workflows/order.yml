@@ -9,18 +9,23 @@ on:
         description: 视频链接
         required: true
       targets:
-        description: 目标JSON,如 {"play":2500,"like":30}
+        description: 目标JSON,如 {"play":100,"share":50,"like":100,"heart":50}
         required: true
 
 permissions:
   contents: write
   issues: write
 
+# 并发串行:同一时间只允许一个 run 执行,避免订单数据互相覆盖/重复执行
+concurrency:
+  group: sph-remote-run
+  cancel-in-progress: false
+
 jobs:
   order:
     if: ${{ github.event_name == 'workflow_dispatch' || startsWith(github.event.issue.title, 'order:') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -52,9 +57,11 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: 安装依赖
+      - name: 安装依赖(xvfb 提供虚拟显示,供真实窗口模式浏览器使用)
         if: ${{ env.PAUSED != 'yes' }}
         run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb
           pip install playwright
           python -m playwright install chromium --with-deps
 
@@ -77,11 +84,11 @@ jobs:
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
 
-      - name: 自动下单
+      - name: 自动下单(真实窗口模式)
         id: run
         if: ${{ env.PAUSED != 'yes' }}
         run: |
-          python remote/main.py order "$URL" "$TARGETS" 2>&1 | tee /tmp/result.txt
+          xvfb-run -a python remote/main.py order "$URL" "$TARGETS" 2>&1 | tee /tmp/result.txt
         env:
           JUZI_ACCOUNT: ${{ secrets.JUZI_ACCOUNT }}
           JUZI_PASSWORD: ${{ secrets.JUZI_PASSWORD }}
@@ -89,6 +96,8 @@ jobs:
           JUZI_FORWARD_GOODS: ${{ secrets.JUZI_FORWARD_GOODS }}
           IMT_ACCOUNT: ${{ secrets.IMT_ACCOUNT }}
           IMT_PASSWORD: ${{ secrets.IMT_PASSWORD }}
+          IMT_LIKE_GOODS: ${{ secrets.IMT_LIKE_GOODS }}
+          IMT_HEART_GOODS: ${{ secrets.IMT_HEART_GOODS }}
 
       - name: 提交订单数据
         if: ${{ env.PAUSED != 'yes' }}
