@@ -1,10 +1,21 @@
 # -*- coding: utf-8 -*-
-"""orders.json 数据读写(workflow 内使用,简单 JSON 数据库)"""
+"""orders.json 数据读写(workflow 内使用,简单 JSON 数据库)
+订单模型: 每个订单含总体状态 + 各项目(播放/转发/赞/爱心)独立状态
+"""
 import json
 import os
 import time
 
 import config
+
+ITEM_KEYS = ("play", "share", "like", "heart")
+
+# 状态常量
+ST_PENDING = "pending"          # 排队中
+ST_PROCESSING = "processing"    # 处理中
+ST_SUCCESS = "success"          # 全部成功
+ST_FAILED = "failed"            # 全部失败
+ST_PARTIAL = "partial_success"  # 部分成功
 
 
 def _now() -> str:
@@ -39,11 +50,26 @@ def next_order_no(date: str) -> str:
     return no
 
 
+def new_item() -> dict:
+    return {
+        "status": "wait",          # wait/processing/success/failed
+        "step": "等待中",
+        "error": "",
+        "platform": "",            # juzi / imt
+        "goods_ref": "",           # 商品编号
+        "platform_order_no": "",   # 平台订单号(如返回)
+        "result": "",
+    }
+
+
 def add_order(url: str, targets: dict) -> dict:
-    """新增订单记录"""
+    """新增订单记录。targets 各项目数量(>0 才下单)。"""
     data = load()
     date = time.strftime("%Y-%m-%d")
     no = next_order_no(date)
+    items = {k: new_item() for k in ITEM_KEYS}
+    for k in ITEM_KEYS:
+        items[k]["qty"] = int(targets.get(k) or 0)
     order = {
         "order_no": no,
         "url": url,
@@ -52,9 +78,9 @@ def add_order(url: str, targets: dict) -> dict:
         "targets": {k: int(v or 0) for k, v in targets.items()},
         "init": {"like": 0, "heart": 0, "comment": 0, "share": 0, "play": 0},
         "cur": {"like": 0, "heart": 0, "comment": 0, "share": 0, "play": 0},
+        "items": items,            # 各项目独立状态
         "status": config.ST_PENDING,
-        "platform": "",
-        "result": "",
+        "step": "订单已创建,排队等待处理",
         "error": "",
         "created_at": _now(),
         "updated_at": _now(),
@@ -83,6 +109,18 @@ def update_order(order_no: str, **fields) -> None:
     save(data)
 
 
+def update_item(order_no: str, key: str, **fields) -> None:
+    """更新订单内某个项目(播放/转发/赞/爱心)的状态"""
+    data = load()
+    for o in data["orders"]:
+        if o["order_no"] == order_no:
+            item = o["items"].setdefault(key, new_item())
+            item.update(fields)
+            o["updated_at"] = _now()
+            break
+    save(data)
+
+
 def active_orders() -> list:
     """未完成订单(用于达标检查)"""
     data = load()
@@ -90,10 +128,10 @@ def active_orders() -> list:
 
 
 def add_log(kind: str, message: str) -> None:
-    """追加一条运行日志(网页「日志」页显示),最多保留200条"""
+    """追加一条运行日志(网页「日志」页显示),最多保留300条"""
     data = load()
     logs = data.setdefault("logs", [])
     logs.append({"time": _now(), "kind": str(kind), "message": str(message)[:300]})
-    if len(logs) > 200:
-        del logs[: len(logs) - 200]
+    if len(logs) > 300:
+        del logs[: len(logs) - 300]
     save(data)
