@@ -165,6 +165,8 @@ const SECRETS = [
   { name: "IMT_PASSWORD", el: "in-imt-pwd", label: "imt密码" },
   { name: "IMT_LIKE_GOODS", el: "in-like-goods", label: "点赞商品编码" },
   { name: "IMT_HEART_GOODS", el: "in-heart-goods", label: "爱心商品编码" },
+  { name: "JUZI_COOKIE", el: "in-jz-cookie", label: "橘子登录Cookie" },
+  { name: "IMT_COOKIE", el: "in-imt-cookie", label: "imt登录Cookie" },
 ];
 async function ghApi(path, opts = {}) {
   const res = await fetch("https://api.github.com" + path, {
@@ -226,7 +228,7 @@ async function savePlatformCfg() {
     }
     msg.textContent = "保存成功！下单时自动使用新配置";
     msg.className = "msg ok";
-    ["in-jz-pwd", "in-imt-pwd"].forEach(id => { $(id).value = ""; });
+    ["in-jz-pwd", "in-imt-pwd", "in-jz-cookie", "in-imt-cookie"].forEach(id => { $(id).value = ""; });
     loadSecretStatus();
   } catch (e) {
     msg.textContent = `保存失败: ${e.message}`;
