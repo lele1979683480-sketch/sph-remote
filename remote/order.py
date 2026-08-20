@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
-"""处理一个新订单:记录 -> 抓取 -> 下单"""
-import re
+"""订单处理: 创建 -> 解析视频 -> 分项目下单(播放/转发/赞/爱心) -> 汇总状态
+规则:
+  - 视频解析失败 -> 整个订单失败,不继续下单
+  - 各项目独立执行、独立状态; 单项目失败不影响其他项目
+  - 总体状态: 全部成功=success, 全部失败=failed, 部分成功=partial_success
+"""
 import time
 
 import config
@@ -9,85 +13,145 @@ import imt
 import juzi
 import scraper
 
-_URL_RE = re.compile(r"https?://[^\s]+")
+ITEM_LABEL = {
+    "play": "播放",
+    "share": "转发",
+    "like": "点赞",
+    "heart": "爱心",
+}
 
 
-def parse_order_text(text: str) -> dict | None:
-    """从网页提交的文本解析订单:链接 + 赞/爱心/评论/转发/播放 + 数量"""
-    m = _URL_RE.search(text or "")
-    if not m:
-        return None
-    url = m.group(0).rstrip("。，,；;")
-    rest = (text or "")[m.end():]
-    targets = {"like": 0, "heart": 0, "comment": 0, "share": 0, "play": 0}
-    # 形式1: 赞30 爱心20 播放2500 (数字在指标前,如"播放2500")
-    front = re.findall(r"(赞|点赞|爱心|爱|评论|评|转发|转|播放|播)\s*[:：]?\s*(\d+)", rest)
-    # 形式2: 30赞 20爱心 (数字在指标后)
-    back = re.findall(r"(\d+)\s*(赞|点赞|爱心|爱|评论|评|转发|转|播放|播)", rest)
-    hits = back if (len(back) >= len(front) and back) else front
-    if not hits:
-        return None
-    key_map = {"赞": "like", "点赞": "like", "爱心": "heart", "爱": "heart",
-               "评论": "comment", "评": "comment", "转发": "share", "转": "share",
-               "播放": "play", "播": "play"}
-    for a, b in hits:
-        kw, num = (a, b) if front and a in key_map else (b, a)
-        try:
-            targets[key_map[kw]] = int(num)
-        except Exception:
-            continue
-    if sum(targets.values()) <= 0:
-        return None
-    return {"url": url, "targets": targets}
+def _target_items(targets: dict) -> list:
+    """返回数量>0的项目列表 [(key, qty)]"""
+    return [(k, int(v)) for k, v in (targets or {}).items()
+            if int(v or 0) > 0 and k in ITEM_LABEL]
+
+
+def _step(no: str, text: str, log_kind: str = "info"):
+    """更新订单当前步骤 + 追加日志"""
+    db.update_order(no, step=text)
+    db.add_log(log_kind, f"订单{no} {text}")
+
+
+def _goods_ref(key: str) -> str:
+    """取项目对应的商品编号(全部来自配置,不硬编码)"""
+    if key == "play":
+        return config.JUZI_PLAY_GOODS
+    if key == "share":
+        return config.JUZI_FORWARD_GOODS
+    if key == "like":
+        return config.IMT_LIKE_GOODS
+    if key == "heart":
+        return config.IMT_HEART_GOODS
+    return ""
+
+
+def _run_item(no: str, key: str, qty: int, url: str, video_name: str) -> dict:
+    """执行单个项目下单,返回该项目的最终字段(用于 update_item)"""
+    label = ITEM_LABEL[key]
+    goods = _goods_ref(key)
+
+    def rep(text):
+        db.update_item(no, key, step=text)
+        db.add_log("order", f"订单{no} [{label}] {text}")
+
+    db.update_item(no, key, status=config.IT_PROCESSING,
+                   step=f"{label}开始处理", qty=qty, goods_ref=goods)
+    db.add_log("order", f"订单{no} [{label}] 开始下单 数量={qty}")
+
+    if key in ("play", "share"):
+        platform = config.PLATFORM_JUZI
+        if not goods:
+            return _item_fail(no, key, label, "未配置播放/转发商品编号")
+        result = juzi.order(goods, video_name, url, qty, step_cb=rep)
+    else:
+        platform = config.PLATFORM_IMT
+        title = "点赞" if key == "like" else "爱心"
+        result = imt.order(url, qty, title=title, goods_ref=goods, step_cb=rep)
+
+    if result.get("ok"):
+        fields = {
+            "status": config.IT_SUCCESS,
+            "step": f"{label}下单成功",
+            "result": result.get("message", ""),
+            "platform": platform,
+            "platform_order_no": result.get("platform_order_no", ""),
+            "error": "",
+        }
+        db.update_item(no, key, **fields)
+        db.add_log("ok", f"订单{no} [{label}] 下单成功: {result.get('message')}")
+        return fields
+    return _item_fail(no, key, label, result.get("message", "下单失败"))
+
+
+def _item_fail(no: str, key: str, label: str, err: str) -> dict:
+    fields = {
+        "status": config.IT_FAILED,
+        "step": f"{label}下单失败",
+        "error": err,
+        "result": err,
+    }
+    db.update_item(no, key, **fields)
+    db.add_log("error", f"订单{no} [{label}] 下单失败: {err}")
+    return fields
+
+
+def _overall_status(no: str) -> str:
+    """根据各项目状态汇总总体状态"""
+    order = db.get_order(no)
+    items = order.get("items") or {}
+    active = [k for k, v in (order.get("targets") or {}).items() if int(v or 0) > 0]
+    if not active:
+        return config.ST_FAILED
+    statuses = {items.get(k, {}).get("status") for k in active}
+    if statuses == {config.IT_SUCCESS}:
+        return config.ST_SUCCESS
+    if statuses == {config.IT_FAILED}:
+        return config.ST_FAILED
+    return config.ST_PARTIAL
 
 
 def process_order(url: str, targets: dict) -> dict:
     """创建订单并自动下单。返回订单记录。"""
     order = db.add_order(url, targets)
     no = order["order_no"]
-    db.add_log("order", f"收到新订单 {no}: {url} 目标={targets}")
-    # 1. 抓取视频数据(博主名/标题/初始数据)
+    _step(no, "订单已创建,开始处理")
+    db.add_log("order", f"订单{no} 创建: {url} 目标={targets}")
+
+    # 1. 解析视频链接(失败即整单失败,不继续下单)
+    _step(no, "正在解析视频链接")
     data = scraper.scrape(url)
-    if data:
-        db.update_order(no, video_name=data.get("author") or "",
-                        title=data.get("title") or "",
-                        init={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
-                        cur={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
-                        status=config.ST_PROCESSING)
-        db.add_log("info", f"订单{no} 抓取成功: 博主={data.get('author')} 赞{data.get('like')} 爱心{data.get('heart')} 评论{data.get('comment')} 转发{data.get('share')}")
-    else:
-        db.update_order(no, status=config.ST_PROCESSING)
-        db.add_log("warn", f"订单{no} 视频数据抓取失败,继续下单")
-    # 2. 自动下单
-    results = []
-    ok_all = True
-    video_name = data.get("author") if data else ""
-    if targets.get("play"):
-        db.add_log("order", f"订单{no} 播放下单中({config.JUZI_PLAY_GOODS})数量={targets['play']}...")
-        r = juzi.order(config.JUZI_PLAY_GOODS, video_name, url, targets["play"])
-        results.append(f"播放:{r['message']}")
-        db.add_log("ok" if r["ok"] else "error", f"订单{no} 播放下单: {r['message']}")
-        if not r["ok"]:
-            ok_all = False
-    if targets.get("share"):
-        db.add_log("order", f"订单{no} 转发下单中({config.JUZI_FORWARD_GOODS})数量={targets['share']}...")
-        r = juzi.order(config.JUZI_FORWARD_GOODS, video_name, url, targets["share"])
-        results.append(f"转发:{r['message']}")
-        db.add_log("ok" if r["ok"] else "error", f"订单{no} 转发下单: {r['message']}")
-        if not r["ok"]:
-            ok_all = False
-    if targets.get("like") or targets.get("heart"):
-        qty = max(targets.get("like", 0), targets.get("heart", 0))
-        db.add_log("order", f"订单{no} imt 赞/爱心下单中数量={qty}...")
-        r = imt.order(url, qty)
-        results.append(f"赞/爱心:{r['message']}")
-        db.add_log("ok" if r["ok"] else "error", f"订单{no} 赞/爱心: {r['message']}")
-        if not r["ok"]:
-            ok_all = False
-    status = config.ST_SUBMITTED if ok_all else config.ST_FAILED
-    db.update_order(no, status=status,
-                    platform="juzi" if (targets.get("play") or targets.get("share")) else "",
-                    result=";".join(results),
-                    error="" if ok_all else ";".join(results))
-    db.add_log("ok" if ok_all else "error", f"订单{no} 完成: status={status} 结果={';'.join(results)}")
+    if not data:
+        err = f"视频链接解析失败,无法获取视频数据: {url}"
+        db.update_order(no, status=config.ST_FAILED, step="解析视频失败", error=err)
+        db.add_log("error", f"订单{no} {err}")
+        return db.get_order(no)
+    db.update_order(no, video_name=data.get("author") or "",
+                    title=data.get("title") or "",
+                    init={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
+                    cur={k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")},
+                    step=f"视频解析成功: {data.get('author') or ''}")
+    db.add_log("info", f"订单{no} 视频解析成功: 博主={data.get('author')} "
+                       f"赞{data.get('like')} 爱心{data.get('heart')} "
+                       f"评论{data.get('comment')} 转发{data.get('share')}")
+
+    # 2. 分项目下单
+    db.update_order(no, status=config.ST_PROCESSING)
+    for key, qty in _target_items(targets):
+        _run_item(no, key, qty, url, data.get("author") or "")
+
+    # 3. 汇总状态
+    overall = _overall_status(no)
+    db.update_order(no, status=overall,
+                    completed=(overall == config.ST_SUCCESS),
+                    step=("全部下单成功" if overall == config.ST_SUCCESS
+                          else "部分下单成功" if overall == config.ST_PARTIAL
+                          else "下单失败"))
+    db.add_log("ok" if overall != config.ST_FAILED else "error",
+               f"订单{no} 处理完成: status={overall}")
     return db.get_order(no)
+
+
+def pending_processes() -> list:
+    """供测试/手动触发的待处理项(空实现,保持接口)"""
+    return []
