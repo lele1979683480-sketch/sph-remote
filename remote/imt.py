@@ -35,6 +35,9 @@ def _body(page) -> str:
 
 
 def ensure_login(page, step_cb=None) -> bool:
+    """确认已登录。
+    优先级: 已有登录态 > 配置的Cookie注入 > 账号密码
+    """
     def rep(s):
         if step_cb:
             step_cb(s)
@@ -46,8 +49,30 @@ def ensure_login(page, step_cb=None) -> bool:
             return True
     except Exception:
         pass
+
+    # 方式1: 使用手机导出的登录 Cookie
+    if config.IMT_COOKIE:
+        rep("尝试使用已保存的登录Cookie")
+        try:
+            cookies = config.parse_cookie(config.IMT_COOKIE, "imt.tiankongfeiji.cn")
+            if not cookies:
+                rep("登录失败:Cookie 内容为空")
+                return False
+            page.context.add_cookies(cookies)
+            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+            time.sleep(5)
+            body = _body(page)
+            if "提交订单" in body or "退出" in body:
+                rep("Cookie 登录成功")
+                return True
+            rep("Cookie 登录失败(可能已过期,请重新在手机导出)")
+        except Exception as e:
+            rep(f"Cookie 注入异常:{e}")
+        return False
+
+    # 方式2: 账号密码登录
     if not (config.IMT_ACCOUNT and config.IMT_PASSWORD):
-        rep("登录失败:未配置 imt 账号密码")
+        rep("登录失败:未配置 imt 账号密码或Cookie")
         return False
     rep("未登录,开始账号密码登录")
     try:
