@@ -94,6 +94,8 @@ jobs:
           IMT_PASSWORD: ${{ secrets.IMT_PASSWORD }}
           IMT_LIKE_GOODS: ${{ secrets.IMT_LIKE_GOODS }}
           IMT_HEART_GOODS: ${{ secrets.IMT_HEART_GOODS }}
+          JUZI_COOKIE: ${{ secrets.JUZI_COOKIE }}
+          IMT_COOKIE: ${{ secrets.IMT_COOKIE }}
 
       - name: 提交订单数据
         if: ${{ env.PAUSED != 'yes' }}
