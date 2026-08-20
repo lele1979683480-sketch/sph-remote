@@ -23,13 +23,14 @@ def run() -> dict:
         init = o.get("init") or {}
         targets = o.get("targets") or {}
         # 达标:每个有目标的项目 当前 >= 初始 + 目标
-        need = {k: v for k, v in targets.items() if v > 0}
+        need = {k: v for k, v in targets.items() if int(v or 0) > 0}
         all_done = bool(need) and all(
-            cur.get(k, 0) >= (init.get(k, 0) + v) for k, v in need.items())
+            cur.get(k, 0) >= (init.get(k, 0) + int(v)) for k, v in need.items())
         fields = {"cur": cur}
         if all_done:
-            fields["status"] = config.ST_COMPLETED
+            fields["status"] = config.ST_SUCCESS
             fields["completed"] = True
+            fields["step"] = "已达标"
         db.update_order(o["order_no"], **fields)
         report["checked"] += 1
         if all_done:
