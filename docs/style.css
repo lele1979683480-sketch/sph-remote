@@ -41,13 +41,26 @@ body {
 .order .no { font-weight: 700; color: #07c160; font-size: 15px; }
 .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; color: #fff; }
 .badge.pending { background: #faad14; } .badge.processing { background: #faad14; }
-.badge.submitted { background: #07c160; } .badge.failed { background: #e64340; }
-.badge.completed { background: #999; }
+.badge.success { background: #07c160; } .badge.partial_success { background: #1677ff; }
+.badge.failed { background: #e64340; }
 .order .title { font-size: 13px; color: #333; margin: 6px 0 2px; line-height: 1.4; }
 .order .meta { font-size: 12px; color: #888; line-height: 1.6; }
 .order .tgt { font-size: 13px; margin-top: 6px; }
 .tgt .done { color: #07c160; }
 .tgt .undone { color: #e64340; }
+.proj { font-size: 13px; margin-top: 6px; padding: 6px 8px; background: #f8f9fa;
+  border-radius: 8px; }
+.proj .pl { font-weight: 600; }
+.proj.done { border-left: 3px solid #07c160; }
+.proj.undone { border-left: 3px solid #e64340; }
+.badge-s { font-size: 11px; padding: 1px 6px; border-radius: 8px; background: #eee;
+  color: #666; margin-left: 4px; }
+.badge-s.success { background: #07c160; color: #fff; }
+.badge-s.failed { background: #e64340; color: #fff; }
+.badge-s.processing { background: #faad14; color: #fff; }
+.pstep { font-size: 11px; color: #888; margin-top: 2px; }
+.errbox { margin-top: 8px; background: #fff1f0; border: 1px solid #ffccc7;
+  border-radius: 8px; padding: 6px 10px; font-size: 12px; color: #e64340; }
 .empty { text-align: center; color: #999; padding: 40px 0; font-size: 14px; }
 .sys-state { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
 .logline { font-size: 12px; padding: 6px 0; border-bottom: 1px solid #f0f0f0;
