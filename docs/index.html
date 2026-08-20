@@ -48,11 +48,11 @@
   <div class="filter">
     <select id="sel-status" class="ipt">
       <option value="">全部状态</option>
-      <option value="pending">待处理</option>
+      <option value="pending">排队中</option>
       <option value="processing">处理中</option>
-      <option value="submitted">已提交</option>
+      <option value="success">已达标</option>
+      <option value="partial_success">部分成功</option>
       <option value="failed">失败</option>
-      <option value="completed">已达标</option>
     </select>
   </div>
   <div id="order-list"></div>
@@ -72,6 +72,11 @@
     <label>imt 平台（赞/爱心下单）</label>
     <input id="in-imt-acct" placeholder="imt 账号/手机号" class="ipt" autocomplete="off">
     <input id="in-imt-pwd" type="password" placeholder="imt 密码" class="ipt" autocomplete="new-password">
+    <div class="grid2">
+      <div class="fld"><span>点赞商品编码</span><input id="in-like-goods" placeholder="赞商品编号" class="ipt"></div>
+      <div class="fld"><span>爱心商品编码</span><input id="in-heart-goods" placeholder="爱心商品编号" class="ipt"></div>
+    </div>
+    <p class="hint">赞和爱心分别下单；若平台为同一任务，两个编码填相同值。</p>
   </div>
   <button id="btn-save-cfg" class="btn primary">保存配置到服务器</button>
   <p id="cfg-status" class="hint" style="margin-top:8px"></p>
