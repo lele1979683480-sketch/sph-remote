@@ -65,31 +65,27 @@ jobs:
           pip install playwright
           python -m playwright install chromium --with-deps
 
-      - name: 解析订单参数
-        id: parse
+      - name: 自动下单(真实窗口模式)
+        id: run
         if: ${{ env.PAUSED != 'yes' }}
         run: |
+          # 直接在 bash 内取输入(避免 GITHUB_ENV 中转丢失 JSON 引号)
           if [ "$EVENT" = "workflow_dispatch" ]; then
-            echo "URL=$INPUT_URL" >> "$GITHUB_ENV"
-            echo "TARGETS=$INPUT_TARGETS" >> "$GITHUB_ENV"
+            URL="$INPUT_URL"
+            TARGETS="$INPUT_TARGETS"
           else
             URL="${ISSUE_TITLE#order: }"
-            echo "URL=$URL" >> "$GITHUB_ENV"
-            echo "TARGETS=$ISSUE_BODY" >> "$GITHUB_ENV"
+            TARGETS="$ISSUE_BODY"
           fi
+          echo "处理订单: $URL"
+          echo "目标: $TARGETS"
+          xvfb-run -a python remote/main.py order "$URL" "$TARGETS" 2>&1 | tee /tmp/result.txt
         env:
           EVENT: ${{ github.event_name }}
           INPUT_URL: ${{ inputs.url }}
           INPUT_TARGETS: ${{ inputs.targets }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
           ISSUE_BODY: ${{ github.event.issue.body }}
-
-      - name: 自动下单(真实窗口模式)
-        id: run
-        if: ${{ env.PAUSED != 'yes' }}
-        run: |
-          xvfb-run -a python remote/main.py order "$URL" "$TARGETS" 2>&1 | tee /tmp/result.txt
-        env:
           JUZI_ACCOUNT: ${{ secrets.JUZI_ACCOUNT }}
           JUZI_PASSWORD: ${{ secrets.JUZI_PASSWORD }}
           JUZI_PLAY_GOODS: ${{ secrets.JUZI_PLAY_GOODS }}
