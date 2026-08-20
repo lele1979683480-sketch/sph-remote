@@ -8,6 +8,7 @@ import json
 import sys
 
 import check
+import config
 import order
 
 
@@ -28,9 +29,15 @@ def main():
             print("RESULT: targets 不是合法 JSON")
             sys.exit(1)
         o = order.process_order(url, targets)
-        print(f"RESULT: 订单{o['order_no']} status={o['status']}")
-        print(f"详情: {o.get('result') or o.get('error') or '-'}")
-        sys.exit(0 if o["status"] == "submitted" else 1)
+        status = o.get("status", "")
+        print(f"RESULT: 订单{o['order_no']} status={status}")
+        for key, it in (o.get("items") or {}).items():
+            if int((o.get("targets") or {}).get(key, 0) or 0) > 0:
+                print(f"  [{key}] {it.get('status')} - {it.get('step')} "
+                      f"{('- ' + it.get('error', '')) if it.get('error') else ''}")
+        if status in (config.ST_SUCCESS, config.ST_PARTIAL):
+            sys.exit(0)
+        sys.exit(1)
     elif cmd == "check":
         rep = check.run()
         print(f"RESULT: 检查{rep['checked']}单, 新达标{rep['completed']}, 抓取失败{rep['failed']}")
