@@ -38,3 +38,40 @@ JUZI_ACCOUNT = os.environ.get("JUZI_ACCOUNT", "")
 JUZI_PASSWORD = os.environ.get("JUZI_PASSWORD", "")
 IMT_ACCOUNT = os.environ.get("IMT_ACCOUNT", "")
 IMT_PASSWORD = os.environ.get("IMT_PASSWORD", "")
+
+# ---- 登录 Cookie(手机导出后粘贴到网页配置, 优先于账号密码) ----
+JUZI_COOKIE = os.environ.get("JUZI_COOKIE", "")
+IMT_COOKIE = os.environ.get("IMT_COOKIE", "")
+
+
+def parse_cookie(cookie_str: str, default_domain: str) -> list:
+    """解析 Cookie: 支持 JSON 数组(Cookie-Editor导出) 和 'k=v; k2=v2' 两种格式"""
+    import json
+    s = (cookie_str or "").strip()
+    if not s:
+        return []
+    if s.startswith("["):
+        try:
+            arr = json.loads(s)
+            out = []
+            for c in arr:
+                if not c.get("name"):
+                    continue
+                out.append({
+                    "name": str(c["name"]).strip(),
+                    "value": str(c.get("value", "")).strip(),
+                    "domain": str(c.get("domain") or default_domain),
+                    "path": str(c.get("path") or "/"),
+                })
+            return out
+        except Exception:
+            pass
+    # k=v; k2=v2 格式
+    out = []
+    for part in s.split(";"):
+        part = part.strip()
+        if "=" in part:
+            k, v = part.split("=", 1)
+            out.append({"name": k.strip(), "value": v.strip(),
+                        "domain": default_domain, "path": "/"})
+    return out
