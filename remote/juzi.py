@@ -65,7 +65,9 @@ def _is_logged_in(page) -> bool:
 
 
 def ensure_login(page, step_cb=None) -> bool:
-    """确认已登录;未登录则账号密码登录。失败返回 False。"""
+    """确认已登录。
+    优先级: 已有登录态 > 配置的Cookie注入 > 账号密码(Playwright可能被平台风控)
+    """
     def rep(s):
         if step_cb:
             step_cb(s)
@@ -76,8 +78,31 @@ def ensure_login(page, step_cb=None) -> bool:
     if _is_logged_in(page):
         rep("登录状态检查:已登录")
         return True
+
+    # 方式1: 使用手机导出的登录 Cookie
+    if config.JUZI_COOKIE:
+        rep("尝试使用已保存的登录Cookie")
+        try:
+            cookies = config.parse_cookie(config.JUZI_COOKIE, ".juzi00.com")
+            if not cookies:
+                rep("登录失败:Cookie 内容为空")
+                return False
+            page.context.add_cookies(cookies)
+            page.reload()
+            time.sleep(6)
+            _close_popups(page)
+            if _is_logged_in(page):
+                rep("Cookie 登录成功")
+                return True
+            rep("Cookie 登录失败(可能已过期,请重新在手机导出)")
+
+        except Exception as e:
+            rep(f"Cookie 注入异常:{e}")
+        return False
+
+    # 方式2: 账号密码登录(平台可能对自动化环境风控)
     if not (config.JUZI_ACCOUNT and config.JUZI_PASSWORD):
-        rep("登录失败:未配置橘子账号密码")
+        rep("登录失败:未配置橘子账号密码或Cookie")
         return False
     rep("未登录,开始账号密码登录")
     try:
