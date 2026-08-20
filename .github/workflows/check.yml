@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# 与下单共享并发组:同组串行执行,避免 orders.json 并发写覆盖
+concurrency:
+  group: sph-remote-run
+  cancel-in-progress: false
+
 jobs:
   check:
     runs-on: ubuntu-latest
