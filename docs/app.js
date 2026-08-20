@@ -12,8 +12,8 @@ const state = {
 };
 
 const $ = (id) => document.getElementById(id);
-const ST_NAMES = { pending: "待处理", processing: "处理中", submitted: "已提交",
-  failed: "失败", completed: "已达标" };
+const ST_NAMES = { pending: "排队中", processing: "处理中", success: "已达标",
+  failed: "失败", partial_success: "部分成功" };
 
 function saveCfg() {
   state.owner = $("in-owner").value.trim();
@@ -67,7 +67,7 @@ async function submitOrder() {
       showMsg(`提交失败: ${err.message || res.status}`, false);
       return;
     }
-    showMsg("已提交，服务器开始自动下单，约1-2分钟完成", true);
+    showMsg("✅ 订单已提交，正在排队处理（约1-3分钟），可在「订单列表」查看进度", true);
     $("in-url").value = ""; $("in-play").value = ""; $("in-like").value = "";
     $("in-heart").value = ""; $("in-share").value = "";
     setTimeout(() => loadOrders(), 5000);
@@ -112,26 +112,40 @@ function renderOrders() {
 }
 function orderCard(o) {
   const st = ST_NAMES[o.status] || o.status;
-  const t = o.targets || {};
-  const tg = [];
-  const labels = { like: "赞", heart: "爱心", comment: "评论", share: "转发", play: "播放" };
-  for (const k of ["like", "heart", "comment", "share", "play"]) {
-    if (t[k]) {
-      const init = (o.init && o.init[k]) || 0;
-      const cur = (o.cur && o.cur[k]) || 0;
-      const done = cur >= init + t[k];
-      tg.push(`<span class="${done ? "done" : "undone"}">${labels[k]} ${cur}/${init + t[k]}</span>`);
-    }
-  }
-  const res = o.result ? `<div class="meta">平台: ${o.result}</div>` : "";
+  const labels = { like: "赞", heart: "爱心", play: "播放", share: "转发" };
+  const itst = { wait: "等待中", processing: "处理中", success: "成功", failed: "失败" };
+  const items = o.items || {};
+  const targets = o.targets || {};
+  const rows = ["like", "heart", "play", "share"].map(k => {
+    const qty = targets[k] || 0;
+    if (!qty) return "";
+    const it = items[k] || {};
+    const stc = it.status === "success" ? "done"
+      : it.status === "failed" ? "undone" : "";
+    const init = (o.init && o.init[k]) || 0;
+    const cur = (o.cur && o.cur[k]) || 0;
+    const progress = `(${cur}/${init + qty})`;
+    return `<div class="proj ${stc}">
+      <span class="pl">${labels[k]}</span> ×${qty} ${progress}
+      <span class="badge-s ${it.status || ""}">${itst[it.status] || (it.status || "等待中")}</span>
+      <div class="pstep">${escHtml(it.step || "")}</div>
+    </div>`;
+  }).join("");
+  const errs = Object.keys(labels).map(k => (items[k] || {}).error).filter(Boolean);
+  const errBlock = errs.length
+    ? `<div class="errbox">${errs.map(e => `<div>❌ ${escHtml(e)}</div>`).join("")}</div>` : "";
+  const orderNo = o.platform_order_no
+    ? `<div class="meta">平台订单号: ${escHtml(o.platform_order_no)}</div>` : "";
   return `<div class="order">
     <div class="head">
       <span class="no">${o.order_no || ""}</span>
       <span class="badge ${o.status}">${st}</span>
     </div>
-    <div class="title">${(o.video_name ? "【" + o.video_name + "】" : "")} ${o.title || "数据待抓取"}</div>
-    <div class="meta">目标: ${tg.join("　")}</div>
-    ${res}
+    <div class="title">${escHtml((o.video_name ? "【" + o.video_name + "】" : "") + (o.title || "数据待抓取"))}</div>
+    <div class="meta">步骤: ${escHtml(o.step || "等待处理")}</div>
+    ${rows}
+    ${orderNo}
+    ${errBlock}
     <div class="meta">${(o.created_at || "").slice(5, 16)}</div>
   </div>`;
 }
@@ -144,6 +158,8 @@ const SECRETS = [
   { name: "JUZI_FORWARD_GOODS", el: "in-share-goods", label: "转发商品编码" },
   { name: "IMT_ACCOUNT", el: "in-imt-acct", label: "imt账号" },
   { name: "IMT_PASSWORD", el: "in-imt-pwd", label: "imt密码" },
+  { name: "IMT_LIKE_GOODS", el: "in-like-goods", label: "点赞商品编码" },
+  { name: "IMT_HEART_GOODS", el: "in-heart-goods", label: "爱心商品编码" },
 ];
 async function ghApi(path, opts = {}) {
   const res = await fetch("https://api.github.com" + path, {
