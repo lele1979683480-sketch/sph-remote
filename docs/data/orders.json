@@ -1,0 +1,1865 @@
+{
+  "orders": [
+    {
+      "order_no": "082001",
+      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
+      "video_name": "T5MALL",
+      "title": "T5活动 | “玩咖聚乐部”限时免费报名中！ 📣星巴克 + M Stand + Manner + 瑞幸 + 库迪，5大咖啡品牌联手搞事情，咖啡脑袋速来集合！ ☕ 研磨大师 · 咖啡分享 介绍来自不同产区的咖啡豆的特点、水洗处理法和日晒处理法咖啡豆的风味介绍，带你一口喝懂世界！ ⚡ 研磨大师 · 手感挑战赛 10分钟倒计时！自己取豆、自己磨粉，比谁磨得最快，磨得最接近目标克数。 优胜者直接抱走限定好礼！ 名额有限，火速扫码报名！ #白云五号 #咖啡 #夏日好去处 #好玩 #白云新城 #星巴克 #MStand #Manner #瑞幸 #库迪",
+      "targets": {
+        "play": 1
+      },
+      "init": {
+        "like": 13,
+        "heart": 11,
+        "comment": 0,
+        "share": 8,
+        "play": 0
+      },
+      "cur": {
+        "like": 13,
+        "heart": 11,
+        "comment": 0,
+        "share": 8,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;T5MALL",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "success",
+      "step": "全部下单成功",
+      "error": "",
+      "created_at": "2026-08-20 09:42:48",
+      "updated_at": "2026-08-20 09:42:48",
+      "completed": true
+    },
+    {
+      "order_no": "260801",
+      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "failed",
+          "step": "播放下单失败",
+          "error": "购买数量不能小于1000",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "failed",
+      "step": "播放下单失败(数量小于最小购买量)",
+      "error": "购买数量不能小于1000",
+      "created_at": "2026-08-26 11:34:22",
+      "updated_at": "2026-08-26 11:34:22",
+      "completed": false
+    },
+    {
+      "order_no": "260802",
+      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "failed",
+          "step": "播放下单失败",
+          "error": "购买数量不能小于1000",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "failed",
+      "step": "播放下单失败(数量小于最小购买量)",
+      "error": "购买数量不能小于1000",
+      "created_at": "2026-08-26 11:52:35",
+      "updated_at": "2026-08-26 11:52:35",
+      "completed": false
+    },
+    {
+      "order_no": "260803",
+      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "success",
+      "step": "播放下单成功",
+      "error": "",
+      "created_at": "2026-08-26 12:22:14",
+      "updated_at": "2026-08-26 12:22:14",
+      "completed": true
+    },
+    {
+      "order_no": "260804",
+      "url": "https://weixin.qq.com/sph/AYoYGOFVxM",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "success",
+      "step": "播放下单成功",
+      "error": "",
+      "created_at": "2026-08-26 12:36:25",
+      "updated_at": "2026-08-26 12:36:25",
+      "completed": true
+    }
+  ],
+  "counter": {
+    "2026-08-20": 1,
+    "2026-08-26": 4
+  },
+  "logs": [
+    {
+      "time": "2026-08-22 22:16:05",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-22 22:46:38",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-22 22:46:50",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-22 22:46:50",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-22 23:15:23",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-22 23:15:36",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-22 23:15:36",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-22 23:44:21",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-22 23:44:34",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-22 23:44:34",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 01:04:25",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 01:04:40",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 01:04:40",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 02:24:55",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 02:25:10",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 02:25:10",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 03:28:54",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 03:29:06",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 03:29:06",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 04:10:04",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 04:10:20",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 04:10:20",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 05:01:05",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 05:01:17",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 05:01:17",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 05:54:14",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 05:54:27",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 05:54:27",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 06:31:27",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 06:31:39",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 06:31:39",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 07:29:00",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 07:29:15",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 07:29:15",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 07:57:45",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 07:57:58",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 07:57:58",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 08:30:53",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 08:31:07",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 08:31:07",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 09:27:04",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 09:27:23",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 09:27:23",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 09:51:36",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 09:51:51",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 09:51:51",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 10:17:46",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 10:17:59",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 10:17:59",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 10:48:56",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 10:49:11",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 10:49:11",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 11:16:17",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 11:16:34",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 11:16:34",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 11:44:10",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 11:44:21",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 11:44:21",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 12:28:12",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 12:28:28",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 12:28:28",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 13:11:08",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 13:11:21",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 13:11:21",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 13:52:46",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 13:52:59",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 13:52:59",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 14:17:44",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 14:17:58",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 14:17:58",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 14:48:20",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 14:48:32",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 14:48:32",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 15:16:37",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 15:16:50",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 15:16:50",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 15:45:43",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 15:45:57",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 15:45:57",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 16:18:09",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 16:18:28",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 16:18:28",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 16:50:06",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 16:50:18",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 16:50:18",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 17:15:38",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 17:15:51",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 17:15:51",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 17:43:34",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 17:43:47",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 17:43:47",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 18:21:08",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 18:21:21",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 18:21:21",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 18:56:08",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 18:56:21",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 18:56:21",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 19:19:47",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 19:20:00",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 19:20:00",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 19:44:26",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 19:44:38",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 19:44:38",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 20:15:57",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 20:16:09",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 20:16:09",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 20:47:33",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 20:47:46",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 20:47:46",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 21:15:53",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 21:16:06",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 21:16:06",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 21:44:28",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 21:44:40",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 21:44:40",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 22:15:36",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 22:15:48",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 22:15:48",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 22:46:57",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 22:47:10",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 22:47:10",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 23:15:20",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 23:15:33",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 23:15:33",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-23 23:43:59",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-23 23:44:12",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-23 23:44:12",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 00:56:55",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 00:57:09",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 00:57:09",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 02:21:45",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 02:21:58",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 02:21:58",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 03:31:01",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 03:31:13",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 03:31:13",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 04:39:03",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 04:39:14",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 04:39:14",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 05:33:33",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 05:33:45",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 05:33:45",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 06:44:38",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 06:44:52",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 06:44:52",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 07:53:43",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 07:53:55",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 07:53:55",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 08:41:13",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 08:41:26",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 08:41:26",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 09:40:40",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 09:40:52",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 09:40:52",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 10:32:26",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 10:32:41",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 10:32:41",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 11:21:57",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 11:22:09",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 11:22:09",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 11:52:39",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 11:52:51",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 11:52:51",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 12:38:02",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 12:38:14",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 12:38:14",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 13:57:04",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 13:57:16",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 13:57:16",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 14:36:25",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 14:36:36",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 14:36:36",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 15:33:39",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 15:33:51",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 15:33:51",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 16:30:16",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 16:30:27",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 16:30:27",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 17:07:50",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 17:08:02",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 17:08:02",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 17:57:12",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 17:57:24",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 17:57:24",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 18:38:08",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 18:38:20",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 18:38:20",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 19:25:34",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 19:25:46",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 19:25:46",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 19:53:45",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 19:53:57",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 19:53:57",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 20:23:23",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 20:23:36",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 20:23:36",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 20:57:41",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 20:57:52",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 20:57:52",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 21:29:10",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 21:29:23",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 21:29:23",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 21:55:03",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 21:55:15",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 21:55:15",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 22:20:10",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 22:20:21",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 22:20:21",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 22:52:07",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 22:52:20",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 22:52:20",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 23:18:05",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 23:18:17",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 23:18:17",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-24 23:45:17",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-24 23:45:31",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-24 23:45:31",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 00:57:07",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 00:57:18",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 00:57:18",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 02:17:44",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 02:18:01",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 02:18:01",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 03:26:06",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 03:26:20",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 03:26:20",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 04:07:38",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 04:07:51",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 04:07:51",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 05:03:47",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 05:03:59",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 05:03:59",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 05:57:22",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 05:57:35",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 05:57:35",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 06:43:55",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 06:44:09",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 06:44:09",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 07:39:28",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 07:39:41",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 07:39:41",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 08:35:26",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 08:35:39",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 08:35:39",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 09:29:52",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 09:30:04",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 09:30:04",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 10:02:35",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 10:02:48",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 10:02:48",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 10:58:32",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 10:58:47",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 10:58:47",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-25 11:30:32",
+      "kind": "info",
+      "message": "达标检查开始: 1 单"
+    },
+    {
+      "time": "2026-08-25 11:30:43",
+      "kind": "info",
+      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
+    },
+    {
+      "time": "2026-08-25 11:30:43",
+      "kind": "info",
+      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-26 11:34:22",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 11:34:22",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AfCOekg1kk 目标={'play': 1}"
+    },
+    {
+      "time": "2026-08-26 11:34:22",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 11:34:36",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=保利燕语堂悦小龍同志 赞4 爱心4 评论0 转发67"
+    },
+    {
+      "time": "2026-08-26 11:34:36",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1"
+    },
+    {
+      "time": "2026-08-26 11:34:36",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台)"
+    },
+    {
+      "time": "2026-08-26 11:34:50",
+      "kind": "order",
+      "message": "订单260801 [播放] 尝试注入 localStorage 登录凭证"
+    },
+    {
+      "time": "2026-08-26 11:34:50",
+      "kind": "order",
+      "message": "订单260801 [播放] localStorage 注入异常:BrowserContext.add_init_script() got an unexpected keyword argument 'arg'"
+    },
+    {
+      "time": "2026-08-26 11:34:51",
+      "kind": "error",
+      "message": "订单260801 [播放] 下单失败: 橘子平台登录失败(请检查账号密码/验证码)"
+    },
+    {
+      "time": "2026-08-26 11:34:51",
+      "kind": "error",
+      "message": "订单260801 处理完成: status=failed"
+    },
+    {
+      "time": "2026-08-26 11:52:35",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 11:52:35",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AfCOekg1kk 目标={'play': 1}"
+    },
+    {
+      "time": "2026-08-26 11:52:35",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 11:52:50",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=保利燕语堂悦小龍同志 赞4 爱心4 评论0 转发67"
+    },
+    {
+      "time": "2026-08-26 11:52:50",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1"
+    },
+    {
+      "time": "2026-08-26 11:52:50",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台)"
+    },
+    {
+      "time": "2026-08-26 11:53:09",
+      "kind": "order",
+      "message": "订单260801 [播放] 尝试注入 localStorage 登录凭证"
+    },
+    {
+      "time": "2026-08-26 11:53:15",
+      "kind": "order",
+      "message": "订单260801 [播放] localStorage 登录失败(凭证可能已过期,请重新在电脑/手机浏览器登录后导出)"
+    },
+    {
+      "time": "2026-08-26 11:53:16",
+      "kind": "error",
+      "message": "订单260801 [播放] 下单失败: 橘子平台登录失败(请检查账号密码/验证码)"
+    },
+    {
+      "time": "2026-08-26 11:53:16",
+      "kind": "error",
+      "message": "订单260801 处理完成: status=failed"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AfCOekg1kk 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=保利燕语堂悦小龍同志 赞12 爱心13 评论0 转发67"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:22:27",
+      "kind": "order",
+      "message": "订单260801 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-26 12:22:28",
+      "kind": "order",
+      "message": "订单260801 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-26 12:22:28",
+      "kind": "order",
+      "message": "订单260801 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"保利燕语堂悦小龍同志\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AfCOekg1kk\"}]"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "order",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;保利燕语堂悦小龍同志"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "ok",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;保利燕语堂悦小龍同志"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "ok",
+      "message": "订单260801 处理完成: status=success"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AYoYGOFVxM 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=T5MALL 赞13 爱心11 评论0 转发8"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:36:38",
+      "kind": "order",
+      "message": "订单260801 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"T5MALL\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AYoYGOFVxM\"}]"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "ok",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "ok",
+      "message": "订单260801 处理完成: status=success"
+    }
+  ]
+}
