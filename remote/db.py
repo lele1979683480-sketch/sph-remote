@@ -38,16 +38,13 @@ def save(data: dict) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def next_order_no(date: str) -> str:
-    """生成业务订单编号:MMDD+当日流水"""
-    data = load()
+def next_order_no(data: dict, date: str) -> str:
+    """生成业务订单编号:MMDD+当日流水(直接操作传入的 data,避免覆盖)"""
     key = date
     data["counter"][key] = data["counter"].get(key, 0) + 1
     seq = data["counter"][key]
     mmdd = date[2:4] + date[5:7]
-    no = f"{mmdd}{seq:02d}"
-    save(data)
-    return no
+    return f"{mmdd}{seq:02d}"
 
 
 def new_item() -> dict:
@@ -66,7 +63,7 @@ def add_order(url: str, targets: dict) -> dict:
     """新增订单记录。targets 各项目数量(>0 才下单)。"""
     data = load()
     date = time.strftime("%Y-%m-%d")
-    no = next_order_no(date)
+    no = next_order_no(data, date)
     items = {k: new_item() for k in ITEM_KEYS}
     for k in ITEM_KEYS:
         items[k]["qty"] = int(targets.get(k) or 0)
