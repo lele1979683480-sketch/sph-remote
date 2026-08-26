@@ -1,7 +1,7 @@
 {
   "orders": [
     {
-      "order_no": "260801",
+      "order_no": "082001",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
       "video_name": "T5MALL",
       "title": "T5活动 | “玩咖聚乐部”限时免费报名中！ 📣星巴克 + M Stand + Manner + 瑞幸 + 库迪，5大咖啡品牌联手搞事情，咖啡脑袋速来集合！ ☕ 研磨大师 · 咖啡分享 介绍来自不同产区的咖啡豆的特点、水洗处理法和日晒处理法咖啡豆的风味介绍，带你一口喝懂世界！ ⚡ 研磨大师 · 手感挑战赛 10分钟倒计时！自己取豆、自己磨粉，比谁磨得最快，磨得最接近目标克数。 优胜者直接抱走限定好礼！ 名额有限，火速扫码报名！ #白云五号 #咖啡 #夏日好去处 #好玩 #白云新城 #星巴克 #MStand #Manner #瑞幸 #库迪",
@@ -68,7 +68,7 @@
       "step": "全部下单成功",
       "error": "",
       "created_at": "2026-08-20 09:42:48",
-      "updated_at": "2026-08-26 12:36:39",
+      "updated_at": "2026-08-20 09:42:48",
       "completed": true
     },
     {
@@ -95,9 +95,9 @@
       },
       "items": {
         "play": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
+          "status": "failed",
+          "step": "播放下单失败",
+          "error": "购买数量不能小于1000",
           "platform": "",
           "goods_ref": "",
           "platform_order_no": "",
@@ -135,15 +135,15 @@
           "qty": 0
         }
       },
-      "status": "pending",
-      "step": "订单已创建,排队等待处理",
-      "error": "",
+      "status": "failed",
+      "step": "播放下单失败(数量小于最小购买量)",
+      "error": "购买数量不能小于1000",
       "created_at": "2026-08-26 11:34:22",
       "updated_at": "2026-08-26 11:34:22",
       "completed": false
     },
     {
-      "order_no": "260801",
+      "order_no": "260802",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
       "video_name": "",
       "title": "",
@@ -166,9 +166,9 @@
       },
       "items": {
         "play": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
+          "status": "failed",
+          "step": "播放下单失败",
+          "error": "购买数量不能小于1000",
           "platform": "",
           "goods_ref": "",
           "platform_order_no": "",
@@ -206,15 +206,15 @@
           "qty": 0
         }
       },
-      "status": "pending",
-      "step": "订单已创建,排队等待处理",
-      "error": "",
+      "status": "failed",
+      "step": "播放下单失败(数量小于最小购买量)",
+      "error": "购买数量不能小于1000",
       "created_at": "2026-08-26 11:52:35",
       "updated_at": "2026-08-26 11:52:35",
       "completed": false
     },
     {
-      "order_no": "260801",
+      "order_no": "260803",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
       "video_name": "",
       "title": "",
@@ -237,8 +237,8 @@
       },
       "items": {
         "play": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "播放下单成功",
           "error": "",
           "platform": "",
           "goods_ref": "",
@@ -277,15 +277,15 @@
           "qty": 0
         }
       },
-      "status": "pending",
-      "step": "订单已创建,排队等待处理",
+      "status": "success",
+      "step": "播放下单成功",
       "error": "",
       "created_at": "2026-08-26 12:22:14",
       "updated_at": "2026-08-26 12:22:14",
-      "completed": false
+      "completed": true
     },
     {
-      "order_no": "260801",
+      "order_no": "260804",
       "url": "https://weixin.qq.com/sph/AYoYGOFVxM",
       "video_name": "",
       "title": "",
@@ -308,8 +308,8 @@
       },
       "items": {
         "play": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "播放下单成功",
           "error": "",
           "platform": "",
           "goods_ref": "",
@@ -348,15 +348,18 @@
           "qty": 0
         }
       },
-      "status": "pending",
-      "step": "订单已创建,排队等待处理",
+      "status": "success",
+      "step": "播放下单成功",
       "error": "",
       "created_at": "2026-08-26 12:36:25",
       "updated_at": "2026-08-26 12:36:25",
-      "completed": false
+      "completed": true
     }
   ],
-  "counter": {},
+  "counter": {
+    "2026-08-20": 1,
+    "2026-08-26": 4
+  },
   "logs": [
     {
       "time": "2026-08-22 22:16:05",
