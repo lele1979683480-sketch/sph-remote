@@ -47,6 +47,9 @@ IMT_COOKIE = os.environ.get("IMT_COOKIE", "")
 JUZI_LOCALSTORAGE = os.environ.get("JUZI_LOCALSTORAGE", "")
 IMT_LOCALSTORAGE = os.environ.get("IMT_LOCALSTORAGE", "")
 
+# ---- imt 悬赏样图(已上传到平台的图片地址, 优先于运行时自动生成) ----
+IMT_SAMPLE_IMG = os.environ.get("IMT_SAMPLE_IMG", "")
+
 
 def parse_localstorage(s: str) -> dict:
     """解析 localStorage JSON(登录凭证通常以 {key: value} 形式存这里)"""
