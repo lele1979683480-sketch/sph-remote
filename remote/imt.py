@@ -1,219 +1,204 @@
 # -*- coding: utf-8 -*-
-"""imt 悬赏平台自动下单(赞/爱心)
-赞和爱心为独立订单项,分别调用下单(goods_ref 可配置区分)。
-流程: 登录 -> 打开下单页 -> 填链接/数量 -> 提交 -> 验证结果
+"""imt 悬赏平台自动下单(赞/爱心) —— 纯 API 方案
+imt 是"悬赏"模式: 发布任务(链接+要求+样图), 平台投手接单执行后按量结算。
+流程: 登录 -> 生成并上传样图 -> createOrder。
+每步输出详细日志(step_cb)。凭证来自 GitHub Secrets(localStorage 或 账号密码)。
 """
+import base64
+import io
 import json
 import time
-
-from playwright.sync_api import sync_playwright
+import urllib.error
+import urllib.request
 
 import config
 
-
-def _new_context(p):
-    return p.chromium.launch_persistent_context(
-        "", headless=False,  # 与橘子一致,真实窗口模式,规避反自动化
-        args=["--window-position=-32000,-32000", "--disable-gpu"],
-        user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) "
-                    "Chrome/120.0.0.0 Safari/537.36"),
-    )
+BASE = "https://imt.tiankongfeiji.cn/capi"
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+      "AppleWebKit/537.36 (KHTML, like Gecko) "
+      "Chrome/120.0.0.0 Safari/537.36")
+_LOGIN_TRIES = 3
 
 
-def _is_visible(el) -> bool:
+def _rep(step_cb, s):
+    if step_cb:
+        step_cb(s)
+
+
+def _http(path: str, params: dict, creds: dict | None = None,
+          timeout: int = 30) -> dict:
+    """底层 JSON POST 请求。creds: {un, token, uid}"""
+    body = json.dumps(params).encode()
+    headers = {
+        "User-Agent": UA,
+        "Content-Type": "application/json; charset=utf-8",
+        "Referer": "https://imt.tiankongfeiji.cn/customer/order_add.html",
+        "login-un": (creds or {}).get("un", "0"),
+        "login-token": (creds or {}).get("token", "0"),
+        "login-uid": str((creds or {}).get("uid", 0)),
+        "platform": "0",
+    }
+    req = urllib.request.Request(BASE + path, data=body, method="POST", headers=headers)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.load(resp)
+
+
+def _creds_from_localstorage() -> dict | None:
+    """从 IMT_LOCALSTORAGE 凭证提取 {un, token, uid}"""
+    data = config.parse_localstorage(config.IMT_LOCALSTORAGE)
+    un = str(data.get("un_customer") or "").strip()
+    token = str(data.get("token_customer") or "").strip()
+    uid = str(data.get("uid") or "").strip()
+    if not (un and token and uid):
+        return None
+    return {"un": un, "token": token, "uid": uid}
+
+
+def login(step_cb=None) -> dict | None:
+    """获取 imt 登录凭证。优先级: localStorage凭证 > 账号密码。"""
+    # 1) localStorage 凭证(手机导出, 最可靠)
+    creds = _creds_from_localstorage()
+    if creds:
+        # 验证凭证有效性
+        try:
+            r = _http("/customer/info", {}, creds)
+            if r.get("code") == 0:
+                _rep(step_cb, f"imt 登录成功(本地凭证) 余额:{r['result'].get('moneyCurrent')}元")
+                return creds
+            _rep(step_cb, f"imt 本地凭证失效({r.get('msg')}),尝试账号密码")
+        except Exception as e:
+            _rep(step_cb, f"imt 本地凭证验证异常:{e}")
+
+    # 2) 账号密码登录
+    account = config.IMT_ACCOUNT.strip()
+    pwd = config.IMT_PASSWORD.strip()
+    if not (account and pwd):
+        _rep(step_cb, "imt 登录失败:未配置本地凭证或账号密码")
+        return None
+    last_err = ""
+    for i in range(_LOGIN_TRIES):
+        try:
+            r = _http("/login/pwdLogin", {"un": account, "pwd": pwd})
+            res = r.get("result") or {}
+            if r.get("code") == 0 and res.get("token"):
+                _rep(step_cb, f"imt 登录成功(账号密码,第{i + 1}次)")
+                return {"un": account, "token": str(res["token"]),
+                        "uid": str(res.get("uid", 0))}
+            last_err = str(r.get("msg") or r)
+        except Exception as e:
+            last_err = str(e)
+        if i < _LOGIN_TRIES - 1:
+            time.sleep(2)
+    _rep(step_cb, f"imt 登录失败:{last_err}")
+    return None
+
+
+def _make_sample_img(qty_label: str) -> str:
+    """生成样图(JPEG dataURL, 与前端一致: 宽500 质量20%)"""
     try:
-        return bool(el.is_visible())
+        from PIL import Image, ImageDraw
+        img = Image.new("RGB", (500, 660), (255, 255, 255))
+        d = ImageDraw.Draw(img)
+        d.text((20, 30), "SHP Task Sample", fill=(0, 0, 0))
+        d.text((20, 60), "Open the link", fill=(80, 80, 80))
+        d.text((20, 90), qty_label, fill=(80, 80, 80))
+        d.text((20, 120), "then screenshot as proof", fill=(80, 80, 80))
+        buf = io.BytesIO()
+        img.save(buf, format="JPEG", quality=20)
+        return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
     except Exception:
-        return False
+        # 无 PIL 时用一张 1x1 的合法 JPEG
+        b64 = ("/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a"
+               "HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/wAALCAABAAEBAREA/8QAFAABAAAAAAAAAAAAAAAA"
+               "AAAACf/EABQQAQAAAAAAAAAAAAAAAAAAAAD/2gAIAQEAAD8AKp//2Q==")
+        return "data:image/jpeg;base64," + b64
 
 
-def _body(page) -> str:
-    try:
-        return page.inner_text("body") or ""
-    except Exception:
-        return ""
-
-
-def ensure_login(page, step_cb=None) -> bool:
-    """确认已登录。
-    优先级: 已有登录态 > 配置的Cookie注入 > 账号密码
+def order(url: str, quantity: int, title: str = "点赞", goods_ref: str = "",
+          step_cb=None) -> dict:
+    """在 imt 平台发布悬赏任务(赞/爱心)。
+    title: "点赞" 或 "爱心" 区分任务描述。
+    返回 {"ok": bool, "message": str, "platform_order_no": str}
     """
     def rep(s):
-        if step_cb:
-            step_cb(s)
+        _rep(step_cb, s)
 
     try:
-        body = _body(page)
-        if "提交订单" in body or "退出" in body:
-            rep("登录状态检查:已登录")
-            return True
+        quantity = int(quantity or 0)
     except Exception:
-        pass
+        quantity = 0
+    if not url or quantity <= 0:
+        return {"ok": False, "message": f"链接/数量无效:{url},{quantity}"}
 
-    # 方式1: 注入 localStorage 登录凭证(imt 登录态实际存在 localStorage)
-    if config.IMT_LOCALSTORAGE:
-        rep("尝试注入 localStorage 登录凭证")
-        try:
-            data = config.parse_localstorage(config.IMT_LOCALSTORAGE)
-            if not data:
-                rep("登录失败:localStorage 凭证内容为空")
-                return False
-            payload = json.dumps(data, ensure_ascii=False)
-            # 注意: add_init_script 不支持 arg 参数, 必须把凭证 JSON 直接嵌入脚本
-            script = ("() => { try { const data = %s; "
-                      "for (const [k, v] of Object.entries(data)) { localStorage.setItem(k, v); } "
-                      "} catch (e) {} }") % payload
-            page.context.add_init_script(script)
-            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
-            time.sleep(5)
-            body = _body(page)
-            if "提交订单" in body or "退出" in body:
-                rep("localStorage 凭证登录成功")
-                return True
-            rep("localStorage 登录失败(凭证可能已过期,请重新在浏览器登录后导出)")
-        except Exception as e:
-            rep(f"localStorage 注入异常:{e}")
-        return False
+    rep(f"开始处理(imt 平台 API 下单) 任务={title} 数量={quantity}")
 
-    # 方式2: 使用手机导出的登录 Cookie
-    if config.IMT_COOKIE:
-        rep("尝试使用已保存的登录Cookie")
-        try:
-            cookies = config.parse_cookie(config.IMT_COOKIE, "imt.tiankongfeiji.cn")
-            if not cookies:
-                rep("登录失败:Cookie 内容为空")
-                return False
-            page.context.add_cookies(cookies)
-            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
-            time.sleep(5)
-            body = _body(page)
-            if "提交订单" in body or "退出" in body:
-                rep("Cookie 登录成功")
-                return True
-            rep("Cookie 登录失败(可能已过期,请重新在手机导出)")
-        except Exception as e:
-            rep(f"Cookie 注入异常:{e}")
-        return False
+    # 1. 登录
+    creds = login(rep)
+    if not creds:
+        return {"ok": False, "message": "imt 平台登录失败"}
 
-    # 方式2: 账号密码登录
-    if not (config.IMT_ACCOUNT and config.IMT_PASSWORD):
-        rep("登录失败:未配置 imt 账号密码或Cookie")
-        return False
-    rep("未登录,开始账号密码登录")
+    # 2. 下单配置(单价/数量范围)
     try:
-        page.goto("https://imt.tiankongfeiji.cn/customer/login.html", wait_until="domcontentloaded", timeout=60000)
-        time.sleep(5)
-        vis = [el for el in page.query_selector_all("input") if _is_visible(el)]
-        if len(vis) < 2:
-            rep("登录失败:找不到账号/密码输入框")
-            return False
-        vis[0].fill(config.IMT_ACCOUNT)
-        vis[1].fill(config.IMT_PASSWORD)
-        for b in page.query_selector_all("button"):
-            if _is_visible(b) and (b.inner_text() or "").strip() == "登录":
-                b.click(timeout=3000)
-                break
-        time.sleep(6)
-        body = _body(page)
-        if "提交订单" in body or "退出" in body:
-            rep("登录成功")
-            return True
-        rep(f"登录失败:提交后仍未登录,页面:{body[:80]!r}")
-        return False
+        cfg = _http("/order/getOrderConfig", {}, creds)
+        oc = (cfg.get("result") or {}).get("orderConfig") or {}
     except Exception as e:
-        rep(f"登录异常:{e}")
-        return False
-
-
-def order(url: str, quantity: int, title: str = "点赞➕爱心",
-          goods_ref: str = "", step_cb=None) -> dict:
-    """在 imt 平台发布任务。返回 {"ok","message","platform_order_no"}"""
-    if not url or not quantity or quantity <= 0:
-        return {"ok": False, "message": f"参数无效(url={url}, 数量={quantity})"}
-
-    def rep(s):
-        if step_cb:
-            step_cb(s)
-
-    rep(f"开始处理(imt平台) 商品编号:{goods_ref or '默认'}")
-    p = sync_playwright().start()
-    ctx = None
+        rep(f"获取 imt 下单配置失败:{e}")
+        oc = {}
+    price = float(oc.get("customerPrice") or 0.06)
     try:
-        ctx = _new_context(p)
-        page = ctx.pages[0] if ctx.pages else ctx.new_page()
-        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
-        time.sleep(5)
-        if not ensure_login(page, rep):
-            return {"ok": False, "message": "imt 平台登录失败(请检查账号密码)"}
-        # 重新打开下单页(登录后)
-        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
-        time.sleep(5)
-        body = _body(page)
-        if "提交订单" not in body:
-            return {"ok": False, "message": f"未进入 imt 下单页。页面:{body[:100]}"}
-        rep("进入 imt 下单页")
-        # 填表
-        try:
-            page.fill('input[name=url]', url)
-            rep("已填写视频链接")
-        except Exception as e:
-            return {"ok": False, "message": f"填链接失败:{e}"}
-        try:
-            page.fill('input[name=title]', title[:80])
-        except Exception:
-            pass
-        try:
-            page.fill('textarea[name=taskRequire]', "请完成后提交截图,谢谢")
-        except Exception:
-            pass
-        try:
-            page.fill('input[name=buyNum]', str(quantity))
-            rep(f"填写数量:{quantity}")
-        except Exception as e:
-            return {"ok": False, "message": f"填数量失败:{e}"}
-        try:
-            actual = page.input_value('input[name=buyNum]').strip()
-            if actual != str(quantity):
-                return {"ok": False, "message": f"数量校验失败!订单={quantity},表单={actual}"}
-        except Exception:
-            pass
-        rep("数量校验通过")
-        # 提交
-        body_before = _body(page)
-        clicked = False
-        for b in page.query_selector_all("button"):
-            if _is_visible(b):
-                t = (b.inner_text() or "").strip()
-                if "提交" in t:
-                    rep(f"点击提交:{t[:20]}")
-                    b.click(timeout=5000)
-                    clicked = True
-                    break
-        if not clicked:
-            return {"ok": False, "message": "找不到提交按钮"}
-        time.sleep(4)
-        body_after = _body(page)
-        rep("等待平台返回结果")
-        ok_kws = ("提交成功", "下单成功", "发布成功", "任务已发布", "审核中", "待审核")
-        fail_kws = ("提交失败", "下单失败", "发布失败", "操作失败")
-        for kw in ok_kws:
-            if kw in body_after and kw not in body_before:
-                return {"ok": True, "message": f"imt 提交成功,等待审核(数量{quantity})"}
-        for kw in fail_kws:
-            if kw in body_after and kw not in body_before:
-                return {"ok": False, "message": f"imt 提交失败:页面提示:{kw}"}
-        return {"ok": False,
-                "message": f"已点击提交但未确认成功。页面:{body_after[:120]}"}
+        min_qty = int(oc.get("minCount") or 10)
+        max_qty = int(oc.get("maxCount") or 5000)
+    except Exception:
+        min_qty, max_qty = 10, 5000
+    if quantity < min_qty:
+        rep(f"数量 {quantity} 小于 imt 最小发布量 {min_qty}, 自动调整为 {min_qty}")
+        quantity = min_qty
+    if quantity > max_qty:
+        return {"ok": False, "message": f"数量 {quantity} 超过 imt 上限 {max_qty}"}
+    to_examine_price = float(oc.get("toExaminePrice") or 0.01)
+
+    # 3. 生成并上传样图(imt 强制要求样图)
+    rep("生成样图并上传")
+    act = "点赞并截图" if title == "点赞" else "点亮爱心并截图"
+    sample = _make_sample_img(title + " 任务")
+    try:
+        up = _http("/customer/uploadImgBase64",
+                   {"base64Str": sample, "isWatermark": True}, creds)
+        fp = (up.get("result") or {}).get("filePath")
+        if not fp:
+            return {"ok": False, "message": f"样图上传失败:{up.get('msg')}"}
+        rep("样图上传成功")
     except Exception as e:
-        return {"ok": False, "message": f"imt 下单异常:{e}"}
-    finally:
-        try:
-            if ctx:
-                ctx.close()
-        except Exception:
-            pass
-        try:
-            p.stop()
-        except Exception:
-            pass
+        return {"ok": False, "message": f"样图上传异常:{e}"}
+
+    # 4. 发布悬赏任务
+    task_req = (f"打开链接，进入视频号视频页面，{act}，完成后上传截图。"
+                f"截图需清晰展示点赞成功状态。")
+    params = {
+        "url": url,
+        "title": "视频号" + title + "任务",
+        "taskRequire": task_req,
+        "rateLimit": 0,
+        "buyNum": quantity,
+        "dailyVote": 0,
+        "toExamine": 0,
+        "toExaminePrice": to_examine_price,
+        "price": price,
+        "tags": [],
+        "modelFile": fp,
+        "modelFileCount": 1,
+        "qrContent": "",
+        "sourceOrderId": "",
+        "sync": True,
+    }
+    rep(f"发布悬赏任务: {title} x {quantity}, 单价{price}元")
+    try:
+        r = _http("/order/createOrder", params, creds)
+    except Exception as e:
+        return {"ok": False, "message": f"imt 下单请求异常:{e}"}
+
+    if r.get("code") == 0:
+        msg = str(r.get("msg") or "下单成功")
+        rep(f"imt 下单成功: {msg}")
+        return {"ok": True, "message": msg, "platform_order_no": ""}
+    return {"ok": False, "message": f"imt 下单失败:{r.get('msg')}"}
