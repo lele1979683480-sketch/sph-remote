@@ -79,10 +79,14 @@
     <p class="hint">赞和爱心分别下单；若平台为同一任务，两个编码填相同值。</p>
   </div>
   <div class="card">
-    <label>登录 Cookie（推荐，绕过平台风控）</label>
-    <p class="hint">用手机 Kiwi 浏览器登录橘子/imt 后导出 Cookie 粘贴到下面，保存后自动下单不再需要密码登录。</p>
-    <textarea id="in-jz-cookie" class="ipt" rows="3" placeholder="橘子 Cookie：用Kiwi浏览器登录后导出粘贴到这里"></textarea>
-    <textarea id="in-imt-cookie" class="ipt" rows="3" placeholder="imt Cookie：同上"></textarea>
+    <label>橘子登录凭证（推荐，绕开密码登录风控）</label>
+    <p class="hint">在电脑/手机浏览器登录橘子后，把浏览器里导出的登录凭证粘贴到这里。凭证可在「日志」页一键导出。</p>
+    <textarea id="in-jz-localstorage" class="ipt" rows="4" placeholder='{"ACCESS_TOKEN":"eyJ...","user":"{...}"}'></textarea>
+  </div>
+  <div class="card">
+    <label>imt 登录凭证（推荐，绕开密码登录风控）</label>
+    <p class="hint">在电脑/手机浏览器登录 imt 后，把浏览器里导出的登录凭证粘贴到这里（含 token_customer、uid）。</p>
+    <textarea id="in-imt-localstorage" class="ipt" rows="3" placeholder='{"uid":"1708","token_customer":"..."}'></textarea>
   </div>
   <button id="btn-save-cfg" class="btn primary">保存配置到服务器</button>
   <p id="cfg-status" class="hint" style="margin-top:8px"></p>
