@@ -157,23 +157,26 @@ def order(url: str, quantity: int, title: str = "点赞", goods_ref: str = "",
         return {"ok": False, "message": f"数量 {quantity} 超过 imt 上限 {max_qty}"}
     to_examine_price = float(oc.get("toExaminePrice") or 0.01)
 
-    # 3. 生成并上传样图(imt 强制要求样图)
-    rep("生成样图并上传")
-    act = "点赞并截图" if title == "点赞" else "点亮爱心并截图"
-    sample = _make_sample_img(title + " 任务")
-    try:
-        up = _http("/customer/uploadImgBase64",
-                   {"base64Str": sample, "isWatermark": True}, creds)
-        fp = (up.get("result") or {}).get("filePath")
-        if not fp:
-            return {"ok": False, "message": f"样图上传失败:{up.get('msg')}"}
-        rep("样图上传成功")
-    except Exception as e:
-        return {"ok": False, "message": f"样图上传异常:{e}"}
+    # 3. 样图: 优先用已配置的样图地址(与电脑版一致), 没有则自动生成上传
+    act = "点赞截图" if title == "点赞" else "点爱心截图"
+    fp = (config.IMT_SAMPLE_IMG or "").strip()
+    if fp:
+        rep("使用已配置样图")
+    else:
+        rep("生成样图并上传")
+        sample = _make_sample_img(title + " 任务")
+        try:
+            up = _http("/customer/uploadImgBase64",
+                       {"base64Str": sample, "isWatermark": True}, creds)
+            fp = (up.get("result") or {}).get("filePath")
+            if not fp:
+                return {"ok": False, "message": f"样图上传失败:{up.get('msg')}"}
+            rep("样图上传成功")
+        except Exception as e:
+            return {"ok": False, "message": f"样图上传异常:{e}"}
 
     # 4. 发布悬赏任务
-    task_req = (f"打开链接，进入视频号视频页面，{act}，完成后上传截图。"
-                f"截图需清晰展示点赞成功状态。")
+    task_req = act
     params = {
         "url": url,
         "title": "视频号" + title + "任务",
