@@ -87,6 +87,32 @@ function showMsg(t, ok) {
 }
 
 /* ---------- 订单列表 ---------- */
+async function fetchOrdersJson(timeoutMs = 12000) {
+  // 优先用 API(带PAT,稳定), 无 PAT 时退回 raw CDN; 统一超时避免一直转圈
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), timeoutMs);
+  try {
+    if (state.owner && state.repo && state.pat) {
+      try {
+        const res = await fetch(
+          `https://api.github.com/repos/${state.owner}/${state.repo}/contents/data/orders.json`,
+          { cache: "no-store", signal: ctl.signal,
+            headers: { "Authorization": `Bearer ${state.pat}`, "Accept": "application/vnd.github+json" } });
+        if (res.ok) {
+          const meta = await res.json();
+          return JSON.parse(atob(meta.content));
+        }
+      } catch (e) { /* API 失败则退回 raw */ }
+    }
+    const res = await fetch(
+      `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/data/orders.json`,
+      { cache: "no-store", signal: ctl.signal });
+    if (!res.ok) throw new Error("无法读取订单数据(可能还没有订单)");
+    return await res.json();
+  } finally {
+    clearTimeout(timer);
+  }
+}
 async function loadOrders() {
   saveCfg();
   const box = $("order-list");
@@ -96,16 +122,12 @@ async function loadOrders() {
   }
   box.innerHTML = '<div class="empty">加载中...</div>';
   try {
-    const res = await fetch(
-      `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/data/orders.json`,
-      { cache: "no-store" });
-    if (!res.ok) throw new Error("无法读取订单数据(可能还没有订单)");
-    const data = await res.json();
+    const data = await fetchOrdersJson();
     state.orders = (data.orders || []).slice().reverse();
     state.logs = data.logs || [];
     renderOrders();
   } catch (e) {
-    box.innerHTML = `<div class="empty">加载失败: ${e.message}</div>`;
+    box.innerHTML = `<div class="empty">加载失败: ${e.message}（请检查网络，稍后自动重试）</div>`;
   }
 }
 function renderOrders() {
@@ -253,11 +275,7 @@ function renderLogs() {
 async function loadLogs() {
   if (!state.owner || !state.repo) { renderLogs(); return; }
   try {
-    const res = await fetch(
-      `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/data/orders.json`,
-      { cache: "no-store" });
-    if (!res.ok) throw new Error("读取失败");
-    const data = await res.json();
+    const data = await fetchOrdersJson();
     state.logs = data.logs || [];
   } catch (e) {
     state.logs = [{ time: "", kind: "error", message: "日志读取失败: " + e.message }];
