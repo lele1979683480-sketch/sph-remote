@@ -96,6 +96,8 @@ jobs:
           IMT_HEART_GOODS: ${{ secrets.IMT_HEART_GOODS }}
           JUZI_COOKIE: ${{ secrets.JUZI_COOKIE }}
           IMT_COOKIE: ${{ secrets.IMT_COOKIE }}
+          JUZI_LOCALSTORAGE: ${{ secrets.JUZI_LOCALSTORAGE }}
+          IMT_LOCALSTORAGE: ${{ secrets.IMT_LOCALSTORAGE }}
 
       - name: 提交订单数据
         if: ${{ env.PAUSED != 'yes' }}
