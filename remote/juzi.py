@@ -73,7 +73,7 @@ def ensure_login(page, step_cb=None) -> bool:
         if step_cb:
             step_cb(s)
 
-    page.goto("https://juzi00.com/", timeout=30000)
+    page.goto("https://juzi00.com/", wait_until="domcontentloaded", timeout=90000)
     time.sleep(6)
     _close_popups(page)
     if _is_logged_in(page):
@@ -89,15 +89,12 @@ def ensure_login(page, step_cb=None) -> bool:
                 rep("登录失败:localStorage 凭证内容为空")
                 return False
             payload = json.dumps(data, ensure_ascii=False)
-            page.context.add_init_script("""(payload) => {
-                try {
-                    const data = JSON.parse(payload);
-                    for (const [k, v] of Object.entries(data)) {
-                        localStorage.setItem(k, v);
-                    }
-                } catch (e) {}
-            }""", arg=payload)
-            page.goto("https://juzi00.com/", timeout=30000)
+            # 注意: add_init_script 不支持 arg 参数, 必须把凭证 JSON 直接嵌入脚本
+            script = ("() => { try { const data = %s; "
+                      "for (const [k, v] of Object.entries(data)) { localStorage.setItem(k, v); } "
+                      "} catch (e) {} }") % payload
+            page.context.add_init_script(script)
+            page.goto("https://juzi00.com/", wait_until="domcontentloaded", timeout=90000)
             time.sleep(6)
             _close_popups(page)
             if _is_logged_in(page):
@@ -189,7 +186,7 @@ def _enter_collect(page, step_cb=None) -> bool:
     for route in _COLLECT_ROUTES:
         rep(f"进入收藏:尝试路由 {route}")
         try:
-            page.goto("https://juzi00.com/indexPc.html" + route, timeout=15000)
+            page.goto("https://juzi00.com/indexPc.html" + route, wait_until="domcontentloaded", timeout=60000)
             time.sleep(4)
             if _looks_like_collect(page):
                 rep(f"进入收藏成功:路由 {route}")
