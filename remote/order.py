@@ -46,7 +46,7 @@ def _goods_ref(key: str) -> str:
     return ""
 
 
-def _run_item(no: str, key: str, qty: int, url: str, video_name: str) -> dict:
+def _run_item(no: str, key: str, qty: int, url: str, video: dict) -> dict:
     """执行单个项目下单,返回该项目的最终字段(用于 update_item)"""
     label = ITEM_LABEL[key]
     goods = _goods_ref(key)
@@ -63,7 +63,7 @@ def _run_item(no: str, key: str, qty: int, url: str, video_name: str) -> dict:
         platform = config.PLATFORM_JUZI
         if not goods:
             return _item_fail(no, key, label, "未配置播放/转发商品编号")
-        result = juzi.order(goods, video_name, url, qty, step_cb=rep)
+        result = juzi.order(goods, video, qty, step_cb=rep)
     else:
         platform = config.PLATFORM_IMT
         title = "点赞" if key == "like" else "爱心"
@@ -137,8 +137,11 @@ def process_order(url: str, targets: dict) -> dict:
 
     # 2. 分项目下单
     db.update_order(no, status=config.ST_PROCESSING)
+    video = {"author": data.get("author") or "",
+             "title": data.get("title") or "",
+             "url": url}
     for key, qty in _target_items(targets):
-        _run_item(no, key, qty, url, data.get("author") or "")
+        _run_item(no, key, qty, url, video)
 
     # 3. 汇总状态
     overall = _overall_status(no)
