@@ -248,6 +248,7 @@ const SECRETS = [
   { name: "IMT_HEART_GOODS", el: "in-heart-goods", label: "爱心商品编码" },
   { name: "JUZI_LOCALSTORAGE", el: "in-jz-localstorage", label: "橘子登录凭证" },
   { name: "IMT_LOCALSTORAGE", el: "in-imt-localstorage", label: "imt登录凭证" },
+  { name: "IMT_SAMPLE_IMG", el: "in-imt-sample", label: "imt样图地址" },
 ];
 async function ghApi(path, opts = {}) {
   const res = await fetch("https://api.github.com" + path, {
