@@ -43,6 +43,23 @@ IMT_PASSWORD = os.environ.get("IMT_PASSWORD", "")
 JUZI_COOKIE = os.environ.get("JUZI_COOKIE", "")
 IMT_COOKIE = os.environ.get("IMT_COOKIE", "")
 
+# ---- 登录凭证 localStorage(橘子/imt 实际把登录态存 localStorage, 优先于 Cookie) ----
+JUZI_LOCALSTORAGE = os.environ.get("JUZI_LOCALSTORAGE", "")
+IMT_LOCALSTORAGE = os.environ.get("IMT_LOCALSTORAGE", "")
+
+
+def parse_localstorage(s: str) -> dict:
+    """解析 localStorage JSON(登录凭证通常以 {key: value} 形式存这里)"""
+    import json
+    s = (s or "").strip()
+    if not s:
+        return {}
+    try:
+        d = json.loads(s)
+        return d if isinstance(d, dict) else {}
+    except Exception:
+        return {}
+
 
 def parse_cookie(cookie_str: str, default_domain: str) -> list:
     """解析 Cookie: 支持 JSON 数组(Cookie-Editor导出) 和 'k=v; k2=v2' 两种格式"""
