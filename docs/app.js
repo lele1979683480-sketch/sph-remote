@@ -144,42 +144,94 @@ function renderOrders() {
   if (!list.length) { box.innerHTML = '<div class="empty">暂无订单</div>'; return; }
   box.innerHTML = list.map(orderCard).join("");
 }
+function copyLink(url, ev) {
+  ev && ev.stopPropagation();
+  const done = () => {
+    const btn = ev && ev.currentTarget;
+    if (btn) { const t = btn.textContent; btn.textContent = "✓ 已复制"; setTimeout(() => { btn.textContent = t; }, 1500); }
+  };
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(url).then(done).catch(() => legacyCopy(url, done));
+  } else {
+    legacyCopy(url, done);
+  }
+}
+function legacyCopy(url, done) {
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = url;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    done();
+  } catch (e) {
+    alert("复制失败，请长按链接手动复制");
+  }
+}
+function escAttr(s) {
+  return escHtml(s).replace(/'/g, "&#39;");
+}
 function orderCard(o) {
   const st = ST_NAMES[o.status] || o.status;
   const labels = { like: "赞", heart: "爱心", play: "播放", share: "转发" };
   const itst = { wait: "等待中", processing: "处理中", success: "成功", failed: "失败" };
   const items = o.items || {};
   const targets = o.targets || {};
+  const init = o.init || {};
+
+  // 链接行(纯文字 + 复制按钮)
+  const url = o.url || "";
+  const linkRow = url
+    ? `<div class="meta link-row">
+        <span class="link-text">🔗 ${escHtml(url)}</span>
+        <button class="btn-link" onclick="copyLink('${escAttr(url)}', event)">复制</button>
+      </div>` : "";
+
+  // 视频初始数据(赞/爱心/转发/评论)
+  const initParts = [];
+  [["like", "赞"], ["heart", "爱心"], ["share", "转发"], ["comment", "评论"]].forEach(([k, lb]) => {
+    if (init[k]) initParts.push(`${lb} ${init[k]}`);
+  });
+  const initRow = initParts.length
+    ? `<div class="meta">视频初始数据：${escHtml(initParts.join(" ｜ "))}</div>` : "";
+
+  // 你填的目标
+  const tgtParts = [];
+  ["like", "heart", "play", "share"].forEach(k => {
+    if (targets[k]) tgtParts.push(`${labels[k]} ${targets[k]}`);
+  });
+  const tgtRow = tgtParts.length
+    ? `<div class="meta">你填的目标：${escHtml(tgtParts.join(" ｜ "))}</div>` : "";
+
+  // 每个下单项目一行
   const rows = ["like", "heart", "play", "share"].map(k => {
     const qty = targets[k] || 0;
     if (!qty) return "";
     const it = items[k] || {};
     const stc = it.status === "success" ? "done"
       : it.status === "failed" ? "undone" : "";
-    const init = (o.init && o.init[k]) || 0;
-    const cur = (o.cur && o.cur[k]) || 0;
-    const progress = `(${cur}/${init + qty})`;
+    const stName = itst[it.status] || (it.status || "等待中");
+    const done = it.status === "success" ? qty : 0; // 下单成功=已全部完成
+    const errTxt = it.error ? ` <span class="err-txt">${escHtml(it.error)}</span>` : "";
     return `<div class="proj ${stc}">
-      <span class="pl">${labels[k]}</span> ×${qty} ${progress}
-      <span class="badge-s ${it.status || ""}">${itst[it.status] || (it.status || "等待中")}</span>
-      <div class="pstep">${escHtml(it.step || "")}</div>
+      <span class="pl">${labels[k]}</span> 已下单 ${qty}，已完成 ${done}/${qty}
+      <span class="badge-s ${it.status || ""}">${stName}</span>${errTxt}
     </div>`;
   }).join("");
-  const errs = Object.keys(labels).map(k => (items[k] || {}).error).filter(Boolean);
-  const errBlock = errs.length
-    ? `<div class="errbox">${errs.map(e => `<div>❌ ${escHtml(e)}</div>`).join("")}</div>` : "";
-  const orderNo = o.platform_order_no
-    ? `<div class="meta">平台订单号: ${escHtml(o.platform_order_no)}</div>` : "";
+
   return `<div class="order">
     <div class="head">
       <span class="no">${o.order_no || ""}</span>
       <span class="badge ${o.status}">${st}</span>
     </div>
+    ${linkRow}
     <div class="title">${escHtml((o.video_name ? "【" + o.video_name + "】" : "") + (o.title || "数据待抓取"))}</div>
-    <div class="meta">步骤: ${escHtml(o.step || "等待处理")}</div>
+    ${initRow}
+    ${tgtRow}
     ${rows}
-    ${orderNo}
-    ${errBlock}
     <div class="meta">${(o.created_at || "").slice(5, 16)}</div>
   </div>`;
 }
