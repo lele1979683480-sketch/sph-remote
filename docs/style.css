@@ -48,6 +48,13 @@ body {
 .order .tgt { font-size: 13px; margin-top: 6px; }
 .tgt .done { color: #07c160; }
 .tgt .undone { color: #e64340; }
+.link-row { display: flex; align-items: flex-start; gap: 6px; word-break: break-all; }
+.link-text { flex: 1; font-size: 12px; color: #666; line-height: 1.5; user-select: text;
+  -webkit-user-select: text; }
+.btn-link { flex-shrink: 0; font-size: 12px; padding: 2px 10px; border: none;
+  border-radius: 12px; background: #07c160; color: #fff; margin-top: 1px; }
+.btn-link:active { opacity: .8; }
+.err-txt { font-size: 12px; color: #e64340; }
 .proj { font-size: 13px; margin-top: 6px; padding: 6px 8px; background: #f8f9fa;
   border-radius: 8px; }
 .proj .pl { font-weight: 600; }
