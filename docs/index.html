@@ -25,12 +25,12 @@
     <input id="in-url" type="url" placeholder="https://weixin.qq.com/sph/xxxx" class="ipt">
   </div>
   <div class="card">
-    <label>下单项目（选填，不填为0）</label>
+    <label>下单项目（不填视为 0）</label>
     <div class="grid2">
-      <div class="fld"><span>👍 赞</span><input id="in-like" type="number" min="0" value="0" class="ipt"></div>
-      <div class="fld"><span>💗 爱心</span><input id="in-heart" type="number" min="0" value="0" class="ipt"></div>
-      <div class="fld"><span>▶️ 播放</span><input id="in-play" type="number" min="0" value="0" class="ipt"></div>
-      <div class="fld"><span>🔁 转发</span><input id="in-share" type="number" min="0" value="0" class="ipt"></div>
+      <div class="fld"><span>👍 赞</span><input id="in-like" type="number" min="0" placeholder="0" inputmode="numeric" class="ipt"></div>
+      <div class="fld"><span>💗 爱心</span><input id="in-heart" type="number" min="0" placeholder="0" inputmode="numeric" class="ipt"></div>
+      <div class="fld"><span>▶️ 播放</span><input id="in-play" type="number" min="0" placeholder="0" inputmode="numeric" class="ipt"></div>
+      <div class="fld"><span>🔁 转发</span><input id="in-share" type="number" min="0" placeholder="0" inputmode="numeric" class="ipt"></div>
     </div>
   </div>
   <div class="card">
@@ -60,32 +60,32 @@
 
 <section id="panel-cfg" class="panel" hidden>
   <div class="card">
-    <label>橘子平台（播放/转发下单）</label>
-    <input id="in-jz-acct" placeholder="橘子账号" class="ipt" autocomplete="off">
+    <label>橘子平台（播放/转发下单，API 账号密码登录）</label>
+    <input id="in-jz-acct" placeholder="橘子账号/手机号" class="ipt" autocomplete="off">
     <input id="in-jz-pwd" type="password" placeholder="橘子密码" class="ipt" autocomplete="new-password">
     <div class="grid2">
-      <div class="fld"><span>播放商品编码</span><input id="in-play-goods" placeholder="如 6862" class="ipt"></div>
-      <div class="fld"><span>转发商品编码</span><input id="in-share-goods" placeholder="如 9044" class="ipt"></div>
+      <div class="fld"><span>播放商品编码</span><input id="in-play-goods" placeholder="如 6862" value="6862" class="ipt"></div>
+      <div class="fld"><span>转发商品编码</span><input id="in-share-goods" placeholder="如 9044" value="9044" class="ipt"></div>
     </div>
   </div>
   <div class="card">
-    <label>imt 平台（赞/爱心下单）</label>
+    <label>imt 平台（赞/爱心，悬赏模式，API 登录）</label>
     <input id="in-imt-acct" placeholder="imt 账号/手机号" class="ipt" autocomplete="off">
     <input id="in-imt-pwd" type="password" placeholder="imt 密码" class="ipt" autocomplete="new-password">
     <div class="grid2">
-      <div class="fld"><span>点赞商品编码</span><input id="in-like-goods" placeholder="赞商品编号" class="ipt"></div>
-      <div class="fld"><span>爱心商品编码</span><input id="in-heart-goods" placeholder="爱心商品编号" class="ipt"></div>
+      <div class="fld"><span>点赞商品编码</span><input id="in-like-goods" placeholder="无需填写" class="ipt"></div>
+      <div class="fld"><span>爱心商品编码</span><input id="in-heart-goods" placeholder="无需填写" class="ipt"></div>
     </div>
-    <p class="hint">赞和爱心分别下单；若平台为同一任务，两个编码填相同值。</p>
+    <p class="hint">imt 为悬赏任务平台，无商品编号，赞/爱心按任务发布；商品编码框无需填写。</p>
   </div>
   <div class="card">
-    <label>橘子登录凭证（推荐，绕开密码登录风控）</label>
-    <p class="hint">在电脑/手机浏览器登录橘子后，把浏览器里导出的登录凭证粘贴到这里。凭证可在「日志」页一键导出。</p>
-    <textarea id="in-jz-localstorage" class="ipt" rows="4" placeholder='{"ACCESS_TOKEN":"eyJ...","user":"{...}"}'></textarea>
+    <label>橘子登录凭证（可选，账号密码失效时才用）</label>
+    <p class="hint">正常情况只用上面的账号密码即可（API 直连不受密码风控影响）。仅当账号密码登录失败时，才需要粘贴浏览器导出的登录凭证。</p>
+    <textarea id="in-jz-localstorage" class="ipt" rows="3" placeholder='{"ACCESS_TOKEN":"eyJ...","user":"{...}"}'></textarea>
   </div>
   <div class="card">
-    <label>imt 登录凭证（推荐，绕开密码登录风控）</label>
-    <p class="hint">在电脑/手机浏览器登录 imt 后，把浏览器里导出的登录凭证粘贴到这里（含 token_customer、uid）。</p>
+    <label>imt 登录凭证（可选，账号密码失效时才用）</label>
+    <p class="hint">优先使用上面的 imt 账号密码；失效时再粘贴手机浏览器导出的登录凭证（含 token_customer、uid）。</p>
     <textarea id="in-imt-localstorage" class="ipt" rows="3" placeholder='{"uid":"1708","token_customer":"..."}'></textarea>
   </div>
   <button id="btn-save-cfg" class="btn primary">保存配置到服务器</button>
