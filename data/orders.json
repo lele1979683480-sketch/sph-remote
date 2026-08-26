@@ -3,23 +3,23 @@
     {
       "order_no": "260801",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
-      "video_name": "保利燕语堂悦小龍同志",
-      "title": "广州市·保利燕语堂悦",
+      "video_name": "T5MALL",
+      "title": "T5活动 | “玩咖聚乐部”限时免费报名中！ 📣星巴克 + M Stand + Manner + 瑞幸 + 库迪，5大咖啡品牌联手搞事情，咖啡脑袋速来集合！ ☕ 研磨大师 · 咖啡分享 介绍来自不同产区的咖啡豆的特点、水洗处理法和日晒处理法咖啡豆的风味介绍，带你一口喝懂世界！ ⚡ 研磨大师 · 手感挑战赛 10分钟倒计时！自己取豆、自己磨粉，比谁磨得最快，磨得最接近目标克数。 优胜者直接抱走限定好礼！ 名额有限，火速扫码报名！ #白云五号 #咖啡 #夏日好去处 #好玩 #白云新城 #星巴克 #MStand #Manner #瑞幸 #库迪",
       "targets": {
         "play": 1
       },
       "init": {
-        "like": 12,
-        "heart": 13,
+        "like": 13,
+        "heart": 11,
         "comment": 0,
-        "share": 67,
+        "share": 8,
         "play": 0
       },
       "cur": {
-        "like": 12,
-        "heart": 13,
+        "like": 13,
+        "heart": 11,
         "comment": 0,
-        "share": 67,
+        "share": 8,
         "play": 0
       },
       "items": {
@@ -30,7 +30,7 @@
           "platform": "juzi",
           "goods_ref": "6862",
           "platform_order_no": "",
-          "result": "视频号-独家作品播放购买成功;保利燕语堂悦小龍同志",
+          "result": "视频号-独家作品播放购买成功;T5MALL",
           "qty": 1000
         },
         "share": {
@@ -68,7 +68,7 @@
       "step": "全部下单成功",
       "error": "",
       "created_at": "2026-08-20 09:42:48",
-      "updated_at": "2026-08-26 12:22:29",
+      "updated_at": "2026-08-26 12:36:39",
       "completed": true
     },
     {
@@ -283,70 +283,81 @@
       "created_at": "2026-08-26 12:22:14",
       "updated_at": "2026-08-26 12:22:14",
       "completed": false
+    },
+    {
+      "order_no": "260801",
+      "url": "https://weixin.qq.com/sph/AYoYGOFVxM",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "pending",
+      "step": "订单已创建,排队等待处理",
+      "error": "",
+      "created_at": "2026-08-26 12:36:25",
+      "updated_at": "2026-08-26 12:36:25",
+      "completed": false
     }
   ],
   "counter": {},
   "logs": [
-    {
-      "time": "2026-08-22 20:16:53",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 20:47:18",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 20:47:31",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 20:47:31",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 21:16:25",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 21:16:37",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 21:16:37",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 21:44:33",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 21:44:46",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 21:44:46",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 22:15:52",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 22:16:05",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
     {
       "time": "2026-08-22 22:16:05",
       "kind": "info",
@@ -1784,6 +1795,66 @@
     },
     {
       "time": "2026-08-26 12:22:29",
+      "kind": "ok",
+      "message": "订单260801 处理完成: status=success"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AYoYGOFVxM 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-08-26 12:36:25",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=T5MALL 赞13 爱心11 评论0 转发8"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:36:37",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:36:38",
+      "kind": "order",
+      "message": "订单260801 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"T5MALL\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AYoYGOFVxM\"}]"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "order",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
+      "kind": "ok",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-08-26 12:36:39",
       "kind": "ok",
       "message": "订单260801 处理完成: status=success"
     }
