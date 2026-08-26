@@ -9,29 +9,29 @@
         "play": 1
       },
       "init": {
-        "like": 4,
-        "heart": 4,
+        "like": 12,
+        "heart": 13,
         "comment": 0,
         "share": 67,
         "play": 0
       },
       "cur": {
-        "like": 4,
-        "heart": 4,
+        "like": 12,
+        "heart": 13,
         "comment": 0,
         "share": 67,
         "play": 0
       },
       "items": {
         "play": {
-          "status": "failed",
-          "step": "播放下单失败",
-          "error": "橘子平台登录失败(请检查账号密码/验证码)",
-          "platform": "",
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
           "goods_ref": "6862",
           "platform_order_no": "",
-          "result": "橘子平台登录失败(请检查账号密码/验证码)",
-          "qty": 1
+          "result": "视频号-独家作品播放购买成功;保利燕语堂悦小龍同志",
+          "qty": 1000
         },
         "share": {
           "status": "wait",
@@ -64,12 +64,12 @@
           "qty": 0
         }
       },
-      "status": "failed",
-      "step": "下单失败",
+      "status": "success",
+      "step": "全部下单成功",
       "error": "",
       "created_at": "2026-08-20 09:42:48",
-      "updated_at": "2026-08-26 11:53:16",
-      "completed": false
+      "updated_at": "2026-08-26 12:22:29",
+      "completed": true
     },
     {
       "order_no": "260801",
@@ -212,70 +212,81 @@
       "created_at": "2026-08-26 11:52:35",
       "updated_at": "2026-08-26 11:52:35",
       "completed": false
+    },
+    {
+      "order_no": "260801",
+      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "pending",
+      "step": "订单已创建,排队等待处理",
+      "error": "",
+      "created_at": "2026-08-26 12:22:14",
+      "updated_at": "2026-08-26 12:22:14",
+      "completed": false
     }
   ],
   "counter": {},
   "logs": [
-    {
-      "time": "2026-08-22 18:21:14",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 18:56:40",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 18:56:53",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 18:56:53",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 19:20:37",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 19:20:48",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 19:20:48",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 19:44:46",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 19:44:58",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-22 19:44:58",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-22 20:16:40",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-22 20:16:53",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
     {
       "time": "2026-08-22 20:16:53",
       "kind": "info",
@@ -1715,6 +1726,66 @@
       "time": "2026-08-26 11:53:16",
       "kind": "error",
       "message": "订单260801 处理完成: status=failed"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/AfCOekg1kk 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-08-26 12:22:14",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=保利燕语堂悦小龍同志 赞12 爱心13 评论0 转发67"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:22:26",
+      "kind": "order",
+      "message": "订单260801 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-08-26 12:22:27",
+      "kind": "order",
+      "message": "订单260801 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-26 12:22:28",
+      "kind": "order",
+      "message": "订单260801 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-26 12:22:28",
+      "kind": "order",
+      "message": "订单260801 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"保利燕语堂悦小龍同志\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AfCOekg1kk\"}]"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "order",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;保利燕语堂悦小龍同志"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "ok",
+      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;保利燕语堂悦小龍同志"
+    },
+    {
+      "time": "2026-08-26 12:22:29",
+      "kind": "ok",
+      "message": "订单260801 处理完成: status=success"
     }
   ]
 }
