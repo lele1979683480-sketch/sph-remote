@@ -60,15 +60,12 @@ def ensure_login(page, step_cb=None) -> bool:
                 rep("登录失败:localStorage 凭证内容为空")
                 return False
             payload = json.dumps(data, ensure_ascii=False)
-            page.context.add_init_script("""(payload) => {
-                try {
-                    const data = JSON.parse(payload);
-                    for (const [k, v] of Object.entries(data)) {
-                        localStorage.setItem(k, v);
-                    }
-                } catch (e) {}
-            }""", arg=payload)
-            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+            # 注意: add_init_script 不支持 arg 参数, 必须把凭证 JSON 直接嵌入脚本
+            script = ("() => { try { const data = %s; "
+                      "for (const [k, v] of Object.entries(data)) { localStorage.setItem(k, v); } "
+                      "} catch (e) {} }") % payload
+            page.context.add_init_script(script)
+            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
             time.sleep(5)
             body = _body(page)
             if "提交订单" in body or "退出" in body:
@@ -88,7 +85,7 @@ def ensure_login(page, step_cb=None) -> bool:
                 rep("登录失败:Cookie 内容为空")
                 return False
             page.context.add_cookies(cookies)
-            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
             time.sleep(5)
             body = _body(page)
             if "提交订单" in body or "退出" in body:
@@ -105,7 +102,7 @@ def ensure_login(page, step_cb=None) -> bool:
         return False
     rep("未登录,开始账号密码登录")
     try:
-        page.goto("https://imt.tiankongfeiji.cn/customer/login.html", timeout=30000)
+        page.goto("https://imt.tiankongfeiji.cn/customer/login.html", wait_until="domcontentloaded", timeout=60000)
         time.sleep(5)
         vis = [el for el in page.query_selector_all("input") if _is_visible(el)]
         if len(vis) < 2:
@@ -145,12 +142,12 @@ def order(url: str, quantity: int, title: str = "点赞➕爱心",
     try:
         ctx = _new_context(p)
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
-        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
         time.sleep(5)
         if not ensure_login(page, rep):
             return {"ok": False, "message": "imt 平台登录失败(请检查账号密码)"}
         # 重新打开下单页(登录后)
-        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+        page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", wait_until="domcontentloaded", timeout=60000)
         time.sleep(5)
         body = _body(page)
         if "提交订单" not in body:
