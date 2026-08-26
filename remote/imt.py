@@ -3,6 +3,7 @@
 赞和爱心为独立订单项,分别调用下单(goods_ref 可配置区分)。
 流程: 登录 -> 打开下单页 -> 填链接/数量 -> 提交 -> 验证结果
 """
+import json
 import time
 
 from playwright.sync_api import sync_playwright
@@ -50,7 +51,35 @@ def ensure_login(page, step_cb=None) -> bool:
     except Exception:
         pass
 
-    # 方式1: 使用手机导出的登录 Cookie
+    # 方式1: 注入 localStorage 登录凭证(imt 登录态实际存在 localStorage)
+    if config.IMT_LOCALSTORAGE:
+        rep("尝试注入 localStorage 登录凭证")
+        try:
+            data = config.parse_localstorage(config.IMT_LOCALSTORAGE)
+            if not data:
+                rep("登录失败:localStorage 凭证内容为空")
+                return False
+            payload = json.dumps(data, ensure_ascii=False)
+            page.context.add_init_script("""(payload) => {
+                try {
+                    const data = JSON.parse(payload);
+                    for (const [k, v] of Object.entries(data)) {
+                        localStorage.setItem(k, v);
+                    }
+                } catch (e) {}
+            }""", arg=payload)
+            page.goto("https://imt.tiankongfeiji.cn/customer/order_add.html", timeout=30000)
+            time.sleep(5)
+            body = _body(page)
+            if "提交订单" in body or "退出" in body:
+                rep("localStorage 凭证登录成功")
+                return True
+            rep("localStorage 登录失败(凭证可能已过期,请重新在浏览器登录后导出)")
+        except Exception as e:
+            rep(f"localStorage 注入异常:{e}")
+        return False
+
+    # 方式2: 使用手机导出的登录 Cookie
     if config.IMT_COOKIE:
         rep("尝试使用已保存的登录Cookie")
         try:
