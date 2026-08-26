@@ -88,10 +88,16 @@ function showMsg(t, ok) {
 
 /* ---------- 订单列表 ---------- */
 async function fetchOrdersJson(timeoutMs = 12000) {
-  // 优先用 API(带PAT,稳定), 无 PAT 时退回 raw CDN; 统一超时避免一直转圈
+  // 优先读同域 Pages 静态文件(不依赖 raw CDN, 大陆网络稳定); 失败再退回 API/raw
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), timeoutMs);
   try {
+    // 1) 同域 Pages 静态文件(最新同步, 无墙)
+    try {
+      const res = await fetch("data/orders.json", { cache: "no-store", signal: ctl.signal });
+      if (res.ok) return await res.json();
+    } catch (e) { /* 继续尝试下一来源 */ }
+    // 2) GitHub API(带PAT)
     if (state.owner && state.repo && state.pat) {
       try {
         const res = await fetch(
@@ -102,8 +108,9 @@ async function fetchOrdersJson(timeoutMs = 12000) {
           const meta = await res.json();
           return JSON.parse(atob(meta.content));
         }
-      } catch (e) { /* API 失败则退回 raw */ }
+      } catch (e) { /* API 失败则继续 */ }
     }
+    // 3) raw CDN(最后兜底)
     const res = await fetch(
       `https://raw.githubusercontent.com/${state.owner}/${state.repo}/main/data/orders.json`,
       { cache: "no-store", signal: ctl.signal });
