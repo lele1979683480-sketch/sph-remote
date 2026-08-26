@@ -98,6 +98,7 @@ jobs:
           IMT_COOKIE: ${{ secrets.IMT_COOKIE }}
           JUZI_LOCALSTORAGE: ${{ secrets.JUZI_LOCALSTORAGE }}
           IMT_LOCALSTORAGE: ${{ secrets.IMT_LOCALSTORAGE }}
+          IMT_SAMPLE_IMG: ${{ secrets.IMT_SAMPLE_IMG }}
 
       - name: 提交订单数据
         if: ${{ env.PAUSED != 'yes' }}
