@@ -3,6 +3,7 @@
 流程: 登录 -> 进入收藏 -> 按商品编号搜索商品 -> 打开商品页 -> 填链接/数量 -> 提交 -> 验证结果
 每步输出详细日志(step_cb), 找不到商品/登录失败时明确失败, 不继续下单。
 """
+import json
 import time
 
 from playwright.sync_api import sync_playwright
@@ -66,7 +67,7 @@ def _is_logged_in(page) -> bool:
 
 def ensure_login(page, step_cb=None) -> bool:
     """确认已登录。
-    优先级: 已有登录态 > 配置的Cookie注入 > 账号密码(Playwright可能被平台风控)
+    优先级: 已有登录态 > localStorage凭证(橘子实际存储方式) > Cookie > 账号密码
     """
     def rep(s):
         if step_cb:
@@ -79,7 +80,35 @@ def ensure_login(page, step_cb=None) -> bool:
         rep("登录状态检查:已登录")
         return True
 
-    # 方式1: 使用手机导出的登录 Cookie
+    # 方式1: 注入 localStorage 登录凭证(橘子登录态实际存在 localStorage)
+    if config.JUZI_LOCALSTORAGE:
+        rep("尝试注入 localStorage 登录凭证")
+        try:
+            data = config.parse_localstorage(config.JUZI_LOCALSTORAGE)
+            if not data:
+                rep("登录失败:localStorage 凭证内容为空")
+                return False
+            payload = json.dumps(data, ensure_ascii=False)
+            page.context.add_init_script("""(payload) => {
+                try {
+                    const data = JSON.parse(payload);
+                    for (const [k, v] of Object.entries(data)) {
+                        localStorage.setItem(k, v);
+                    }
+                } catch (e) {}
+            }""", arg=payload)
+            page.goto("https://juzi00.com/", timeout=30000)
+            time.sleep(6)
+            _close_popups(page)
+            if _is_logged_in(page):
+                rep("localStorage 凭证登录成功")
+                return True
+            rep("localStorage 登录失败(凭证可能已过期,请重新在电脑/手机浏览器登录后导出)")
+        except Exception as e:
+            rep(f"localStorage 注入异常:{e}")
+        return False
+
+    # 方式2: 使用手机导出的登录 Cookie
     if config.JUZI_COOKIE:
         rep("尝试使用已保存的登录Cookie")
         try:
