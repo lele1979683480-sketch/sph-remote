@@ -158,7 +158,12 @@ def order(url: str, quantity: int, title: str = "点赞", goods_ref: str = "",
     to_examine_price = float(oc.get("toExaminePrice") or 0.01)
 
     # 3. 样图: 优先用已配置的样图地址(与电脑版一致), 没有则自动生成上传
-    act = "点赞截图" if title == "点赞" else "点爱心截图"
+    if title == "点赞":
+        act = "点赞截图"
+    elif title == "爱心":
+        act = "点爱心截图"
+    else:
+        act = "点赞并点亮爱心，完成后截图"  # 合并任务(赞+爱心)
     fp = (config.IMT_SAMPLE_IMG or "").strip()
     if fp:
         rep("使用已配置样图")
