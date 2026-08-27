@@ -36,6 +36,11 @@ def scrape(url: str) -> dict | None:
         page = ctx.pages[0] if ctx.pages else ctx.new_page()
         page.goto(url, timeout=30000)
         time.sleep(8)
+        # 滚动触发懒加载(视频号数据常需滚动后才渲染)
+        for _ in range(3):
+            page.mouse.wheel(0, 800)
+            time.sleep(1)
+        time.sleep(2)
         data = page.evaluate("""() => {
             const numOf = (sel) => {
                 const icon = document.querySelector(sel);
@@ -49,7 +54,11 @@ def scrape(url: str) -> dict | None:
             const heart = numOf('[class*="heart-regular"]');
             const comment = numOf('[class*="bubble-regular"]');
             const share = numOf('[class*="share-regular"]');
+            // 播放数:页面常以 "xx次播放/xx 播放" 形式出现
             const raw = document.body ? document.body.innerText : '';
+            let play = null;
+            const pm = /([\\d,.万亿]+)\\s*次?\\s*播放/.exec(raw);
+            if (pm) play = pm[1];
             const lines = raw.split('\\n').map(s => s.trim()).filter(Boolean);
             let title = '', publish = '', author = '', sawPublish = false;
             for (const line of lines) {
@@ -67,18 +76,19 @@ def scrape(url: str) -> dict | None:
                     author = line;
                 }
             }
-            return {like, heart, comment, share, title, author};
+            return {like, heart, comment, share, play, title, author};
         }""")
         result = {
-            "like": parse_number(data.get("like")),
-            "heart": parse_number(data.get("heart")),
-            "comment": parse_number(data.get("comment")),
+            "like": parse_number(data.get("like")) or 0,
+            "heart": parse_number(data.get("heart")) or 0,
+            "comment": parse_number(data.get("comment")) or 0,
             "share": parse_number(data.get("share")) or 0,
+            "play": parse_number(data.get("play")) or 0,
             "title": (data.get("title") or "").strip(),
             "author": (data.get("author") or "").strip(),
         }
-        if result["like"] is not None and result["heart"] is not None \
-                and result["comment"] is not None and result["title"]:
+        # 单项容错:数字抓不到记为0,不整单失败;标题抓不到才判定失败
+        if result["title"]:
             return result
         return None
     except Exception:
