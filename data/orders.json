@@ -1,219 +1,6 @@
 {
   "orders": [
     {
-      "order_no": "082001",
-      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
-      "video_name": "T5MALL",
-      "title": "T5活动 | “玩咖聚乐部”限时免费报名中！ 📣星巴克 + M Stand + Manner + 瑞幸 + 库迪，5大咖啡品牌联手搞事情，咖啡脑袋速来集合！ ☕ 研磨大师 · 咖啡分享 介绍来自不同产区的咖啡豆的特点、水洗处理法和日晒处理法咖啡豆的风味介绍，带你一口喝懂世界！ ⚡ 研磨大师 · 手感挑战赛 10分钟倒计时！自己取豆、自己磨粉，比谁磨得最快，磨得最接近目标克数。 优胜者直接抱走限定好礼！ 名额有限，火速扫码报名！ #白云五号 #咖啡 #夏日好去处 #好玩 #白云新城 #星巴克 #MStand #Manner #瑞幸 #库迪",
-      "targets": {
-        "play": 1
-      },
-      "init": {
-        "like": 13,
-        "heart": 11,
-        "comment": 0,
-        "share": 8,
-        "play": 0
-      },
-      "cur": {
-        "like": 13,
-        "heart": 11,
-        "comment": 0,
-        "share": 8,
-        "play": 0
-      },
-      "items": {
-        "play": {
-          "status": "success",
-          "step": "播放下单成功",
-          "error": "",
-          "platform": "juzi",
-          "goods_ref": "6862",
-          "platform_order_no": "",
-          "result": "视频号-独家作品播放购买成功;T5MALL",
-          "qty": 1000
-        },
-        "share": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        },
-        "like": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        },
-        "heart": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        }
-      },
-      "status": "success",
-      "step": "全部下单成功",
-      "error": "",
-      "created_at": "2026-08-20 09:42:48",
-      "updated_at": "2026-08-20 09:42:48",
-      "completed": true
-    },
-    {
-      "order_no": "260801",
-      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
-      "video_name": "湾区Carson",
-      "title": "广州周边1h，把车开进清远长隆非洲动物部落 #清远长隆 #清远长隆动物大越野 #火烈鸟小镇 #开车看动物 #车窗外是动物 #从原野到粉色 #一天两个世界 #带娃看动物 #火烈鸟投喂 #清远自驾攻略 #火烈鸟小镇打卡",
-      "targets": {
-        "play": 1
-      },
-      "init": {
-        "like": 0,
-        "heart": 0,
-        "comment": 0,
-        "share": 0,
-        "play": 0
-      },
-      "cur": {
-        "like": 109,
-        "heart": 98,
-        "comment": 11,
-        "share": 202,
-        "play": 0
-      },
-      "items": {
-        "play": {
-          "status": "failed",
-          "step": "播放下单失败",
-          "error": "购买数量不能小于1000",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 1
-        },
-        "share": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        },
-        "like": {
-          "status": "success",
-          "step": "点赞下单成功",
-          "error": "",
-          "platform": "imt",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "操作成功",
-          "qty": 30
-        },
-        "heart": {
-          "status": "success",
-          "step": "爱心下单成功",
-          "error": "",
-          "platform": "imt",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "操作成功",
-          "qty": 30
-        }
-      },
-      "status": "success",
-      "step": "已达标",
-      "error": "购买数量不能小于1000",
-      "created_at": "2026-08-26 11:34:22",
-      "updated_at": "2026-08-27 10:27:21",
-      "completed": true
-    },
-    {
-      "order_no": "260802",
-      "url": "https://weixin.qq.com/sph/AfCOekg1kk",
-      "video_name": "",
-      "title": "",
-      "targets": {
-        "play": 1
-      },
-      "init": {
-        "like": 0,
-        "heart": 0,
-        "comment": 0,
-        "share": 0,
-        "play": 0
-      },
-      "cur": {
-        "like": 16,
-        "heart": 16,
-        "comment": 0,
-        "share": 67,
-        "play": 0
-      },
-      "items": {
-        "play": {
-          "status": "failed",
-          "step": "播放下单失败",
-          "error": "购买数量不能小于1000",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 1
-        },
-        "share": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        },
-        "like": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        },
-        "heart": {
-          "status": "wait",
-          "step": "等待中",
-          "error": "",
-          "platform": "",
-          "goods_ref": "",
-          "platform_order_no": "",
-          "result": "",
-          "qty": 0
-        }
-      },
-      "status": "failed",
-      "step": "播放下单失败(数量小于最小购买量)",
-      "error": "购买数量不能小于1000",
-      "created_at": "2026-08-26 11:52:35",
-      "updated_at": "2026-08-27 10:27:11",
-      "completed": false
-    },
-    {
       "order_no": "260803",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
       "video_name": "",
@@ -356,7 +143,7 @@
       "completed": true
     },
     {
-      "order_no": "260801",
+      "order_no": "082701",
       "url": "https://weixin.qq.com/sph/Af8Qthmr7N",
       "video_name": "",
       "title": "",
@@ -400,32 +187,32 @@
           "qty": 0
         },
         "like": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "下单成功",
           "error": "",
-          "platform": "",
+          "platform": "imt",
           "goods_ref": "",
           "platform_order_no": "",
-          "result": "",
+          "result": "imt 下单成功",
           "qty": 30
         },
         "heart": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "下单成功",
           "error": "",
-          "platform": "",
+          "platform": "imt",
           "goods_ref": "",
           "platform_order_no": "",
-          "result": "",
+          "result": "imt 下单成功",
           "qty": 30
         }
       },
-      "status": "pending",
-      "step": "订单已创建,排队等待处理",
+      "status": "success",
+      "step": "赞+爱心下单成功(合并前为2个独立任务)",
       "error": "",
       "created_at": "2026-08-27 03:22:12",
       "updated_at": "2026-08-27 03:22:12",
-      "completed": false
+      "completed": true
     }
   ],
   "counter": {
