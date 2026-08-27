@@ -39,12 +39,18 @@ def save(data: dict) -> None:
 
 
 def next_order_no(data: dict, date: str) -> str:
-    """生成业务订单编号:MMDD+当日流水(直接操作传入的 data,避免覆盖)"""
-    key = date
-    data["counter"][key] = data["counter"].get(key, 0) + 1
-    seq = data["counter"][key]
-    mmdd = date[2:4] + date[5:7]
-    return f"{mmdd}{seq:02d}"
+    """生成业务订单编号:MMDD+当日流水(直接操作传入的 data,避免覆盖)
+    生成后查重: 订单号已存在则序号递增,确保全局唯一(修复跨天重号)。
+    """
+    mmdd = date[5:7] + date[8:10]  # 月+日, 如 08-27 -> 0827
+    seq = data["counter"].get(date, 0)
+    while True:
+        seq += 1
+        no = f"{mmdd}{seq:02d}"
+        if not any(o.get("order_no") == no for o in data.get("orders", [])):
+            break
+    data["counter"][date] = seq
+    return no
 
 
 def new_item() -> dict:
