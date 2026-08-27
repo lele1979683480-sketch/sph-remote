@@ -51,12 +51,22 @@ async function submitOrder() {
   if (Object.values(targets).every(v => !v)) {
     showMsg("请至少填写一个下单项目数量", false); return;
   }
+  // 赞+爱心同时填:合并为同一个任务,数量取较小值(与电脑版一致),提交前明确告知
+  if (targets.like > 0 && targets.heart > 0) {
+    const m = Math.min(targets.like, targets.heart);
+    const ok = confirm(`赞(${targets.like})和爱心(${targets.heart})将合并为同一个任务，\n数量按较少者执行：赞×${m} + 爱心×${m}（1次任务同时做两个动作）。\n确定提交？`);
+    if (!ok) return;
+    targets.like = m;
+    targets.heart = m;
+  }
   // 用无引号的文本格式提交,避免 GitHub Actions 对 JSON 引号的处理问题
   const bodyText = Object.entries(targets)
     .filter(([, v]) => v > 0)
     .map(([k, v]) => `${k}:${v}`)
     .join(";");
   showMsg("正在提交...", true);
+  const btn = $("btn-submit");
+  btn.disabled = true;  // 防重复提交
   try {
     const res = await fetch(`https://api.github.com/repos/${state.owner}/${state.repo}/issues`, {
       method: "POST",
@@ -78,6 +88,8 @@ async function submitOrder() {
     setTimeout(() => loadOrders(), 5000);
   } catch (e) {
     showMsg(`提交失败: ${e.message}`, false);
+  } finally {
+    btn.disabled = false;
   }
 }
 function showMsg(t, ok) {
