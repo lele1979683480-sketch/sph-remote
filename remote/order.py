@@ -27,6 +27,21 @@ def _target_items(targets: dict) -> list:
             if int(v or 0) > 0 and k in ITEM_LABEL]
 
 
+def _normalize_targets(targets: dict) -> dict:
+    """赞+爱心同时填时,合并为同一个 imt 任务,数量取较小值(与电脑版一致)。
+    例: 赞15 爱心10 -> 赞10 爱心10(一次任务同时做两个动作)。
+    """
+    t = {k: int(v or 0) for k, v in (targets or {}).items()}
+    like = t.get("like", 0)
+    heart = t.get("heart", 0)
+    if like > 0 and heart > 0:
+        m = min(like, heart)
+        t["like"] = m
+        t["heart"] = m
+        t["_combined_imt"] = True
+    return t
+
+
 def _step(no: str, text: str, log_kind: str = "info"):
     """更新订单当前步骤 + 追加日志"""
     db.update_order(no, step=text)
@@ -46,8 +61,11 @@ def _goods_ref(key: str) -> str:
     return ""
 
 
-def _run_item(no: str, key: str, qty: int, url: str, video: dict) -> dict:
-    """执行单个项目下单,返回该项目的最终字段(用于 update_item)"""
+def _run_item(no: str, key: str, qty: int, url: str, video: dict,
+              combined: bool = False) -> dict:
+    """执行单个项目下单,返回该项目的最终字段(用于 update_item)
+    combined: 赞+爱心已合并为同一个 imt 任务(在 like 项目执行, heart 标记并入)
+    """
     label = ITEM_LABEL[key]
     goods = _goods_ref(key)
 
@@ -64,9 +82,23 @@ def _run_item(no: str, key: str, qty: int, url: str, video: dict) -> dict:
         if not goods:
             return _item_fail(no, key, label, "未配置播放/转发商品编号")
         result = juzi.order(goods, video, qty, step_cb=rep)
+    elif key == "heart" and combined:
+        # 爱心已并入点赞任务,不再单独下单
+        fields = {
+            "status": config.IT_SUCCESS,
+            "step": "已并入点赞+爱心任务",
+            "result": "与点赞合并为同一任务",
+            "platform": config.PLATFORM_IMT,
+            "platform_order_no": "",
+            "error": "",
+        }
+        db.update_item(no, key, **fields)
+        db.add_log("ok", f"订单{no} [爱心] 已并入点赞+爱心任务(数量={qty})")
+        return fields
     else:
         platform = config.PLATFORM_IMT
-        title = "点赞" if key == "like" else "爱心"
+        title = "点赞爱心" if (key == "like" and combined) else \
+            ("点赞" if key == "like" else "爱心")
         result = imt.order(url, qty, title=title, goods_ref=goods, step_cb=rep)
 
     if result.get("ok"):
@@ -113,6 +145,16 @@ def _overall_status(no: str) -> str:
 
 def process_order(url: str, targets: dict) -> dict:
     """创建订单并自动下单。返回订单记录。"""
+    # 归一化:赞+爱心合并为同一任务,数量取较小值
+    targets = _normalize_targets(targets)
+    combined = bool(targets.pop("_combined_imt", False))
+
+    # 幂等:同链接+同目标且未完成的订单已存在,则拒绝重复下单
+    for exist in db.active_orders():
+        if exist.get("url") == url and (exist.get("targets") or {}) == targets:
+            db.add_log("warn", f"已有相同订单({exist['order_no']})处理中,拒绝重复下单")
+            return exist
+
     order = db.add_order(url, targets)
     no = order["order_no"]
     _step(no, "订单已创建,开始处理")
@@ -141,7 +183,7 @@ def process_order(url: str, targets: dict) -> dict:
              "title": data.get("title") or "",
              "url": url}
     for key, qty in _target_items(targets):
-        _run_item(no, key, qty, url, video)
+        _run_item(no, key, qty, url, video, combined=combined)
 
     # 3. 汇总状态
     overall = _overall_status(no)
