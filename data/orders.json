@@ -74,8 +74,8 @@
     {
       "order_no": "260801",
       "url": "https://weixin.qq.com/sph/AfCOekg1kk",
-      "video_name": "",
-      "title": "",
+      "video_name": "湾区Carson",
+      "title": "广州周边1h，把车开进清远长隆非洲动物部落 #清远长隆 #清远长隆动物大越野 #火烈鸟小镇 #开车看动物 #车窗外是动物 #从原野到粉色 #一天两个世界 #带娃看动物 #火烈鸟投喂 #清远自驾攻略 #火烈鸟小镇打卡",
       "targets": {
         "play": 1
       },
@@ -87,10 +87,10 @@
         "play": 0
       },
       "cur": {
-        "like": 16,
-        "heart": 16,
+        "like": 0,
+        "heart": 0,
         "comment": 0,
-        "share": 67,
+        "share": 0,
         "play": 0
       },
       "items": {
@@ -115,31 +115,31 @@
           "qty": 0
         },
         "like": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "点赞下单成功",
           "error": "",
-          "platform": "",
+          "platform": "imt",
           "goods_ref": "",
           "platform_order_no": "",
-          "result": "",
-          "qty": 0
+          "result": "操作成功",
+          "qty": 30
         },
         "heart": {
-          "status": "wait",
-          "step": "等待中",
+          "status": "success",
+          "step": "爱心下单成功",
           "error": "",
-          "platform": "",
+          "platform": "imt",
           "goods_ref": "",
           "platform_order_no": "",
-          "result": "",
-          "qty": 0
+          "result": "操作成功",
+          "qty": 30
         }
       },
       "status": "failed",
-      "step": "播放下单失败(数量小于最小购买量)",
+      "step": "下单失败",
       "error": "购买数量不能小于1000",
       "created_at": "2026-08-26 11:34:22",
-      "updated_at": "2026-08-27 00:30:18",
+      "updated_at": "2026-08-27 03:22:32",
       "completed": false
     },
     {
@@ -354,108 +354,86 @@
       "created_at": "2026-08-26 12:36:25",
       "updated_at": "2026-08-26 12:36:25",
       "completed": true
+    },
+    {
+      "order_no": "260801",
+      "url": "https://weixin.qq.com/sph/Af8Qthmr7N",
+      "video_name": "",
+      "title": "",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 0,
+        "heart": 0,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 30
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 30
+        }
+      },
+      "status": "pending",
+      "step": "订单已创建,排队等待处理",
+      "error": "",
+      "created_at": "2026-08-27 03:22:12",
+      "updated_at": "2026-08-27 03:22:12",
+      "completed": false
     }
   ],
   "counter": {
     "2026-08-20": 1,
-    "2026-08-26": 4
+    "2026-08-26": 4,
+    "2026-08-27": 1
   },
   "logs": [
-    {
-      "time": "2026-08-23 06:31:27",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 06:31:39",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 06:31:39",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 07:29:00",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 07:29:15",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 07:29:15",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 07:57:45",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 07:57:58",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 07:57:58",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 08:30:53",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 08:31:07",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 08:31:07",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 09:27:04",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 09:27:23",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 09:27:23",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 09:51:36",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 09:51:51",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 09:51:51",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 10:17:46",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
     {
       "time": "2026-08-23 10:17:59",
       "kind": "info",
@@ -1860,6 +1838,101 @@
       "time": "2026-08-27 00:30:29",
       "kind": "info",
       "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-27 03:22:12",
+      "kind": "info",
+      "message": "订单260801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-27 03:22:12",
+      "kind": "order",
+      "message": "订单260801 创建: https://weixin.qq.com/sph/Af8Qthmr7N 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-27 03:22:12",
+      "kind": "info",
+      "message": "订单260801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-27 03:22:25",
+      "kind": "info",
+      "message": "订单260801 视频解析成功: 博主=湾区Carson 赞0 爱心0 评论0 转发0"
+    },
+    {
+      "time": "2026-08-27 03:22:25",
+      "kind": "order",
+      "message": "订单260801 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-27 03:22:25",
+      "kind": "order",
+      "message": "订单260801 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞 数量=30"
+    },
+    {
+      "time": "2026-08-27 03:22:26",
+      "kind": "order",
+      "message": "订单260801 [点赞] imt 登录成功(本地凭证) 余额:73.31元"
+    },
+    {
+      "time": "2026-08-27 03:22:27",
+      "kind": "order",
+      "message": "订单260801 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-27 03:22:27",
+      "kind": "order",
+      "message": "订单260801 [点赞] 发布悬赏任务: 点赞 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-27 03:22:28",
+      "kind": "order",
+      "message": "订单260801 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-27 03:22:28",
+      "kind": "ok",
+      "message": "订单260801 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-27 03:22:28",
+      "kind": "order",
+      "message": "订单260801 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-27 03:22:28",
+      "kind": "order",
+      "message": "订单260801 [爱心] 开始处理(imt 平台 API 下单) 任务=爱心 数量=30"
+    },
+    {
+      "time": "2026-08-27 03:22:30",
+      "kind": "order",
+      "message": "订单260801 [爱心] imt 登录成功(本地凭证) 余额:71.51元"
+    },
+    {
+      "time": "2026-08-27 03:22:31",
+      "kind": "order",
+      "message": "订单260801 [爱心] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-27 03:22:31",
+      "kind": "order",
+      "message": "订单260801 [爱心] 发布悬赏任务: 爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-27 03:22:32",
+      "kind": "order",
+      "message": "订单260801 [爱心] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-27 03:22:32",
+      "kind": "ok",
+      "message": "订单260801 [爱心] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-27 03:22:32",
+      "kind": "error",
+      "message": "订单260801 处理完成: status=failed"
     }
   ]
 }
