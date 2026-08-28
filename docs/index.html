@@ -49,13 +49,17 @@
     <select id="sel-status" class="ipt">
       <option value="">全部状态</option>
       <option value="pending">排队中</option>
-      <option value="processing">处理中</option>
-      <option value="success">已达标</option>
-      <option value="partial_success">部分成功</option>
-      <option value="failed">失败</option>
+      <option value="processing">已下单·执行中</option>
+      <option value="success">达标</option>
+      <option value="partial_success">部分达标</option>
+      <option value="failed">未执行</option>
     </select>
   </div>
   <div id="order-list"></div>
+  <div id="del-bar" class="del-bar" hidden>
+    <button class="btn del" onclick="deleteChecked()">🗑 删除选中</button>
+    <button class="btn del danger" onclick="deleteAll()">全部删除</button>
+  </div>
 </section>
 
 <section id="panel-cfg" class="panel" hidden>
@@ -99,8 +103,8 @@
   <div class="card">
     <label>系统控制</label>
     <div id="sys-state" class="sys-state">检查中...</div>
-    <button id="btn-pause" class="btn primary" hidden>⏸️ 停止下单</button>
-    <button id="btn-resume" class="btn primary" hidden>▶️ 启动下单</button>
+    <button id="btn-pause" class="btn primary" hidden>⏸️ 暂停下单</button>
+    <button id="btn-resume" class="btn primary" hidden>▶️ 恢复下单</button>
     <p class="hint">停止后新订单会被拒绝；达标检查继续运行。</p>
   </div>
   <div class="card">
