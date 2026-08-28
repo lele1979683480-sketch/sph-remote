@@ -128,19 +128,21 @@ def _item_fail(no: str, key: str, label: str, err: str) -> dict:
     return fields
 
 
-def _overall_status(no: str) -> str:
-    """根据各项目状态汇总总体状态"""
+def _overall_status(no: str) -> tuple:
+    """根据各项目下单结果汇总, 返回 (status, completed, step)。
+    只表达"是否已提交下单", 不判定达标(达标由 check 抓取后判定)。
+    - 至少一个项目下单成功 -> processing(执行中,等数据达标), completed=False
+    - 全部项目下单失败     -> failed, completed=True
+    """
     order = db.get_order(no)
     items = order.get("items") or {}
     active = [k for k, v in (order.get("targets") or {}).items() if int(v or 0) > 0]
     if not active:
-        return config.ST_FAILED
+        return config.ST_FAILED, True, "无有效下单项目"
     statuses = {items.get(k, {}).get("status") for k in active}
-    if statuses == {config.IT_SUCCESS}:
-        return config.ST_SUCCESS
-    if statuses == {config.IT_FAILED}:
-        return config.ST_FAILED
-    return config.ST_PARTIAL
+    if statuses == {config.IT_FAILED} or statuses == {None} or not statuses:
+        return config.ST_FAILED, True, "下单失败"
+    return config.ST_PROCESSING, False, "已下单，等待数据达标"
 
 
 def process_order(url: str, targets: dict) -> dict:
@@ -185,15 +187,11 @@ def process_order(url: str, targets: dict) -> dict:
     for key, qty in _target_items(targets):
         _run_item(no, key, qty, url, video, combined=combined)
 
-    # 3. 汇总状态
-    overall = _overall_status(no)
-    db.update_order(no, status=overall,
-                    completed=(overall == config.ST_SUCCESS),
-                    step=("全部下单成功" if overall == config.ST_SUCCESS
-                          else "部分下单成功" if overall == config.ST_PARTIAL
-                          else "下单失败"))
+    # 3. 汇总状态(只表达下单结果,达标由后续抓取判定)
+    overall, completed, step = _overall_status(no)
+    db.update_order(no, status=overall, completed=completed, step=step)
     db.add_log("ok" if overall != config.ST_FAILED else "error",
-               f"订单{no} 处理完成: status={overall}")
+               f"订单{no} 处理完成: {step} (status={overall})")
     return db.get_order(no)
 
 
