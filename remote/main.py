@@ -75,7 +75,8 @@ def main():
             sys.exit(0)
         sys.exit(1)
     elif cmd == "check":
-        rep = check.run()
+        order_no = args[1].strip() if len(args) > 1 else ""
+        rep = check.run(order_no)
         print(f"RESULT: 检查{rep['checked']}单, 新达标{rep['completed']}, 抓取失败{rep['failed']}")
         sys.exit(0)
     else:
