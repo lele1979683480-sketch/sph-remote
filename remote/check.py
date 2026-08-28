@@ -5,15 +5,33 @@ import db
 import scraper
 
 
-def run() -> dict:
-    """对所有未完成订单抓取数据并判断达标。返回汇总。"""
-    orders = db.active_orders()
+def run(order_no: str = "") -> dict:
+    """对未完成订单(或指定订单)抓取数据并判断达标。返回汇总。
+    达标定义: 每个有预期的项目 当前 >= 初始 + 预期。
+    """
+    if order_no:
+        o = db.get_order(order_no)
+        orders = [o] if o else []
+        if not orders:
+            db.add_log("warn", f"达标检查: 未找到订单{order_no}")
+            return {"checked": 0, "completed": 0, "failed": 0}
+    else:
+        orders = db.active_orders()
     report = {"checked": 0, "completed": 0, "failed": 0}
     if not orders:
         db.add_log("info", "达标检查: 暂无未完成订单")
         return report
     db.add_log("info", f"达标检查开始: {len(orders)} 单")
     for o in orders:
+        targets = o.get("targets") or {}
+        items = o.get("items") or {}
+        active = [k for k, v in targets.items() if int(v or 0) > 0]
+        # 下单失败的订单(所有目标项目均失败)直接完结,不再检查
+        if active and all((items.get(k) or {}).get("status") == config.IT_FAILED
+                          for k in active):
+            db.update_order(o["order_no"], completed=True, step="下单失败,不再检查")
+            report["failed"] += 1
+            continue
         data = scraper.scrape(o["url"])
         if not data:
             report["failed"] += 1
@@ -21,7 +39,6 @@ def run() -> dict:
             continue
         cur = {k: data.get(k, 0) for k in ("like", "heart", "comment", "share", "play")}
         init = o.get("init") or {}
-        targets = o.get("targets") or {}
         # 达标:每个有目标的项目 当前 >= 初始 + 目标
         need = {k: v for k, v in targets.items() if int(v or 0) > 0}
         all_done = bool(need) and all(
