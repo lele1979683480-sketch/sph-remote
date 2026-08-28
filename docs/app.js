@@ -12,8 +12,8 @@ const state = {
 };
 
 const $ = (id) => document.getElementById(id);
-const ST_NAMES = { pending: "排队中", processing: "处理中", success: "已达标",
-  failed: "失败", partial_success: "部分成功" };
+const ST_NAMES = { pending: "排队中", processing: "已下单·执行中", success: "达标",
+  failed: "未执行", partial_success: "部分达标" };
 
 function saveCfg() {
   state.owner = $("in-owner").value.trim();
@@ -153,8 +153,80 @@ function renderOrders() {
   const box = $("order-list");
   const st = $("sel-status").value;
   const list = state.orders.filter(o => !st || o.status === st);
-  if (!list.length) { box.innerHTML = '<div class="empty">暂无订单</div>'; return; }
+  const bar = $("del-bar");
+  if (!list.length) { box.innerHTML = '<div class="empty">暂无订单</div>'; if (bar) bar.hidden = true; return; }
+  if (bar) bar.hidden = false;
   box.innerHTML = list.map(orderCard).join("");
+}
+function fmtTime(s) {
+  // orders.json 时间由 Actions(UTC) 生成,统一转北京时间显示
+  if (!s) return "";
+  try {
+    const t = new Date(String(s).replace(" ", "T") + "Z");
+    const b = new Date(t.getTime() + 8 * 3600 * 1000);
+    const p = n => String(n).padStart(2, "0");
+    return `${b.getUTCFullYear()}-${p(b.getUTCMonth() + 1)}-${p(b.getUTCDate())} ${p(b.getUTCHours())}:${p(b.getUTCMinutes())}`;
+  } catch (e) { return s; }
+}
+async function triggerFetch(orderNo, btn) {
+  // 手动抓取指定订单的最新数据并重新判定达标
+  if (!state.owner || !state.repo || !state.pat) { alert("请先填写连接配置"); return; }
+  if (btn) { btn.disabled = true; btn.textContent = "抓取中..."; }
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${state.owner}/${state.repo}/actions/workflows/check.yml/dispatches`, {
+      method: "POST",
+      headers: { "Authorization": `Bearer ${state.pat}`, "Content-Type": "application/json",
+        "Accept": "application/vnd.github+json" },
+      body: JSON.stringify({ ref: "main", inputs: { order_no: orderNo } }),
+    });
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      alert(`触发抓取失败: ${err.message || res.status}（需要 PAT 有 Actions 写权限）`);
+      return;
+    }
+    alert("已触发抓取，约1分钟内完成，随后自动刷新");
+    setTimeout(() => loadOrders(), 50000);
+  } catch (e) {
+    alert("触发抓取失败: " + e.message);
+  } finally {
+    if (btn) setTimeout(() => { btn.disabled = false; btn.textContent = "抓取数据"; }, 70000);
+  }
+}
+function checkedOrders() {
+  return [...document.querySelectorAll(".order-check:checked")].map(c => c.value);
+}
+async function deleteChecked() {
+  const nos = checkedOrders();
+  if (!nos.length) { alert("请先勾选要删除的订单"); return; }
+  if (!confirm(`确认删除 ${nos.length} 个订单？删除后不可恢复。`)) return;
+  await deleteOrders(nos);
+}
+async function deleteAll() {
+  if (!state.orders.length) { alert("暂无订单"); return; }
+  if (!confirm(`确认删除全部 ${state.orders.length} 个订单？删除后不可恢复。`)) return;
+  await deleteOrders(state.orders.map(o => o.order_no));
+}
+async function deleteOrders(nos) {
+  // 从 orders.json 移除选中订单(同步 data/ 与 docs/data/), 需要 PAT 写文件权限
+  try {
+    const data = await fetchOrdersJson();
+    data.orders = (data.orders || []).filter(o => !nos.includes(o.order_no));
+    const text = JSON.stringify(data, null, 2);
+    const enc = btoa(unescape(encodeURIComponent(text)));
+    for (const p of ["data/orders.json", "docs/data/orders.json"]) {
+      const meta = await ghApi(`/repos/${state.owner}/${state.repo}/contents/${p}`);
+      const sha = (await meta.json()).sha;
+      await ghApi(`/repos/${state.owner}/${state.repo}/contents/${p}`, {
+        method: "PUT",
+        body: JSON.stringify({ message: "delete orders [skip ci]", content: enc, sha }),
+      });
+    }
+    alert("删除成功");
+    loadOrders();
+  } catch (e) {
+    alert("删除失败: " + e.message + "（需要 PAT 有写文件权限）");
+  }
 }
 function copyLink(url, ev) {
   ev && ev.stopPropagation();
@@ -189,10 +261,9 @@ function escAttr(s) {
 function orderCard(o) {
   const st = ST_NAMES[o.status] || o.status;
   const labels = { like: "赞", heart: "爱心", play: "播放", share: "转发" };
-  const itst = { wait: "等待中", processing: "处理中", success: "成功", failed: "失败" };
-  const items = o.items || {};
   const targets = o.targets || {};
   const init = o.init || {};
+  const cur = o.cur || {};
 
   // 链接行(纯文字 + 复制按钮)
   const url = o.url || "";
@@ -202,49 +273,55 @@ function orderCard(o) {
         <button class="btn-link" onclick="copyLink('${escAttr(url)}', event)">复制</button>
       </div>` : "";
 
-  // 视频初始数据(赞/爱心/转发/评论)
+  // 视频初始数据(赞/爱心/转发/评论/播放)
   const initParts = [];
-  [["like", "赞"], ["heart", "爱心"], ["share", "转发"], ["comment", "评论"]].forEach(([k, lb]) => {
-    if (init[k]) initParts.push(`${lb} ${init[k]}`);
+  [["like", "赞"], ["heart", "爱心"], ["share", "转发"], ["comment", "评论"], ["play", "播放"]].forEach(([k, lb]) => {
+    if (init[k] !== undefined) initParts.push(`${lb} ${init[k]}`);
   });
   const initRow = initParts.length
     ? `<div class="meta">视频初始数据：${escHtml(initParts.join(" ｜ "))}</div>` : "";
 
-  // 你填的目标
+  // 预期增加(用户填的目标)
   const tgtParts = [];
   ["like", "heart", "play", "share"].forEach(k => {
     if (targets[k]) tgtParts.push(`${labels[k]} ${targets[k]}`);
   });
   const tgtRow = tgtParts.length
-    ? `<div class="meta">你填的目标：${escHtml(tgtParts.join(" ｜ "))}</div>` : "";
+    ? `<div class="meta">预期增加：${escHtml(tgtParts.join(" ｜ "))}</div>` : "";
 
-  // 每个下单项目一行
-  const rows = ["like", "heart", "play", "share"].map(k => {
+  // 已完成进度: 增长 = 当前 - 初始, 封顶为预期
+  const progParts = [];
+  ["like", "heart", "play", "share"].forEach(k => {
     const qty = targets[k] || 0;
-    if (!qty) return "";
-    const it = items[k] || {};
-    const stc = it.status === "success" ? "done"
-      : it.status === "failed" ? "undone" : "";
-    const stName = itst[it.status] || (it.status || "等待中");
-    const done = it.status === "success" ? qty : 0; // 下单成功=已全部完成
-    const errTxt = it.error ? ` <span class="err-txt">${escHtml(it.error)}</span>` : "";
-    return `<div class="proj ${stc}">
-      <span class="pl">${labels[k]}</span> 已下单 ${qty}，已完成 ${done}/${qty}
-      <span class="badge-s ${it.status || ""}">${stName}</span>${errTxt}
-    </div>`;
-  }).join("");
+    if (!qty) return;
+    const grow = Math.max(0, (cur[k] || 0) - (init[k] || 0));
+    const done = Math.min(grow, qty);
+    const cls = grow >= qty ? "done" : "undone";
+    progParts.push(`<span class="${cls}">${labels[k]} ${done}/${qty}${grow >= qty ? "✓" : ""}</span>`);
+  });
+  const progRow = progParts.length
+    ? `<div class="tgt">已完成：${progParts.join(" ｜ ")}</div>` : "";
 
-  return `<div class="order">
+  const badgeCls = o.status === "success" ? "success"
+    : o.status === "failed" ? "failed"
+    : o.status === "partial_success" ? "partial_success"
+    : o.status === "pending" ? "pending" : "processing";
+
+  return `<div class="order" id="ord-${escAttr(o.order_no)}">
     <div class="head">
-      <span class="no">${o.order_no || ""}</span>
-      <span class="badge ${o.status}">${st}</span>
+      <label class="ck"><input type="checkbox" class="order-check" value="${escAttr(o.order_no)}"></label>
+      <span class="no">${escHtml(o.order_no || "")}</span>
+      <span class="badge ${badgeCls}">${st}</span>
     </div>
     ${linkRow}
     <div class="title">${escHtml((o.video_name ? "【" + o.video_name + "】" : "") + (o.title || "数据待抓取"))}</div>
     ${initRow}
     ${tgtRow}
-    ${rows}
-    <div class="meta">${(o.created_at || "").slice(5, 16)}</div>
+    ${progRow}
+    <div class="meta row-foot">
+      <span>${fmtTime(o.created_at)}</span>
+      <button class="btn-fetch" onclick="triggerFetch('${escAttr(o.order_no)}', this)">抓取数据</button>
+    </div>
   </div>`;
 }
 
@@ -341,7 +418,7 @@ function renderLogs() {
   if (!state.logs || !state.logs.length) { box.innerHTML = '<div class="empty">暂无日志（有下单/检查动作后出现）</div>'; return; }
   box.innerHTML = state.logs.slice().reverse().map(l => {
     const cls = { ok: "log-ok", error: "log-err", warn: "log-warn", order: "log-order" }[l.kind] || "";
-    return `<div class="logline ${cls}"><span class="lt">${escHtml((l.time || "").slice(5, 19))}</span> ${escHtml(l.message)}</div>`;
+    return `<div class="logline ${cls}"><span class="lt">${escHtml(fmtTime(l.time))}</span> ${escHtml(l.message)}</div>`;
   }).join("");
 }
 async function loadLogs() {
@@ -365,7 +442,9 @@ async function loadPauseState() {
       `https://api.github.com/repos/${state.owner}/${state.repo}/contents/data/pause.flag`,
       { headers: { Authorization: `Bearer ${state.pat}`, Accept: "application/vnd.github+json" } });
     const paused = res.status === 200;
-    $("sys-state").textContent = paused ? "⏸️ 已暂停（新订单会被拒绝）" : "▶️ 运行中（正常接收订单）";
+    $("sys-state").textContent = paused
+      ? "⏸️ 已暂停（新订单会被拒绝，点击「恢复下单」继续）"
+      : "▶️ 运行中（提交订单立即下单，可随时暂停）";
     $("btn-pause").hidden = paused;
     $("btn-resume").hidden = !paused;
   } catch (e) {
