@@ -213,74 +213,86 @@
       "created_at": "2026-08-27 03:22:12",
       "updated_at": "2026-08-27 03:22:12",
       "completed": true
+    },
+    {
+      "order_no": "082801",
+      "url": "https://weixin.qq.com/sph/Ay6XoAq96m",
+      "video_name": "IsaIsaIsaIsa",
+      "title": "#GeorgeRussell",
+      "targets": {
+        "share": 100
+      },
+      "init": {
+        "like": 114,
+        "heart": 100,
+        "comment": 7,
+        "share": 5,
+        "play": 0
+      },
+      "cur": {
+        "like": 114,
+        "heart": 100,
+        "comment": 7,
+        "share": 5,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "success",
+          "step": "转发下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "9044",
+          "platform_order_no": "",
+          "result": "SPH-独家作品转发（标题下单）购买成功;IsaIsaIsaIsa",
+          "qty": 100
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "success",
+      "step": "全部下单成功",
+      "error": "",
+      "created_at": "2026-08-28 02:20:21",
+      "updated_at": "2026-08-28 02:20:39",
+      "completed": true
     }
   ],
   "counter": {
     "2026-08-20": 1,
     "2026-08-26": 4,
-    "2026-08-27": 1
+    "2026-08-27": 1,
+    "2026-08-28": 1
   },
   "logs": [
-    {
-      "time": "2026-08-23 11:16:34",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 11:16:34",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 11:44:10",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 11:44:21",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 11:44:21",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 12:28:12",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 12:28:28",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 12:28:28",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 13:11:08",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 13:11:21",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 13:11:21",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 13:52:46",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
     {
       "time": "2026-08-23 13:52:59",
       "kind": "info",
@@ -1720,6 +1732,66 @@
       "time": "2026-08-27 20:41:52",
       "kind": "info",
       "message": "达标检查: 暂无未完成订单"
+    },
+    {
+      "time": "2026-08-28 02:20:21",
+      "kind": "info",
+      "message": "订单082801 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-28 02:20:21",
+      "kind": "order",
+      "message": "订单082801 创建: https://weixin.qq.com/sph/Ay6XoAq96m 目标={'share': 100}"
+    },
+    {
+      "time": "2026-08-28 02:20:21",
+      "kind": "info",
+      "message": "订单082801 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-28 02:20:37",
+      "kind": "info",
+      "message": "订单082801 视频解析成功: 博主=IsaIsaIsaIsa 赞114 爱心100 评论7 转发5"
+    },
+    {
+      "time": "2026-08-28 02:20:37",
+      "kind": "order",
+      "message": "订单082801 [转发] 开始下单 数量=100"
+    },
+    {
+      "time": "2026-08-28 02:20:37",
+      "kind": "order",
+      "message": "订单082801 [转发] 开始处理(橘子平台 API 下单) 商品#9044 数量=100"
+    },
+    {
+      "time": "2026-08-28 02:20:38",
+      "kind": "order",
+      "message": "订单082801 [转发] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-28 02:20:38",
+      "kind": "order",
+      "message": "订单082801 [转发] 商品参数模板: ['视频号昵称或者feedID', '视频标题']"
+    },
+    {
+      "time": "2026-08-28 02:20:39",
+      "kind": "order",
+      "message": "订单082801 [转发] 参数值: [{\"name\": \"视频号昵称或者feedID\", \"alias\": \"username\", \"value\": \"IsaIsaIsaIsa\"}, {\"name\": \"视频标题\", \"alias\": \"title\", \"value\": \"#GeorgeRussell\"}]"
+    },
+    {
+      "time": "2026-08-28 02:20:39",
+      "kind": "order",
+      "message": "订单082801 [转发] 下单成功: SPH-独家作品转发（标题下单）购买成功;IsaIsaIsaIsa"
+    },
+    {
+      "time": "2026-08-28 02:20:39",
+      "kind": "ok",
+      "message": "订单082801 [转发] 下单成功: SPH-独家作品转发（标题下单）购买成功;IsaIsaIsaIsa"
+    },
+    {
+      "time": "2026-08-28 02:20:39",
+      "kind": "ok",
+      "message": "订单082801 处理完成: status=success"
     }
   ]
 }
