@@ -4,6 +4,10 @@ on:
   schedule:
     - cron: '*/30 * * * *'
   workflow_dispatch:
+    inputs:
+      order_no:
+        description: 指定订单号(留空检查全部)
+        required: false
 
 permissions:
   contents: write
@@ -30,7 +34,7 @@ jobs:
           python -m playwright install chromium --with-deps
 
       - name: 抓取数据检查达标
-        run: python remote/main.py check
+        run: python remote/main.py check ${{ github.event.inputs.order_no }}
 
       - name: 提交更新
         run: |
