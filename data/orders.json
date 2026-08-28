@@ -64,12 +64,12 @@
           "qty": 0
         }
       },
-      "status": "success",
-      "step": "播放下单成功",
+      "status": "processing",
+      "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-26 12:22:14",
       "updated_at": "2026-08-26 12:22:14",
-      "completed": true
+      "completed": false
     },
     {
       "order_no": "260804",
@@ -135,12 +135,12 @@
           "qty": 0
         }
       },
-      "status": "success",
-      "step": "播放下单成功",
+      "status": "processing",
+      "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-26 12:36:25",
       "updated_at": "2026-08-26 12:36:25",
-      "completed": true
+      "completed": false
     },
     {
       "order_no": "082701",
@@ -207,12 +207,12 @@
           "qty": 30
         }
       },
-      "status": "success",
-      "step": "赞+爱心下单成功(合并前为2个独立任务)",
+      "status": "processing",
+      "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-27 03:22:12",
       "updated_at": "2026-08-27 03:22:12",
-      "completed": true
+      "completed": false
     },
     {
       "order_no": "082801",
