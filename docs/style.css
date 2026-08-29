@@ -87,3 +87,5 @@ body {
   padding: 11px; border-radius: 8px; font-size: 14px; font-weight: 600; }
 .btn.del.danger { background: #e64340; color: #fff; }
 .btn.del:active { opacity: .85; }
+.btn.stop { background: #e64340; color: #fff; }
+.btn.stop:active { opacity: .85; }
