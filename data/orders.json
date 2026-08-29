@@ -87,8 +87,8 @@
         "play": 0
       },
       "cur": {
-        "like": 122,
-        "heart": 114,
+        "like": 148,
+        "heart": 141,
         "comment": 2,
         "share": 22,
         "play": 0
@@ -139,7 +139,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 02:03:02",
-      "updated_at": "2026-08-29 02:03:22",
+      "updated_at": "2026-08-29 08:17:18",
       "completed": false
     },
     {
@@ -159,8 +159,8 @@
         "play": 0
       },
       "cur": {
-        "like": 29,
-        "heart": 28,
+        "like": 50,
+        "heart": 44,
         "comment": 0,
         "share": 2,
         "play": 0
@@ -207,12 +207,12 @@
           "qty": 30
         }
       },
-      "status": "processing",
-      "step": "已下单，等待数据达标",
+      "status": "success",
+      "step": "已达标",
       "error": "",
       "created_at": "2026-08-29 06:26:57",
-      "updated_at": "2026-08-29 06:59:35",
-      "completed": false
+      "updated_at": "2026-08-29 08:17:34",
+      "completed": true
     }
   ],
   "counter": {
@@ -223,26 +223,6 @@
     "2026-08-29": 2
   },
   "logs": [
-    {
-      "time": "2026-08-23 20:47:46",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-23 20:47:46",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-23 21:15:53",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-23 21:16:06",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
     {
       "time": "2026-08-23 21:16:06",
       "kind": "info",
@@ -1722,6 +1702,26 @@
       "time": "2026-08-29 06:59:35",
       "kind": "info",
       "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-29 08:17:02",
+      "kind": "info",
+      "message": "达标检查开始: 2 单"
+    },
+    {
+      "time": "2026-08-29 08:17:18",
+      "kind": "info",
+      "message": "订单082901 检查中: 当前={'like': 148, 'heart': 141, 'comment': 2, 'share': 22, 'play': 0}"
+    },
+    {
+      "time": "2026-08-29 08:17:34",
+      "kind": "ok",
+      "message": "订单082902 已达标 ✅ (当前={'like': 50, 'heart': 44, 'comment': 0, 'share': 2, 'play': 0})"
+    },
+    {
+      "time": "2026-08-29 08:17:34",
+      "kind": "info",
+      "message": "达标检查完成: 检查2单, 新达标1, 抓取失败0"
     }
   ]
 }
