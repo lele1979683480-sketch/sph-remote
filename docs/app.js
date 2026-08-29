@@ -281,13 +281,13 @@ function orderCard(o) {
   const initRow = initParts.length
     ? `<div class="meta">视频初始数据：${escHtml(initParts.join(" ｜ "))}</div>` : "";
 
-  // 预期增加(用户填的目标)
-  const tgtParts = [];
-  ["like", "heart", "play", "share"].forEach(k => {
-    if (targets[k]) tgtParts.push(`${labels[k]} ${targets[k]}`);
+  // 现在数据(最新抓取值)
+  const curParts = [];
+  [["like", "赞"], ["heart", "爱心"], ["share", "转发"], ["comment", "评论"], ["play", "播放"]].forEach(([k, lb]) => {
+    if (cur[k] !== undefined) curParts.push(`${lb} ${cur[k]}`);
   });
-  const tgtRow = tgtParts.length
-    ? `<div class="meta">预期增加：${escHtml(tgtParts.join(" ｜ "))}</div>` : "";
+  const curRow = curParts.length
+    ? `<div class="meta">现在数据：${escHtml(curParts.join(" ｜ "))}</div>` : "";
 
   // 已完成进度: 增长 = 当前 - 初始, 封顶为预期
   const progParts = [];
@@ -316,7 +316,7 @@ function orderCard(o) {
     ${linkRow}
     <div class="title">${escHtml((o.video_name ? "【" + o.video_name + "】" : "") + (o.title || "数据待抓取"))}</div>
     ${initRow}
-    ${tgtRow}
+    ${curRow}
     ${progRow}
     <div class="meta row-foot">
       <span>${fmtTime(o.created_at)}</span>
@@ -443,8 +443,8 @@ async function loadPauseState() {
       { headers: { Authorization: `Bearer ${state.pat}`, Accept: "application/vnd.github+json" } });
     const paused = res.status === 200;
     $("sys-state").textContent = paused
-      ? "⏸️ 已暂停（新订单会被拒绝，点击「恢复下单」继续）"
-      : "▶️ 运行中（提交订单立即下单，可随时暂停）";
+      ? "⏸️ 已紧急停止（新订单会被拒绝，点「恢复下单」继续）"
+      : "▶️ 运行中（提交订单立即下单）";
     $("btn-pause").hidden = paused;
     $("btn-resume").hidden = !paused;
   } catch (e) {
