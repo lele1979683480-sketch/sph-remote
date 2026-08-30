@@ -18,8 +18,8 @@
         "play": 0
       },
       "cur": {
-        "like": 34,
-        "heart": 31,
+        "like": 36,
+        "heart": 32,
         "comment": 2,
         "share": 10,
         "play": 0
@@ -70,7 +70,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 14:27:15",
-      "updated_at": "2026-08-30 07:07:59",
+      "updated_at": "2026-08-30 13:09:14",
       "completed": false
     },
     {
@@ -141,7 +141,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 15:45:09",
-      "updated_at": "2026-08-30 07:08:16",
+      "updated_at": "2026-08-30 13:09:30",
       "completed": false
     },
     {
@@ -160,10 +160,10 @@
         "play": 0
       },
       "cur": {
-        "like": 13,
-        "heart": 14,
-        "comment": 1,
-        "share": 5,
+        "like": 21,
+        "heart": 28,
+        "comment": 2,
+        "share": 9,
         "play": 0
       },
       "items": {
@@ -212,7 +212,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 03:45:46",
-      "updated_at": "2026-08-30 07:08:32",
+      "updated_at": "2026-08-30 13:09:51",
       "completed": false
     },
     {
@@ -233,10 +233,10 @@
         "play": 0
       },
       "cur": {
-        "like": 32,
+        "like": 33,
         "heart": 32,
         "comment": 0,
-        "share": 4,
+        "share": 5,
         "play": 0
       },
       "items": {
@@ -285,7 +285,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 04:14:54",
-      "updated_at": "2026-08-30 07:08:47",
+      "updated_at": "2026-08-30 13:10:07",
       "completed": false
     },
     {
@@ -306,8 +306,8 @@
         "play": 0
       },
       "cur": {
-        "like": 11,
-        "heart": 7,
+        "like": 28,
+        "heart": 21,
         "comment": 0,
         "share": 6,
         "play": 0
@@ -358,7 +358,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 09:57:23",
-      "updated_at": "2026-08-30 09:57:47",
+      "updated_at": "2026-08-30 13:10:25",
       "completed": false
     },
     {
@@ -379,10 +379,10 @@
         "play": 0
       },
       "cur": {
-        "like": 4,
-        "heart": 1,
+        "like": 20,
+        "heart": 16,
         "comment": 1,
-        "share": 3,
+        "share": 4,
         "play": 0
       },
       "items": {
@@ -431,7 +431,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 09:59:56",
-      "updated_at": "2026-08-30 10:00:21",
+      "updated_at": "2026-08-30 13:10:41",
       "completed": false
     },
     {
@@ -452,8 +452,8 @@
         "play": 0
       },
       "cur": {
-        "like": 3,
-        "heart": 1,
+        "like": 22,
+        "heart": 19,
         "comment": 0,
         "share": 2,
         "play": 0
@@ -504,7 +504,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 10:39:26",
-      "updated_at": "2026-08-30 11:10:12",
+      "updated_at": "2026-08-30 13:11:02",
       "completed": false
     }
   ],
@@ -517,51 +517,6 @@
     "2026-08-30": 5
   },
   "logs": [
-    {
-      "time": "2026-08-28 02:20:37",
-      "kind": "info",
-      "message": "订单082801 视频解析成功: 博主=IsaIsaIsaIsa 赞114 爱心100 评论7 转发5"
-    },
-    {
-      "time": "2026-08-28 02:20:37",
-      "kind": "order",
-      "message": "订单082801 [转发] 开始下单 数量=100"
-    },
-    {
-      "time": "2026-08-28 02:20:37",
-      "kind": "order",
-      "message": "订单082801 [转发] 开始处理(橘子平台 API 下单) 商品#9044 数量=100"
-    },
-    {
-      "time": "2026-08-28 02:20:38",
-      "kind": "order",
-      "message": "订单082801 [转发] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-08-28 02:20:38",
-      "kind": "order",
-      "message": "订单082801 [转发] 商品参数模板: ['视频号昵称或者feedID', '视频标题']"
-    },
-    {
-      "time": "2026-08-28 02:20:39",
-      "kind": "order",
-      "message": "订单082801 [转发] 参数值: [{\"name\": \"视频号昵称或者feedID\", \"alias\": \"username\", \"value\": \"IsaIsaIsaIsa\"}, {\"name\": \"视频标题\", \"alias\": \"title\", \"value\": \"#GeorgeRussell\"}]"
-    },
-    {
-      "time": "2026-08-28 02:20:39",
-      "kind": "order",
-      "message": "订单082801 [转发] 下单成功: SPH-独家作品转发（标题下单）购买成功;IsaIsaIsaIsa"
-    },
-    {
-      "time": "2026-08-28 02:20:39",
-      "kind": "ok",
-      "message": "订单082801 [转发] 下单成功: SPH-独家作品转发（标题下单）购买成功;IsaIsaIsaIsa"
-    },
-    {
-      "time": "2026-08-28 02:20:39",
-      "kind": "ok",
-      "message": "订单082801 处理完成: status=success"
-    },
     {
       "time": "2026-08-28 05:08:02",
       "kind": "info",
@@ -2016,6 +1971,51 @@
       "time": "2026-08-30 11:10:12",
       "kind": "info",
       "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-30 13:08:57",
+      "kind": "info",
+      "message": "达标检查开始: 7 单"
+    },
+    {
+      "time": "2026-08-30 13:09:14",
+      "kind": "info",
+      "message": "订单082906 检查中: 当前={'like': 36, 'heart': 32, 'comment': 2, 'share': 10, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:09:30",
+      "kind": "info",
+      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 25, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:09:51",
+      "kind": "info",
+      "message": "订单083001 检查中: 当前={'like': 21, 'heart': 28, 'comment': 2, 'share': 9, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:10:07",
+      "kind": "info",
+      "message": "订单083002 检查中: 当前={'like': 33, 'heart': 32, 'comment': 0, 'share': 5, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:10:25",
+      "kind": "info",
+      "message": "订单083003 检查中: 当前={'like': 28, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:10:41",
+      "kind": "info",
+      "message": "订单083004 检查中: 当前={'like': 20, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:11:02",
+      "kind": "info",
+      "message": "订单083005 检查中: 当前={'like': 22, 'heart': 19, 'comment': 0, 'share': 2, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 13:11:02",
+      "kind": "info",
+      "message": "达标检查完成: 检查7单, 新达标0, 抓取失败0"
     }
   ]
 }
