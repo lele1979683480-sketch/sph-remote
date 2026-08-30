@@ -18,10 +18,10 @@
         "play": 0
       },
       "cur": {
-        "like": 32,
-        "heart": 30,
+        "like": 34,
+        "heart": 31,
         "comment": 2,
-        "share": 9,
+        "share": 10,
         "play": 0
       },
       "items": {
@@ -70,7 +70,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 14:27:15",
-      "updated_at": "2026-08-30 01:08:11",
+      "updated_at": "2026-08-30 07:07:59",
       "completed": false
     },
     {
@@ -92,7 +92,7 @@
         "like": 165,
         "heart": 160,
         "comment": 2,
-        "share": 24,
+        "share": 25,
         "play": 0
       },
       "items": {
@@ -141,7 +141,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 15:45:09",
-      "updated_at": "2026-08-30 01:08:27",
+      "updated_at": "2026-08-30 07:08:16",
       "completed": false
     },
     {
@@ -160,9 +160,9 @@
         "play": 0
       },
       "cur": {
-        "like": 8,
-        "heart": 7,
-        "comment": 0,
+        "like": 13,
+        "heart": 14,
+        "comment": 1,
         "share": 5,
         "play": 0
       },
@@ -212,7 +212,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 03:45:46",
-      "updated_at": "2026-08-30 03:46:07",
+      "updated_at": "2026-08-30 07:08:32",
       "completed": false
     },
     {
@@ -233,10 +233,10 @@
         "play": 0
       },
       "cur": {
-        "like": 30,
-        "heart": 30,
+        "like": 32,
+        "heart": 32,
         "comment": 0,
-        "share": 3,
+        "share": 4,
         "play": 0
       },
       "items": {
@@ -285,7 +285,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 04:14:54",
-      "updated_at": "2026-08-30 05:30:14",
+      "updated_at": "2026-08-30 07:08:47",
       "completed": false
     }
   ],
@@ -298,36 +298,6 @@
     "2026-08-30": 2
   },
   "logs": [
-    {
-      "time": "2026-08-26 12:22:29",
-      "kind": "ok",
-      "message": "订单260801 [播放] 下单成功: 视频号-独家作品播放购买成功;保利燕语堂悦小龍同志"
-    },
-    {
-      "time": "2026-08-26 12:22:29",
-      "kind": "ok",
-      "message": "订单260801 处理完成: status=success"
-    },
-    {
-      "time": "2026-08-26 12:36:25",
-      "kind": "info",
-      "message": "订单260801 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-26 12:36:25",
-      "kind": "order",
-      "message": "订单260801 创建: https://weixin.qq.com/sph/AYoYGOFVxM 目标={'play': 1000}"
-    },
-    {
-      "time": "2026-08-26 12:36:25",
-      "kind": "info",
-      "message": "订单260801 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-26 12:36:37",
-      "kind": "info",
-      "message": "订单260801 视频解析成功: 博主=T5MALL 赞13 爱心11 评论0 转发8"
-    },
     {
       "time": "2026-08-26 12:36:37",
       "kind": "order",
@@ -1797,6 +1767,36 @@
       "time": "2026-08-30 05:30:14",
       "kind": "info",
       "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-30 07:07:43",
+      "kind": "info",
+      "message": "达标检查开始: 4 单"
+    },
+    {
+      "time": "2026-08-30 07:07:59",
+      "kind": "info",
+      "message": "订单082906 检查中: 当前={'like': 34, 'heart': 31, 'comment': 2, 'share': 10, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 07:08:16",
+      "kind": "info",
+      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 25, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 07:08:32",
+      "kind": "info",
+      "message": "订单083001 检查中: 当前={'like': 13, 'heart': 14, 'comment': 1, 'share': 5, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 07:08:47",
+      "kind": "info",
+      "message": "订单083002 检查中: 当前={'like': 32, 'heart': 32, 'comment': 0, 'share': 4, 'play': 0}"
+    },
+    {
+      "time": "2026-08-30 07:08:47",
+      "kind": "info",
+      "message": "达标检查完成: 检查4单, 新达标0, 抓取失败0"
     }
   ]
 }
