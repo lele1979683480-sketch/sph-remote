@@ -143,6 +143,77 @@
       "created_at": "2026-08-29 15:45:09",
       "updated_at": "2026-08-30 01:08:27",
       "completed": false
+    },
+    {
+      "order_no": "083001",
+      "url": "https://weixin.qq.com/sph/AWhGZi0D6T",
+      "video_name": "绍伟说房",
+      "title": "广州市·保利燕语堂悦",
+      "targets": {
+        "play": 3000
+      },
+      "init": {
+        "like": 8,
+        "heart": 7,
+        "comment": 0,
+        "share": 5,
+        "play": 0
+      },
+      "cur": {
+        "like": 8,
+        "heart": 7,
+        "comment": 0,
+        "share": 5,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;绍伟说房",
+          "qty": 3000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-30 03:45:46",
+      "updated_at": "2026-08-30 03:46:07",
+      "completed": false
     }
   ],
   "counter": {
@@ -150,69 +221,10 @@
     "2026-08-26": 4,
     "2026-08-27": 1,
     "2026-08-28": 1,
-    "2026-08-29": 7
+    "2026-08-29": 7,
+    "2026-08-30": 1
   },
   "logs": [
-    {
-      "time": "2026-08-25 10:58:32",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-25 10:58:47",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-25 10:58:47",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-25 11:30:32",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-25 11:30:43",
-      "kind": "info",
-      "message": "订单260801 检查中: 当前={'like': 4, 'heart': 4, 'comment': 0, 'share': 67, 'play': 0}"
-    },
-    {
-      "time": "2026-08-25 11:30:43",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-26 11:34:22",
-      "kind": "info",
-      "message": "订单260801 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-26 11:34:22",
-      "kind": "order",
-      "message": "订单260801 创建: https://weixin.qq.com/sph/AfCOekg1kk 目标={'play': 1}"
-    },
-    {
-      "time": "2026-08-26 11:34:22",
-      "kind": "info",
-      "message": "订单260801 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-26 11:34:36",
-      "kind": "info",
-      "message": "订单260801 视频解析成功: 博主=保利燕语堂悦小龍同志 赞4 爱心4 评论0 转发67"
-    },
-    {
-      "time": "2026-08-26 11:34:36",
-      "kind": "order",
-      "message": "订单260801 [播放] 开始下单 数量=1"
-    },
-    {
-      "time": "2026-08-26 11:34:36",
-      "kind": "order",
-      "message": "订单260801 [播放] 开始处理(橘子平台)"
-    },
     {
       "time": "2026-08-26 11:34:50",
       "kind": "order",
@@ -1652,6 +1664,66 @@
       "time": "2026-08-30 01:08:27",
       "kind": "info",
       "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
+    },
+    {
+      "time": "2026-08-30 03:45:46",
+      "kind": "info",
+      "message": "订单083001 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-30 03:45:46",
+      "kind": "order",
+      "message": "订单083001 创建: https://weixin.qq.com/sph/AWhGZi0D6T 目标={'play': 3000}"
+    },
+    {
+      "time": "2026-08-30 03:45:46",
+      "kind": "info",
+      "message": "订单083001 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-30 03:46:05",
+      "kind": "info",
+      "message": "订单083001 视频解析成功: 博主=绍伟说房 赞8 爱心7 评论0 转发5"
+    },
+    {
+      "time": "2026-08-30 03:46:05",
+      "kind": "order",
+      "message": "订单083001 [播放] 开始下单 数量=3000"
+    },
+    {
+      "time": "2026-08-30 03:46:05",
+      "kind": "order",
+      "message": "订单083001 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=3000"
+    },
+    {
+      "time": "2026-08-30 03:46:05",
+      "kind": "order",
+      "message": "订单083001 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-30 03:46:06",
+      "kind": "order",
+      "message": "订单083001 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-30 03:46:06",
+      "kind": "order",
+      "message": "订单083001 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"绍伟说房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AWhGZi0D6T\"}]"
+    },
+    {
+      "time": "2026-08-30 03:46:07",
+      "kind": "order",
+      "message": "订单083001 [播放] 下单成功: 视频号-独家作品播放购买成功;绍伟说房"
+    },
+    {
+      "time": "2026-08-30 03:46:07",
+      "kind": "ok",
+      "message": "订单083001 [播放] 下单成功: 视频号-独家作品播放购买成功;绍伟说房"
+    },
+    {
+      "time": "2026-08-30 03:46:07",
+      "kind": "ok",
+      "message": "订单083001 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
