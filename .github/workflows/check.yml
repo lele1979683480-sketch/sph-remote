@@ -1,8 +1,7 @@
 name: Check Progress
 
 on:
-  schedule:
-    - cron: '*/30 * * * *'
+  # 达标检查仅手动触发(订单卡片「抓取数据」按钮 / 手动 dispatch), 不再定时自动跑
   workflow_dispatch:
     inputs:
       order_no:
