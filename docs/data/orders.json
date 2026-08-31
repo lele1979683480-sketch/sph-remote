@@ -1658,6 +1658,78 @@
       "created_at": "2026-08-31 07:46:31",
       "updated_at": "2026-08-31 07:46:51",
       "completed": false
+    },
+    {
+      "order_no": "083115",
+      "url": "https://weixin.qq.com/sph/A55urAkWWl",
+      "video_name": "追新科技局",
+      "title": "一场冷战遗产的耗尽，正悄悄掐住人类深空的脖子 #NASA #钚238 #深空探索",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 1,
+        "heart": 1,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 1,
+        "heart": 1,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 07:48:43",
+      "updated_at": "2026-08-31 07:49:03",
+      "completed": false
     }
   ],
   "counter": {
@@ -1667,79 +1739,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 14
+    "2026-08-31": 15
   },
   "logs": [
-    {
-      "time": "2026-08-30 13:10:25",
-      "kind": "info",
-      "message": "订单083003 检查中: 当前={'like': 28, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 13:10:41",
-      "kind": "info",
-      "message": "订单083004 检查中: 当前={'like': 20, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 13:11:02",
-      "kind": "info",
-      "message": "订单083005 检查中: 当前={'like': 22, 'heart': 19, 'comment': 0, 'share': 2, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 13:11:02",
-      "kind": "info",
-      "message": "达标检查完成: 检查7单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-30 15:22:56",
-      "kind": "info",
-      "message": "订单083006 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-30 15:22:56",
-      "kind": "order",
-      "message": "订单083006 创建: https://weixin.qq.com/sph/AppRX4BVys 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-08-30 15:22:56",
-      "kind": "info",
-      "message": "订单083006 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-30 15:23:14",
-      "kind": "info",
-      "message": "订单083006 视频解析成功: 博主=燕郊腾跃选房 赞1 爱心1 评论0 转发1"
-    },
-    {
-      "time": "2026-08-30 15:23:14",
-      "kind": "order",
-      "message": "订单083006 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-30 15:23:14",
-      "kind": "order",
-      "message": "订单083006 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-08-30 15:23:15",
-      "kind": "order",
-      "message": "订单083006 [点赞] imt 登录成功(本地凭证) 余额:94.17元"
-    },
-    {
-      "time": "2026-08-30 15:23:16",
-      "kind": "order",
-      "message": "订单083006 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-08-30 15:23:17",
-      "kind": "order",
-      "message": "订单083006 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-08-30 15:23:18",
-      "kind": "order",
-      "message": "订单083006 [点赞] imt 下单成功: 操作成功"
-    },
     {
       "time": "2026-08-30 15:23:18",
       "kind": "ok",
@@ -3169,6 +3171,76 @@
       "time": "2026-08-31 07:46:51",
       "kind": "ok",
       "message": "订单083114 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 07:48:43",
+      "kind": "info",
+      "message": "订单083115 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 07:48:43",
+      "kind": "order",
+      "message": "订单083115 创建: https://weixin.qq.com/sph/A55urAkWWl 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-31 07:48:43",
+      "kind": "info",
+      "message": "订单083115 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 07:48:59",
+      "kind": "info",
+      "message": "订单083115 视频解析成功: 博主=追新科技局 赞1 爱心1 评论0 转发0"
+    },
+    {
+      "time": "2026-08-31 07:48:59",
+      "kind": "order",
+      "message": "订单083115 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 07:48:59",
+      "kind": "order",
+      "message": "订单083115 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-08-31 07:49:01",
+      "kind": "order",
+      "message": "订单083115 [点赞] imt 登录成功(本地凭证) 余额:154.79元"
+    },
+    {
+      "time": "2026-08-31 07:49:02",
+      "kind": "order",
+      "message": "订单083115 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 07:49:02",
+      "kind": "order",
+      "message": "订单083115 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 07:49:03",
+      "kind": "order",
+      "message": "订单083115 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 07:49:03",
+      "kind": "ok",
+      "message": "订单083115 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 07:49:03",
+      "kind": "order",
+      "message": "订单083115 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 07:49:03",
+      "kind": "ok",
+      "message": "订单083115 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-08-31 07:49:03",
+      "kind": "ok",
+      "message": "订单083115 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
