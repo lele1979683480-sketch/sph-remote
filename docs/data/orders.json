@@ -19,9 +19,9 @@
       },
       "cur": {
         "like": 39,
-        "heart": 34,
-        "comment": 3,
-        "share": 11,
+        "heart": 35,
+        "comment": 4,
+        "share": 12,
         "play": 0
       },
       "items": {
@@ -70,7 +70,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 14:27:15",
-      "updated_at": "2026-08-30 23:15:32",
+      "updated_at": "2026-08-31 01:29:17",
       "completed": false
     },
     {
@@ -92,7 +92,7 @@
         "like": 165,
         "heart": 160,
         "comment": 2,
-        "share": 25,
+        "share": 26,
         "play": 0
       },
       "items": {
@@ -141,7 +141,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-29 15:45:09",
-      "updated_at": "2026-08-30 23:15:48",
+      "updated_at": "2026-08-31 01:29:34",
       "completed": false
     },
     {
@@ -212,7 +212,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 03:45:46",
-      "updated_at": "2026-08-30 23:16:04",
+      "updated_at": "2026-08-31 01:29:49",
       "completed": false
     },
     {
@@ -233,8 +233,8 @@
         "play": 0
       },
       "cur": {
-        "like": 33,
-        "heart": 34,
+        "like": 34,
+        "heart": 35,
         "comment": 0,
         "share": 5,
         "play": 0
@@ -285,7 +285,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 04:14:54",
-      "updated_at": "2026-08-30 23:16:20",
+      "updated_at": "2026-08-31 01:30:05",
       "completed": false
     },
     {
@@ -358,7 +358,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 09:57:23",
-      "updated_at": "2026-08-30 23:16:35",
+      "updated_at": "2026-08-31 01:30:22",
       "completed": false
     },
     {
@@ -431,7 +431,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 09:59:56",
-      "updated_at": "2026-08-30 23:16:51",
+      "updated_at": "2026-08-31 01:30:38",
       "completed": false
     },
     {
@@ -504,7 +504,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 10:39:26",
-      "updated_at": "2026-08-30 23:17:07",
+      "updated_at": "2026-08-31 01:30:54",
       "completed": false
     },
     {
@@ -577,7 +577,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 15:22:56",
-      "updated_at": "2026-08-30 23:17:22",
+      "updated_at": "2026-08-31 01:31:10",
       "completed": false
     },
     {
@@ -596,8 +596,8 @@
         "play": 0
       },
       "cur": {
-        "like": 74,
-        "heart": 54,
+        "like": 119,
+        "heart": 94,
         "comment": 26,
         "share": 122,
         "play": 0
@@ -648,7 +648,7 @@
       "step": "已下单，等待数据达标",
       "error": "",
       "created_at": "2026-08-30 23:54:59",
-      "updated_at": "2026-08-30 23:55:17",
+      "updated_at": "2026-08-31 01:31:26",
       "completed": false
     }
   ],
@@ -661,61 +661,6 @@
     "2026-08-30": 7
   },
   "logs": [
-    {
-      "time": "2026-08-29 11:50:43",
-      "kind": "order",
-      "message": "订单082903 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"自流井老街官方\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/A2IfPpgeFr\"}]"
-    },
-    {
-      "time": "2026-08-29 11:50:43",
-      "kind": "order",
-      "message": "订单082903 [播放] 下单成功: 视频号-独家作品播放购买成功;自流井老街官方"
-    },
-    {
-      "time": "2026-08-29 11:50:44",
-      "kind": "ok",
-      "message": "订单082903 [播放] 下单成功: 视频号-独家作品播放购买成功;自流井老街官方"
-    },
-    {
-      "time": "2026-08-29 11:50:44",
-      "kind": "ok",
-      "message": "订单082903 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-08-29 11:52:09",
-      "kind": "info",
-      "message": "订单082904 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-29 11:52:09",
-      "kind": "order",
-      "message": "订单082904 创建: https://weixin.qq.com/sph/Ao6mBNS9yG 目标={'like': 15, 'heart': 15, 'play': 3000}"
-    },
-    {
-      "time": "2026-08-29 11:52:09",
-      "kind": "info",
-      "message": "订单082904 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-29 11:52:28",
-      "kind": "info",
-      "message": "订单082904 视频解析成功: 博主=自流井老街官方 赞39 爱心24 评论13 转发37"
-    },
-    {
-      "time": "2026-08-29 11:52:28",
-      "kind": "order",
-      "message": "订单082904 [点赞] 开始下单 数量=15"
-    },
-    {
-      "time": "2026-08-29 11:52:28",
-      "kind": "order",
-      "message": "订单082904 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=15"
-    },
-    {
-      "time": "2026-08-29 11:52:29",
-      "kind": "order",
-      "message": "订单082904 [点赞] imt 登录成功(本地凭证) 余额:9.17元"
-    },
     {
       "time": "2026-08-29 11:52:31",
       "kind": "order",
@@ -2160,6 +2105,61 @@
       "time": "2026-08-30 23:55:17",
       "kind": "ok",
       "message": "订单083007 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 01:29:00",
+      "kind": "info",
+      "message": "达标检查开始: 9 单"
+    },
+    {
+      "time": "2026-08-31 01:29:17",
+      "kind": "info",
+      "message": "订单082906 检查中: 当前={'like': 39, 'heart': 35, 'comment': 4, 'share': 12, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:29:34",
+      "kind": "info",
+      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 26, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:29:49",
+      "kind": "info",
+      "message": "订单083001 检查中: 当前={'like': 48, 'heart': 71, 'comment': 5, 'share': 11, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:30:05",
+      "kind": "info",
+      "message": "订单083002 检查中: 当前={'like': 34, 'heart': 35, 'comment': 0, 'share': 5, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:30:22",
+      "kind": "info",
+      "message": "订单083003 检查中: 当前={'like': 29, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:30:38",
+      "kind": "info",
+      "message": "订单083004 检查中: 当前={'like': 21, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:30:54",
+      "kind": "info",
+      "message": "订单083005 检查中: 当前={'like': 23, 'heart': 20, 'comment': 0, 'share': 2, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:31:10",
+      "kind": "info",
+      "message": "订单083006 检查中: 当前={'like': 17, 'heart': 13, 'comment': 0, 'share': 3, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:31:26",
+      "kind": "info",
+      "message": "订单083007 检查中: 当前={'like': 119, 'heart': 94, 'comment': 26, 'share': 122, 'play': 0}"
+    },
+    {
+      "time": "2026-08-31 01:31:26",
+      "kind": "info",
+      "message": "达标检查完成: 检查9单, 新达标0, 抓取失败0"
     }
   ]
 }
