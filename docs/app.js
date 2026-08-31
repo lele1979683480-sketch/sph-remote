@@ -80,17 +80,44 @@ async function submitOrder() {
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       showMsg(`提交失败: ${err.message || res.status}`, false);
+      btn.disabled = false;
       return;
     }
-    showMsg("✅ 订单已提交，正在排队处理（约1-3分钟），可在「订单列表」查看进度", true);
+    showMsg("⏳ 订单已提交，处理中（约1-3分钟）完成前按钮锁定，处理完自动解锁", true);
     $("in-url").value = ""; $("in-play").value = ""; $("in-like").value = "";
     $("in-heart").value = ""; $("in-share").value = "";
-    setTimeout(() => loadOrders(), 5000);
+    startOrderWait(url);  // 锁定按钮直到该订单被处理完
   } catch (e) {
     showMsg(`提交失败: ${e.message}`, false);
-  } finally {
     btn.disabled = false;
   }
+}
+let submitWaitTimer = null;
+function startOrderWait(url) {
+  // 轮询该链接的订单, 状态离开"排队中"即视为处理完成, 解锁按钮继续下单
+  const btn = $("btn-submit");
+  clearInterval(submitWaitTimer);
+  let tried = 0;
+  submitWaitTimer = setInterval(async () => {
+    tried++;
+    try {
+      const data = await fetchOrdersJson();
+      const ord = (data.orders || []).filter(o => o.url === url)
+        .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""))[0];
+      if (ord && ord.status !== "pending") {
+        clearInterval(submitWaitTimer);
+        btn.disabled = false;
+        showMsg(`✅ 订单 ${ord.order_no} 已处理（${ST_NAMES[ord.status] || ord.status}），可继续下单`, true);
+        loadOrders();
+        return;
+      }
+    } catch (e) { /* 网络抖动忽略, 继续轮询 */ }
+    if (tried >= 12) {  // 最多等约6分钟
+      clearInterval(submitWaitTimer);
+      btn.disabled = false;
+      showMsg("订单已提交但等待确认超时，请到订单列表查看；按钮已恢复", false);
+    }
+  }, 30000);
 }
 function showMsg(t, ok) {
   const m = $("msg");
