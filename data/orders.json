@@ -794,6 +794,78 @@
       "created_at": "2026-08-31 05:25:03",
       "updated_at": "2026-08-31 05:25:27",
       "completed": false
+    },
+    {
+      "order_no": "083103",
+      "url": "https://weixin.qq.com/sph/A7UNYqOFv2",
+      "video_name": "新讯之光",
+      "title": "一个传感器从10万降到199元，中国团队正在让机器人长出\"人皮\"#机器人 #前沿科技 #电子皮肤",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 3,
+        "heart": 4,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 4,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 06:15:23",
+      "updated_at": "2026-08-31 06:15:46",
+      "completed": false
     }
   ],
   "counter": {
@@ -803,79 +875,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 2
+    "2026-08-31": 3
   },
   "logs": [
-    {
-      "time": "2026-08-29 12:18:16",
-      "kind": "ok",
-      "message": "订单082905 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
-    },
-    {
-      "time": "2026-08-29 12:18:16",
-      "kind": "ok",
-      "message": "订单082905 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-08-29 12:28:16",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-29 12:28:33",
-      "kind": "info",
-      "message": "订单082905 检查中: 当前={'like': 16, 'heart': 15, 'comment': 1, 'share': 8, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 12:28:33",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-29 12:30:50",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-29 12:31:08",
-      "kind": "info",
-      "message": "订单082904 检查中: 当前={'like': 50, 'heart': 30, 'comment': 14, 'share': 37, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 12:31:08",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-29 12:34:01",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-29 12:34:21",
-      "kind": "info",
-      "message": "订单082903 检查中: 当前={'like': 103, 'heart': 87, 'comment': 29, 'share': 133, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 12:34:21",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-29 13:37:05",
-      "kind": "info",
-      "message": "达标检查开始: 1 单"
-    },
-    {
-      "time": "2026-08-29 13:37:22",
-      "kind": "info",
-      "message": "订单082905 检查中: 当前={'like': 18, 'heart': 17, 'comment': 1, 'share': 14, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 13:37:22",
-      "kind": "info",
-      "message": "达标检查完成: 检查1单, 新达标0, 抓取失败0"
-    },
     {
       "time": "2026-08-29 13:44:40",
       "kind": "info",
@@ -2305,6 +2307,76 @@
       "time": "2026-08-31 05:25:27",
       "kind": "ok",
       "message": "订单083102 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 06:15:23",
+      "kind": "info",
+      "message": "订单083103 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 06:15:23",
+      "kind": "order",
+      "message": "订单083103 创建: https://weixin.qq.com/sph/A7UNYqOFv2 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-31 06:15:23",
+      "kind": "info",
+      "message": "订单083103 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 06:15:42",
+      "kind": "info",
+      "message": "订单083103 视频解析成功: 博主=新讯之光 赞3 爱心4 评论0 转发4"
+    },
+    {
+      "time": "2026-08-31 06:15:42",
+      "kind": "order",
+      "message": "订单083103 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:15:42",
+      "kind": "order",
+      "message": "订单083103 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:15:43",
+      "kind": "order",
+      "message": "订单083103 [点赞] imt 登录成功(本地凭证) 余额:51.99元"
+    },
+    {
+      "time": "2026-08-31 06:15:45",
+      "kind": "order",
+      "message": "订单083103 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 06:15:45",
+      "kind": "order",
+      "message": "订单083103 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 06:15:46",
+      "kind": "order",
+      "message": "订单083103 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:15:46",
+      "kind": "ok",
+      "message": "订单083103 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:15:46",
+      "kind": "order",
+      "message": "订单083103 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:15:46",
+      "kind": "ok",
+      "message": "订单083103 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-08-31 06:15:46",
+      "kind": "ok",
+      "message": "订单083103 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
