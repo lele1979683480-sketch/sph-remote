@@ -1802,6 +1802,79 @@
       "created_at": "2026-08-31 07:58:03",
       "updated_at": "2026-08-31 07:58:23",
       "completed": false
+    },
+    {
+      "order_no": "083117",
+      "url": "https://weixin.qq.com/sph/AiLqjujoOq",
+      "video_name": "开模师模具零件工厂一姐露阳",
+      "title": "近距离观察车削加工 #模具 #模具全加工 #精密加工 #源头工厂 #机加工 #模仁 #圆件加工 #方件加工 #接单",
+      "targets": {
+        "like": 20,
+        "heart": 20,
+        "play": 1500
+      },
+      "init": {
+        "like": 35,
+        "heart": 34,
+        "comment": 2,
+        "share": 2,
+        "play": 0
+      },
+      "cur": {
+        "like": 35,
+        "heart": 34,
+        "comment": 2,
+        "share": 2,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;开模师模具零件工厂一姐露阳",
+          "qty": 1500
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 20
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 20
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 14:30:05",
+      "updated_at": "2026-08-31 14:30:30",
+      "completed": false
     }
   ],
   "counter": {
@@ -1811,114 +1884,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 16
+    "2026-08-31": 17
   },
   "logs": [
-    {
-      "time": "2026-08-30 17:42:16",
-      "kind": "info",
-      "message": "订单083001 检查中: 当前={'like': 48, 'heart': 71, 'comment': 5, 'share': 11, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:42:32",
-      "kind": "info",
-      "message": "订单083002 检查中: 当前={'like': 33, 'heart': 33, 'comment': 0, 'share': 5, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:42:49",
-      "kind": "info",
-      "message": "订单083003 检查中: 当前={'like': 28, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:43:05",
-      "kind": "info",
-      "message": "订单083004 检查中: 当前={'like': 20, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:43:22",
-      "kind": "info",
-      "message": "订单083005 检查中: 当前={'like': 22, 'heart': 19, 'comment': 0, 'share': 2, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:43:37",
-      "kind": "info",
-      "message": "订单083006 检查中: 当前={'like': 17, 'heart': 13, 'comment': 0, 'share': 1, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 17:43:37",
-      "kind": "info",
-      "message": "达标检查完成: 检查8单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-30 20:40:24",
-      "kind": "info",
-      "message": "达标检查开始: 8 单"
-    },
-    {
-      "time": "2026-08-30 20:40:42",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 39, 'heart': 33, 'comment': 2, 'share': 11, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:40:58",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 25, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:41:14",
-      "kind": "info",
-      "message": "订单083001 检查中: 当前={'like': 48, 'heart': 71, 'comment': 5, 'share': 11, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:41:30",
-      "kind": "info",
-      "message": "订单083002 检查中: 当前={'like': 33, 'heart': 34, 'comment': 0, 'share': 5, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:41:47",
-      "kind": "info",
-      "message": "订单083003 检查中: 当前={'like': 28, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:42:03",
-      "kind": "info",
-      "message": "订单083004 检查中: 当前={'like': 20, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:42:19",
-      "kind": "info",
-      "message": "订单083005 检查中: 当前={'like': 23, 'heart': 20, 'comment': 0, 'share': 2, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:42:35",
-      "kind": "info",
-      "message": "订单083006 检查中: 当前={'like': 17, 'heart': 13, 'comment': 0, 'share': 1, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 20:42:35",
-      "kind": "info",
-      "message": "达标检查完成: 检查8单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-30 23:15:16",
-      "kind": "info",
-      "message": "达标检查开始: 8 单"
-    },
-    {
-      "time": "2026-08-30 23:15:32",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 39, 'heart': 34, 'comment': 3, 'share': 11, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 23:15:48",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 25, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 23:16:04",
-      "kind": "info",
-      "message": "订单083001 检查中: 当前={'like': 48, 'heart': 71, 'comment': 5, 'share': 11, 'play': 0}"
-    },
     {
       "time": "2026-08-30 23:16:20",
       "kind": "info",
@@ -3313,6 +3281,111 @@
       "time": "2026-08-31 07:58:23",
       "kind": "ok",
       "message": "订单083116 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 14:30:05",
+      "kind": "info",
+      "message": "订单083117 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 14:30:05",
+      "kind": "order",
+      "message": "订单083117 创建: https://weixin.qq.com/sph/AiLqjujoOq 目标={'like': 20, 'heart': 20, 'play': 1500}"
+    },
+    {
+      "time": "2026-08-31 14:30:05",
+      "kind": "info",
+      "message": "订单083117 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 14:30:24",
+      "kind": "info",
+      "message": "订单083117 视频解析成功: 博主=开模师模具零件工厂一姐露阳 赞35 爱心34 评论2 转发2"
+    },
+    {
+      "time": "2026-08-31 14:30:24",
+      "kind": "order",
+      "message": "订单083117 [点赞] 开始下单 数量=20"
+    },
+    {
+      "time": "2026-08-31 14:30:24",
+      "kind": "order",
+      "message": "订单083117 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
+    },
+    {
+      "time": "2026-08-31 14:30:25",
+      "kind": "order",
+      "message": "订单083117 [点赞] imt 登录成功(本地凭证) 余额:89.39元"
+    },
+    {
+      "time": "2026-08-31 14:30:26",
+      "kind": "order",
+      "message": "订单083117 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 14:30:26",
+      "kind": "order",
+      "message": "订单083117 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "order",
+      "message": "订单083117 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "ok",
+      "message": "订单083117 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "order",
+      "message": "订单083117 [爱心] 开始下单 数量=20"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "ok",
+      "message": "订单083117 [爱心] 已并入点赞+爱心任务(数量=20)"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "order",
+      "message": "订单083117 [播放] 开始下单 数量=1500"
+    },
+    {
+      "time": "2026-08-31 14:30:27",
+      "kind": "order",
+      "message": "订单083117 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1500"
+    },
+    {
+      "time": "2026-08-31 14:30:28",
+      "kind": "order",
+      "message": "订单083117 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-08-31 14:30:29",
+      "kind": "order",
+      "message": "订单083117 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-08-31 14:30:29",
+      "kind": "order",
+      "message": "订单083117 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"开模师模具零件工厂一姐露阳\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AiLqjujoOq\"}]"
+    },
+    {
+      "time": "2026-08-31 14:30:29",
+      "kind": "order",
+      "message": "订单083117 [播放] 下单成功: 视频号-独家作品播放购买成功;开模师模具零件工厂一姐露阳"
+    },
+    {
+      "time": "2026-08-31 14:30:30",
+      "kind": "ok",
+      "message": "订单083117 [播放] 下单成功: 视频号-独家作品播放购买成功;开模师模具零件工厂一姐露阳"
+    },
+    {
+      "time": "2026-08-31 14:30:30",
+      "kind": "ok",
+      "message": "订单083117 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
