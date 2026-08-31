@@ -1226,6 +1226,78 @@
       "created_at": "2026-08-31 06:27:51",
       "updated_at": "2026-08-31 06:28:11",
       "completed": false
+    },
+    {
+      "order_no": "083109",
+      "url": "https://weixin.qq.com/sph/AVzbFasHEe",
+      "video_name": "新讯之光",
+      "title": "为什么我们总觉科技停了？#人类科技 #科普 #科技发展",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 2,
+        "heart": 3,
+        "comment": 0,
+        "share": 1,
+        "play": 0
+      },
+      "cur": {
+        "like": 2,
+        "heart": 3,
+        "comment": 0,
+        "share": 1,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 06:29:46",
+      "updated_at": "2026-08-31 06:30:12",
+      "completed": false
     }
   ],
   "counter": {
@@ -1235,79 +1307,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 8
+    "2026-08-31": 9
   },
   "logs": [
-    {
-      "time": "2026-08-30 03:46:05",
-      "kind": "order",
-      "message": "订单083001 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-08-30 03:46:06",
-      "kind": "order",
-      "message": "订单083001 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-08-30 03:46:06",
-      "kind": "order",
-      "message": "订单083001 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"绍伟说房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AWhGZi0D6T\"}]"
-    },
-    {
-      "time": "2026-08-30 03:46:07",
-      "kind": "order",
-      "message": "订单083001 [播放] 下单成功: 视频号-独家作品播放购买成功;绍伟说房"
-    },
-    {
-      "time": "2026-08-30 03:46:07",
-      "kind": "ok",
-      "message": "订单083001 [播放] 下单成功: 视频号-独家作品播放购买成功;绍伟说房"
-    },
-    {
-      "time": "2026-08-30 03:46:07",
-      "kind": "ok",
-      "message": "订单083001 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-08-30 04:14:54",
-      "kind": "info",
-      "message": "订单083002 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-30 04:14:54",
-      "kind": "order",
-      "message": "订单083002 创建: https://weixin.qq.com/sph/AL7jgE7YG5 目标={'like': 15, 'heart': 15, 'play': 4000}"
-    },
-    {
-      "time": "2026-08-30 04:14:54",
-      "kind": "info",
-      "message": "订单083002 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-30 04:15:10",
-      "kind": "info",
-      "message": "订单083002 视频解析成功: 博主=惠佳陶哥 赞14 爱心16 评论0 转发3"
-    },
-    {
-      "time": "2026-08-30 04:15:10",
-      "kind": "order",
-      "message": "订单083002 [点赞] 开始下单 数量=15"
-    },
-    {
-      "time": "2026-08-30 04:15:10",
-      "kind": "order",
-      "message": "订单083002 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=15"
-    },
-    {
-      "time": "2026-08-30 04:15:12",
-      "kind": "order",
-      "message": "订单083002 [点赞] imt 登录成功(本地凭证) 余额:4.67元"
-    },
-    {
-      "time": "2026-08-30 04:15:13",
-      "kind": "order",
-      "message": "订单083002 [点赞] 使用已配置样图"
-    },
     {
       "time": "2026-08-30 04:15:13",
       "kind": "order",
@@ -2737,6 +2739,76 @@
       "time": "2026-08-31 06:28:11",
       "kind": "ok",
       "message": "订单083108 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 06:29:46",
+      "kind": "info",
+      "message": "订单083109 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 06:29:46",
+      "kind": "order",
+      "message": "订单083109 创建: https://weixin.qq.com/sph/AVzbFasHEe 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-31 06:29:46",
+      "kind": "info",
+      "message": "订单083109 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 06:30:04",
+      "kind": "info",
+      "message": "订单083109 视频解析成功: 博主=新讯之光 赞2 爱心3 评论0 转发1"
+    },
+    {
+      "time": "2026-08-31 06:30:04",
+      "kind": "order",
+      "message": "订单083109 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:30:04",
+      "kind": "order",
+      "message": "订单083109 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:30:07",
+      "kind": "order",
+      "message": "订单083109 [点赞] imt 登录成功(本地凭证) 余额:36.99元"
+    },
+    {
+      "time": "2026-08-31 06:30:10",
+      "kind": "order",
+      "message": "订单083109 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 06:30:10",
+      "kind": "order",
+      "message": "订单083109 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 06:30:12",
+      "kind": "order",
+      "message": "订单083109 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:30:12",
+      "kind": "ok",
+      "message": "订单083109 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:30:12",
+      "kind": "order",
+      "message": "订单083109 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:30:12",
+      "kind": "ok",
+      "message": "订单083109 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-08-31 06:30:12",
+      "kind": "ok",
+      "message": "订单083109 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
