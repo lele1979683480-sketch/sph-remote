@@ -1082,6 +1082,78 @@
       "created_at": "2026-08-31 06:21:32",
       "updated_at": "2026-08-31 06:21:56",
       "completed": false
+    },
+    {
+      "order_no": "083107",
+      "url": "https://weixin.qq.com/sph/Ag79hzGeoQ",
+      "video_name": "新讯之光",
+      "title": "马斯克慌没慌不知道，但天上那1.2万颗星链，终于撞上中国对手了 #千帆星座 #卫星互联网 #星链",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 23,
+        "heart": 13,
+        "comment": 15,
+        "share": 11,
+        "play": 0
+      },
+      "cur": {
+        "like": 23,
+        "heart": 13,
+        "comment": 15,
+        "share": 11,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 06:23:37",
+      "updated_at": "2026-08-31 06:24:02",
+      "completed": false
     }
   ],
   "counter": {
@@ -1091,79 +1163,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 6
+    "2026-08-31": 7
   },
   "logs": [
-    {
-      "time": "2026-08-29 15:45:27",
-      "kind": "order",
-      "message": "订单082907 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-08-29 15:45:27",
-      "kind": "order",
-      "message": "订单082907 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-08-29 15:45:27",
-      "kind": "order",
-      "message": "订单082907 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"贾荣-大仟\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/ApM6lntuH8\"}]"
-    },
-    {
-      "time": "2026-08-29 15:45:28",
-      "kind": "order",
-      "message": "订单082907 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
-    },
-    {
-      "time": "2026-08-29 15:45:28",
-      "kind": "ok",
-      "message": "订单082907 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
-    },
-    {
-      "time": "2026-08-29 15:45:28",
-      "kind": "ok",
-      "message": "订单082907 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-08-29 17:37:07",
-      "kind": "info",
-      "message": "达标检查开始: 2 单"
-    },
-    {
-      "time": "2026-08-29 17:37:25",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 32, 'heart': 30, 'comment': 2, 'share': 7, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 17:37:41",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 24, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 17:37:41",
-      "kind": "info",
-      "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-29 20:30:28",
-      "kind": "info",
-      "message": "达标检查开始: 2 单"
-    },
-    {
-      "time": "2026-08-29 20:30:44",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 32, 'heart': 30, 'comment': 2, 'share': 7, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 20:31:00",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 24, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 20:31:00",
-      "kind": "info",
-      "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
-    },
     {
       "time": "2026-08-29 22:46:24",
       "kind": "info",
@@ -2593,6 +2595,76 @@
       "time": "2026-08-31 06:21:56",
       "kind": "ok",
       "message": "订单083106 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 06:23:37",
+      "kind": "info",
+      "message": "订单083107 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 06:23:37",
+      "kind": "order",
+      "message": "订单083107 创建: https://weixin.qq.com/sph/Ag79hzGeoQ 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-31 06:23:37",
+      "kind": "info",
+      "message": "订单083107 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 06:23:56",
+      "kind": "info",
+      "message": "订单083107 视频解析成功: 博主=新讯之光 赞23 爱心13 评论15 转发11"
+    },
+    {
+      "time": "2026-08-31 06:23:56",
+      "kind": "order",
+      "message": "订单083107 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:23:56",
+      "kind": "order",
+      "message": "订单083107 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:24:00",
+      "kind": "order",
+      "message": "订单083107 [点赞] imt 登录成功(本地凭证) 余额:42.39元"
+    },
+    {
+      "time": "2026-08-31 06:24:01",
+      "kind": "order",
+      "message": "订单083107 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 06:24:01",
+      "kind": "order",
+      "message": "订单083107 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 06:24:02",
+      "kind": "order",
+      "message": "订单083107 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:24:02",
+      "kind": "ok",
+      "message": "订单083107 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:24:02",
+      "kind": "order",
+      "message": "订单083107 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:24:02",
+      "kind": "ok",
+      "message": "订单083107 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-08-31 06:24:03",
+      "kind": "ok",
+      "message": "订单083107 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
