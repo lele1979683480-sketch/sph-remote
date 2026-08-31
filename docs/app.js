@@ -406,7 +406,8 @@ async function savePlatformCfg() {
   if (!state.owner || !state.repo || !state.pat) {
     msg.textContent = "请先填写 GitHub 连接配置"; msg.className = "msg err"; return;
   }
-  if (!window.libsodium) { msg.textContent = "加密库未加载，请检查网络"; msg.className = "msg err"; return; }
+  if (!window.sodium) { msg.textContent = "加密库未加载，请检查网络"; msg.className = "msg err"; return; }
+  const libsodium = window.sodium;
   await libsodium.ready;
   // 收集非空项
   const items = SECRETS.filter(s => $(s.el).value.trim());
