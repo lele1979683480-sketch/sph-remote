@@ -1154,6 +1154,78 @@
       "created_at": "2026-08-31 06:23:37",
       "updated_at": "2026-08-31 06:24:02",
       "completed": false
+    },
+    {
+      "order_no": "083108",
+      "url": "https://weixin.qq.com/sph/AM5QMrQlT0",
+      "video_name": "新讯之光",
+      "title": "跑赢博尔特 这台机器人的速度太恐怖#宇树科技 #超人机器人 #人形机器人",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 10,
+        "heart": 6,
+        "comment": 1,
+        "share": 3,
+        "play": 0
+      },
+      "cur": {
+        "like": 10,
+        "heart": 6,
+        "comment": 1,
+        "share": 3,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-08-31 06:27:51",
+      "updated_at": "2026-08-31 06:28:11",
+      "completed": false
     }
   ],
   "counter": {
@@ -1163,79 +1235,9 @@
     "2026-08-28": 1,
     "2026-08-29": 7,
     "2026-08-30": 7,
-    "2026-08-31": 7
+    "2026-08-31": 8
   },
   "logs": [
-    {
-      "time": "2026-08-29 22:46:24",
-      "kind": "info",
-      "message": "达标检查开始: 2 单"
-    },
-    {
-      "time": "2026-08-29 22:46:41",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 32, 'heart': 30, 'comment': 2, 'share': 7, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 22:46:57",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 24, 'play': 0}"
-    },
-    {
-      "time": "2026-08-29 22:46:57",
-      "kind": "info",
-      "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-30 01:07:54",
-      "kind": "info",
-      "message": "达标检查开始: 2 单"
-    },
-    {
-      "time": "2026-08-30 01:08:11",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 32, 'heart': 30, 'comment': 2, 'share': 9, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 01:08:27",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 24, 'play': 0}"
-    },
-    {
-      "time": "2026-08-30 01:08:27",
-      "kind": "info",
-      "message": "达标检查完成: 检查2单, 新达标0, 抓取失败0"
-    },
-    {
-      "time": "2026-08-30 03:45:46",
-      "kind": "info",
-      "message": "订单083001 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-30 03:45:46",
-      "kind": "order",
-      "message": "订单083001 创建: https://weixin.qq.com/sph/AWhGZi0D6T 目标={'play': 3000}"
-    },
-    {
-      "time": "2026-08-30 03:45:46",
-      "kind": "info",
-      "message": "订单083001 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-30 03:46:05",
-      "kind": "info",
-      "message": "订单083001 视频解析成功: 博主=绍伟说房 赞8 爱心7 评论0 转发5"
-    },
-    {
-      "time": "2026-08-30 03:46:05",
-      "kind": "order",
-      "message": "订单083001 [播放] 开始下单 数量=3000"
-    },
-    {
-      "time": "2026-08-30 03:46:05",
-      "kind": "order",
-      "message": "订单083001 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=3000"
-    },
     {
       "time": "2026-08-30 03:46:05",
       "kind": "order",
@@ -2665,6 +2667,76 @@
       "time": "2026-08-31 06:24:03",
       "kind": "ok",
       "message": "订单083107 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-08-31 06:27:51",
+      "kind": "info",
+      "message": "订单083108 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-08-31 06:27:51",
+      "kind": "order",
+      "message": "订单083108 创建: https://weixin.qq.com/sph/AM5QMrQlT0 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-08-31 06:27:51",
+      "kind": "info",
+      "message": "订单083108 正在解析视频链接"
+    },
+    {
+      "time": "2026-08-31 06:28:08",
+      "kind": "info",
+      "message": "订单083108 视频解析成功: 博主=新讯之光 赞10 爱心6 评论1 转发3"
+    },
+    {
+      "time": "2026-08-31 06:28:08",
+      "kind": "order",
+      "message": "订单083108 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:28:08",
+      "kind": "order",
+      "message": "订单083108 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:28:09",
+      "kind": "order",
+      "message": "订单083108 [点赞] imt 登录成功(本地凭证) 余额:40.59元"
+    },
+    {
+      "time": "2026-08-31 06:28:10",
+      "kind": "order",
+      "message": "订单083108 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-08-31 06:28:10",
+      "kind": "order",
+      "message": "订单083108 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-08-31 06:28:11",
+      "kind": "order",
+      "message": "订单083108 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:28:11",
+      "kind": "ok",
+      "message": "订单083108 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-08-31 06:28:11",
+      "kind": "order",
+      "message": "订单083108 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-08-31 06:28:11",
+      "kind": "ok",
+      "message": "订单083108 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-08-31 06:28:11",
+      "kind": "ok",
+      "message": "订单083108 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
