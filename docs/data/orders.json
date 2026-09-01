@@ -2460,6 +2460,79 @@
       "created_at": "2026-09-01 02:02:36",
       "updated_at": "2026-09-01 02:03:03",
       "completed": false
+    },
+    {
+      "order_no": "090102",
+      "url": "https://weixin.qq.com/sph/AlC95AbAI7",
+      "video_name": "大仟羊绒工厂静静",
+      "title": "客户第一句不问价格，而是问：你们有工厂吗？ #塞外大仟 #羊绒工厂 #源头工厂 #羊绒 #B端客户",
+      "targets": {
+        "like": 10,
+        "heart": 10,
+        "play": 1000
+      },
+      "init": {
+        "like": 7,
+        "heart": 10,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "cur": {
+        "like": 7,
+        "heart": 10,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;大仟羊绒工厂静静",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 10
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 10
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-01 04:18:33",
+      "updated_at": "2026-09-01 04:18:57",
+      "completed": false
     }
   ],
   "counter": {
@@ -2470,114 +2543,9 @@
     "2026-08-29": 7,
     "2026-08-30": 7,
     "2026-08-31": 24,
-    "2026-09-01": 1
+    "2026-09-01": 2
   },
   "logs": [
-    {
-      "time": "2026-08-31 07:32:43",
-      "kind": "info",
-      "message": "订单082906 检查中: 当前={'like': 41, 'heart': 40, 'comment': 4, 'share': 12, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:32:59",
-      "kind": "info",
-      "message": "订单082907 检查中: 当前={'like': 165, 'heart': 160, 'comment': 2, 'share': 26, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:33:15",
-      "kind": "info",
-      "message": "订单083001 检查中: 当前={'like': 49, 'heart': 73, 'comment': 5, 'share': 13, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:33:31",
-      "kind": "info",
-      "message": "订单083002 检查中: 当前={'like': 34, 'heart': 35, 'comment': 0, 'share': 5, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:33:47",
-      "kind": "info",
-      "message": "订单083003 检查中: 当前={'like': 29, 'heart': 21, 'comment': 0, 'share': 6, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:34:03",
-      "kind": "info",
-      "message": "订单083004 检查中: 当前={'like': 21, 'heart': 16, 'comment': 1, 'share': 4, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:34:18",
-      "kind": "info",
-      "message": "订单083005 检查中: 当前={'like': 24, 'heart': 21, 'comment': 0, 'share': 2, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:34:36",
-      "kind": "info",
-      "message": "订单083006 检查中: 当前={'like': 19, 'heart': 15, 'comment': 0, 'share': 4, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:34:52",
-      "kind": "info",
-      "message": "订单083007 检查中: 当前={'like': 189, 'heart': 156, 'comment': 26, 'share': 122, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:35:10",
-      "kind": "info",
-      "message": "订单083101 检查中: 当前={'like': 0, 'heart': 3, 'comment': 0, 'share': 0, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:35:26",
-      "kind": "info",
-      "message": "订单083102 检查中: 当前={'like': 17, 'heart': 16, 'comment': 0, 'share': 2, 'play': 0}"
-    },
-    {
-      "time": "2026-08-31 07:35:45",
-      "kind": "ok",
-      "message": "订单083103 已达标 ✅ (当前={'like': 45, 'heart': 44, 'comment': 0, 'share': 4, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:36:00",
-      "kind": "ok",
-      "message": "订单083104 已达标 ✅ (当前={'like': 79, 'heart': 56, 'comment': 44, 'share': 330, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:36:16",
-      "kind": "ok",
-      "message": "订单083105 已达标 ✅ (当前={'like': 52, 'heart': 43, 'comment': 3, 'share': 21, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:36:32",
-      "kind": "ok",
-      "message": "订单083106 已达标 ✅ (当前={'like': 67, 'heart': 43, 'comment': 4, 'share': 16, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:36:48",
-      "kind": "ok",
-      "message": "订单083107 已达标 ✅ (当前={'like': 63, 'heart': 47, 'comment': 15, 'share': 11, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:37:03",
-      "kind": "ok",
-      "message": "订单083108 已达标 ✅ (当前={'like': 54, 'heart': 47, 'comment': 1, 'share': 3, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:37:19",
-      "kind": "ok",
-      "message": "订单083109 已达标 ✅ (当前={'like': 38, 'heart': 37, 'comment': 0, 'share': 1, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:37:35",
-      "kind": "ok",
-      "message": "订单083110 已达标 ✅ (当前={'like': 52, 'heart': 36, 'comment': 5, 'share': 2, 'play': 0})"
-    },
-    {
-      "time": "2026-08-31 07:37:35",
-      "kind": "info",
-      "message": "达标检查完成: 检查19单, 新达标8, 抓取失败0"
-    },
-    {
-      "time": "2026-08-31 07:40:08",
-      "kind": "info",
-      "message": "订单083111 订单已创建,开始处理"
-    },
     {
       "time": "2026-08-31 07:40:08",
       "kind": "order",
@@ -3972,6 +3940,111 @@
       "time": "2026-09-01 02:03:03",
       "kind": "ok",
       "message": "订单090101 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-01 04:18:33",
+      "kind": "info",
+      "message": "订单090102 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-01 04:18:33",
+      "kind": "order",
+      "message": "订单090102 创建: https://weixin.qq.com/sph/AlC95AbAI7 目标={'like': 10, 'heart': 10, 'play': 1000}"
+    },
+    {
+      "time": "2026-09-01 04:18:33",
+      "kind": "info",
+      "message": "订单090102 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-01 04:18:50",
+      "kind": "info",
+      "message": "订单090102 视频解析成功: 博主=大仟羊绒工厂静静 赞7 爱心10 评论0 转发4"
+    },
+    {
+      "time": "2026-09-01 04:18:50",
+      "kind": "order",
+      "message": "订单090102 [点赞] 开始下单 数量=10"
+    },
+    {
+      "time": "2026-09-01 04:18:50",
+      "kind": "order",
+      "message": "订单090102 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=10"
+    },
+    {
+      "time": "2026-09-01 04:18:52",
+      "kind": "order",
+      "message": "订单090102 [点赞] imt 登录成功(本地凭证) 余额:101.33元"
+    },
+    {
+      "time": "2026-09-01 04:18:54",
+      "kind": "order",
+      "message": "订单090102 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-09-01 04:18:54",
+      "kind": "order",
+      "message": "订单090102 [点赞] 发布悬赏任务: 点赞爱心 x 10, 单价0.06元"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "order",
+      "message": "订单090102 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "ok",
+      "message": "订单090102 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "order",
+      "message": "订单090102 [爱心] 开始下单 数量=10"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "ok",
+      "message": "订单090102 [爱心] 已并入点赞+爱心任务(数量=10)"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "order",
+      "message": "订单090102 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-01 04:18:55",
+      "kind": "order",
+      "message": "订单090102 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-01 04:18:56",
+      "kind": "order",
+      "message": "订单090102 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-01 04:18:56",
+      "kind": "order",
+      "message": "订单090102 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-01 04:18:56",
+      "kind": "order",
+      "message": "订单090102 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"大仟羊绒工厂静静\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AlC95AbAI7\"}]"
+    },
+    {
+      "time": "2026-09-01 04:18:57",
+      "kind": "order",
+      "message": "订单090102 [播放] 下单成功: 视频号-独家作品播放购买成功;大仟羊绒工厂静静"
+    },
+    {
+      "time": "2026-09-01 04:18:57",
+      "kind": "ok",
+      "message": "订单090102 [播放] 下单成功: 视频号-独家作品播放购买成功;大仟羊绒工厂静静"
+    },
+    {
+      "time": "2026-09-01 04:18:57",
+      "kind": "ok",
+      "message": "订单090102 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
