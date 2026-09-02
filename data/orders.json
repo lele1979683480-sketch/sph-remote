@@ -2971,6 +2971,77 @@
       "created_at": "2026-09-02 13:35:37",
       "updated_at": "2026-09-02 13:36:01",
       "completed": false
+    },
+    {
+      "order_no": "090202",
+      "url": "https://weixin.qq.com/sph/Aj6RVfEvkn",
+      "video_name": "二奢回收yoko",
+      "title": "惠州市·好岱中古汇·黄金奢侈品回收鉴定中心(惠州店)",
+      "targets": {
+        "play": 2000
+      },
+      "init": {
+        "like": 3,
+        "heart": 3,
+        "comment": 0,
+        "share": 6,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 3,
+        "comment": 0,
+        "share": 6,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;二奢回收yoko",
+          "qty": 2000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-02 13:42:37",
+      "updated_at": "2026-09-02 13:42:57",
+      "completed": false
     }
   ],
   "counter": {
@@ -2982,69 +3053,9 @@
     "2026-08-30": 7,
     "2026-08-31": 24,
     "2026-09-01": 7,
-    "2026-09-02": 1
+    "2026-09-02": 2
   },
   "logs": [
-    {
-      "time": "2026-08-31 14:35:05",
-      "kind": "order",
-      "message": "订单083119 创建: https://weixin.qq.com/sph/A4cFo5jjHp 目标={'like': 20, 'heart': 20, 'play': 1500}"
-    },
-    {
-      "time": "2026-08-31 14:35:05",
-      "kind": "info",
-      "message": "订单083119 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-31 14:35:23",
-      "kind": "info",
-      "message": "订单083119 视频解析成功: 博主=开模师模具零件工厂一姐露阳 赞24 爱心20 评论4 转发4"
-    },
-    {
-      "time": "2026-08-31 14:35:23",
-      "kind": "order",
-      "message": "订单083119 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:35:23",
-      "kind": "order",
-      "message": "订单083119 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:35:24",
-      "kind": "order",
-      "message": "订单083119 [点赞] imt 登录成功(本地凭证) 余额:86.99元"
-    },
-    {
-      "time": "2026-08-31 14:35:25",
-      "kind": "order",
-      "message": "订单083119 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-08-31 14:35:25",
-      "kind": "order",
-      "message": "订单083119 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-08-31 14:35:27",
-      "kind": "order",
-      "message": "订单083119 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-08-31 14:35:27",
-      "kind": "ok",
-      "message": "订单083119 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-08-31 14:35:27",
-      "kind": "order",
-      "message": "订单083119 [爱心] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:35:27",
-      "kind": "ok",
-      "message": "订单083119 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
     {
       "time": "2026-08-31 14:35:27",
       "kind": "order",
@@ -4484,6 +4495,66 @@
       "time": "2026-09-02 13:36:01",
       "kind": "ok",
       "message": "订单090201 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-02 13:42:37",
+      "kind": "info",
+      "message": "订单090202 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-02 13:42:37",
+      "kind": "order",
+      "message": "订单090202 创建: https://weixin.qq.com/sph/Aj6RVfEvkn 目标={'play': 2000}"
+    },
+    {
+      "time": "2026-09-02 13:42:37",
+      "kind": "info",
+      "message": "订单090202 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-02 13:42:56",
+      "kind": "info",
+      "message": "订单090202 视频解析成功: 博主=二奢回收yoko 赞3 爱心3 评论0 转发6"
+    },
+    {
+      "time": "2026-09-02 13:42:56",
+      "kind": "order",
+      "message": "订单090202 [播放] 开始下单 数量=2000"
+    },
+    {
+      "time": "2026-09-02 13:42:56",
+      "kind": "order",
+      "message": "订单090202 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=2000"
+    },
+    {
+      "time": "2026-09-02 13:42:56",
+      "kind": "order",
+      "message": "订单090202 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-02 13:42:57",
+      "kind": "order",
+      "message": "订单090202 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-02 13:42:57",
+      "kind": "order",
+      "message": "订单090202 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"二奢回收yoko\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/Aj6RVfEvkn\"}]"
+    },
+    {
+      "time": "2026-09-02 13:42:57",
+      "kind": "order",
+      "message": "订单090202 [播放] 下单成功: 视频号-独家作品播放购买成功;二奢回收yoko"
+    },
+    {
+      "time": "2026-09-02 13:42:57",
+      "kind": "ok",
+      "message": "订单090202 [播放] 下单成功: 视频号-独家作品播放购买成功;二奢回收yoko"
+    },
+    {
+      "time": "2026-09-02 13:42:57",
+      "kind": "ok",
+      "message": "订单090202 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
