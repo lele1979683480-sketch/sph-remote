@@ -3331,6 +3331,78 @@
       "created_at": "2026-09-03 12:13:51",
       "updated_at": "2026-09-03 12:14:10",
       "completed": false
+    },
+    {
+      "order_no": "090305",
+      "url": "https://weixin.qq.com/sph/AVDGXVg8vJ",
+      "video_name": "T5MALL",
+      "title": "广州市·白云五号T5 MALL",
+      "targets": {
+        "play": 10000,
+        "share": 200
+      },
+      "init": {
+        "like": 66,
+        "heart": 54,
+        "comment": 0,
+        "share": 18,
+        "play": 0
+      },
+      "cur": {
+        "like": 66,
+        "heart": 54,
+        "comment": 0,
+        "share": 18,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "failed",
+          "step": "播放下单失败",
+          "error": "橘子平台登录失败",
+          "platform": "",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "橘子平台登录失败",
+          "qty": 10000
+        },
+        "share": {
+          "status": "failed",
+          "step": "转发下单失败",
+          "error": "橘子平台登录失败",
+          "platform": "",
+          "goods_ref": "6386",
+          "platform_order_no": "",
+          "result": "橘子平台登录失败",
+          "qty": 200
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "failed",
+      "step": "下单失败",
+      "error": "",
+      "created_at": "2026-09-03 14:49:56",
+      "updated_at": "2026-09-03 14:50:24",
+      "completed": true
     }
   ],
   "counter": {
@@ -3343,74 +3415,9 @@
     "2026-08-31": 24,
     "2026-09-01": 7,
     "2026-09-02": 2,
-    "2026-09-03": 4
+    "2026-09-03": 5
   },
   "logs": [
-    {
-      "time": "2026-08-31 14:43:03",
-      "kind": "order",
-      "message": "订单083122 [播放] 下单成功: 视频号-独家作品播放购买成功;开模师模具零件工厂一姐露阳"
-    },
-    {
-      "time": "2026-08-31 14:43:03",
-      "kind": "ok",
-      "message": "订单083122 [播放] 下单成功: 视频号-独家作品播放购买成功;开模师模具零件工厂一姐露阳"
-    },
-    {
-      "time": "2026-08-31 14:43:03",
-      "kind": "ok",
-      "message": "订单083122 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-08-31 14:55:10",
-      "kind": "info",
-      "message": "订单083123 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-08-31 14:55:10",
-      "kind": "order",
-      "message": "订单083123 创建: https://weixin.qq.com/sph/AELidlgtAx 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-08-31 14:55:10",
-      "kind": "info",
-      "message": "订单083123 正在解析视频链接"
-    },
-    {
-      "time": "2026-08-31 14:55:29",
-      "kind": "info",
-      "message": "订单083123 视频解析成功: 博主=燕郊腾跃选房 赞1 爱心1 评论0 转发1"
-    },
-    {
-      "time": "2026-08-31 14:55:29",
-      "kind": "order",
-      "message": "订单083123 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:55:29",
-      "kind": "order",
-      "message": "订单083123 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:55:30",
-      "kind": "order",
-      "message": "订单083123 [点赞] imt 登录成功(本地凭证) 余额:82.19元"
-    },
-    {
-      "time": "2026-08-31 14:55:32",
-      "kind": "order",
-      "message": "订单083123 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-08-31 14:55:32",
-      "kind": "order",
-      "message": "订单083123 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-08-31 14:55:33",
-      "kind": "order",
-      "message": "订单083123 [点赞] imt 下单成功: 操作成功"
-    },
     {
       "time": "2026-08-31 14:55:33",
       "kind": "ok",
@@ -4845,6 +4852,71 @@
       "time": "2026-09-03 12:14:10",
       "kind": "ok",
       "message": "订单090304 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-03 14:49:56",
+      "kind": "info",
+      "message": "订单090305 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-03 14:49:56",
+      "kind": "order",
+      "message": "订单090305 创建: https://weixin.qq.com/sph/AVDGXVg8vJ 目标={'play': 10000, 'share': 200}"
+    },
+    {
+      "time": "2026-09-03 14:49:56",
+      "kind": "info",
+      "message": "订单090305 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-03 14:50:13",
+      "kind": "info",
+      "message": "订单090305 视频解析成功: 博主=T5MALL 赞66 爱心54 评论0 转发18"
+    },
+    {
+      "time": "2026-09-03 14:50:13",
+      "kind": "order",
+      "message": "订单090305 [播放] 开始下单 数量=10000"
+    },
+    {
+      "time": "2026-09-03 14:50:13",
+      "kind": "order",
+      "message": "订单090305 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=10000"
+    },
+    {
+      "time": "2026-09-03 14:50:18",
+      "kind": "order",
+      "message": "订单090305 [播放] API 登录失败:登录接口返回异常"
+    },
+    {
+      "time": "2026-09-03 14:50:18",
+      "kind": "error",
+      "message": "订单090305 [播放] 下单失败: 橘子平台登录失败"
+    },
+    {
+      "time": "2026-09-03 14:50:18",
+      "kind": "order",
+      "message": "订单090305 [转发] 开始下单 数量=200"
+    },
+    {
+      "time": "2026-09-03 14:50:18",
+      "kind": "order",
+      "message": "订单090305 [转发] 开始处理(橘子平台 API 下单) 商品#6386 数量=200"
+    },
+    {
+      "time": "2026-09-03 14:50:24",
+      "kind": "order",
+      "message": "订单090305 [转发] API 登录失败:登录接口返回异常"
+    },
+    {
+      "time": "2026-09-03 14:50:24",
+      "kind": "error",
+      "message": "订单090305 [转发] 下单失败: 橘子平台登录失败"
+    },
+    {
+      "time": "2026-09-03 14:50:24",
+      "kind": "error",
+      "message": "订单090305 处理完成: 下单失败 (status=failed)"
     }
   ]
 }
