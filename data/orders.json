@@ -3259,6 +3259,78 @@
       "created_at": "2026-09-03 05:19:32",
       "updated_at": "2026-09-03 05:19:52",
       "completed": false
+    },
+    {
+      "order_no": "090304",
+      "url": "https://weixin.qq.com/sph/AfOVEY0dax",
+      "video_name": "T5MALL",
+      "title": "广州市·白云五号T5 MALL",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 3,
+        "heart": 2,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 2,
+        "comment": 0,
+        "share": 4,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-03 12:13:51",
+      "updated_at": "2026-09-03 12:14:10",
+      "completed": false
     }
   ],
   "counter": {
@@ -3271,79 +3343,9 @@
     "2026-08-31": 24,
     "2026-09-01": 7,
     "2026-09-02": 2,
-    "2026-09-03": 3
+    "2026-09-03": 4
   },
   "logs": [
-    {
-      "time": "2026-08-31 14:42:58",
-      "kind": "order",
-      "message": "订单083122 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:42:58",
-      "kind": "order",
-      "message": "订单083122 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:42:59",
-      "kind": "order",
-      "message": "订单083122 [点赞] imt 登录成功(本地凭证) 余额:83.39元"
-    },
-    {
-      "time": "2026-08-31 14:43:00",
-      "kind": "order",
-      "message": "订单083122 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-08-31 14:43:00",
-      "kind": "order",
-      "message": "订单083122 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "order",
-      "message": "订单083122 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "ok",
-      "message": "订单083122 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "order",
-      "message": "订单083122 [爱心] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "ok",
-      "message": "订单083122 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "order",
-      "message": "订单083122 [播放] 开始下单 数量=1500"
-    },
-    {
-      "time": "2026-08-31 14:43:01",
-      "kind": "order",
-      "message": "订单083122 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1500"
-    },
-    {
-      "time": "2026-08-31 14:43:02",
-      "kind": "order",
-      "message": "订单083122 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-08-31 14:43:02",
-      "kind": "order",
-      "message": "订单083122 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-08-31 14:43:02",
-      "kind": "order",
-      "message": "订单083122 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"开模师模具零件工厂一姐露阳\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AhorA2cj7p\"}]"
-    },
     {
       "time": "2026-08-31 14:43:03",
       "kind": "order",
@@ -4773,6 +4775,76 @@
       "time": "2026-09-03 05:19:52",
       "kind": "ok",
       "message": "订单090303 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-03 12:13:51",
+      "kind": "info",
+      "message": "订单090304 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-03 12:13:51",
+      "kind": "order",
+      "message": "订单090304 创建: https://weixin.qq.com/sph/AfOVEY0dax 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-09-03 12:13:51",
+      "kind": "info",
+      "message": "订单090304 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-03 12:14:07",
+      "kind": "info",
+      "message": "订单090304 视频解析成功: 博主=T5MALL 赞3 爱心2 评论0 转发4"
+    },
+    {
+      "time": "2026-09-03 12:14:07",
+      "kind": "order",
+      "message": "订单090304 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-09-03 12:14:07",
+      "kind": "order",
+      "message": "订单090304 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-09-03 12:14:08",
+      "kind": "order",
+      "message": "订单090304 [点赞] imt 登录成功(本地凭证) 余额:86.21元"
+    },
+    {
+      "time": "2026-09-03 12:14:09",
+      "kind": "order",
+      "message": "订单090304 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-09-03 12:14:09",
+      "kind": "order",
+      "message": "订单090304 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-09-03 12:14:10",
+      "kind": "order",
+      "message": "订单090304 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-03 12:14:10",
+      "kind": "ok",
+      "message": "订单090304 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-03 12:14:10",
+      "kind": "order",
+      "message": "订单090304 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-09-03 12:14:10",
+      "kind": "ok",
+      "message": "订单090304 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-09-03 12:14:10",
+      "kind": "ok",
+      "message": "订单090304 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
