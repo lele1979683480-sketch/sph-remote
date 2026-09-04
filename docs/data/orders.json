@@ -3545,6 +3545,78 @@
       "created_at": "2026-09-04 03:48:15",
       "updated_at": "2026-09-04 03:48:36",
       "completed": false
+    },
+    {
+      "order_no": "090403",
+      "url": "https://weixin.qq.com/sph/AlndOA2dVn",
+      "video_name": "转发即可发大财",
+      "title": "北京市·河北省政府驻京办",
+      "targets": {
+        "like": 30,
+        "heart": 30
+      },
+      "init": {
+        "like": 1346,
+        "heart": 1396,
+        "comment": 0,
+        "share": 47000,
+        "play": 0
+      },
+      "cur": {
+        "like": 1346,
+        "heart": 1396,
+        "comment": 0,
+        "share": 47000,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 30
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 30
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-04 04:30:25",
+      "updated_at": "2026-09-04 04:30:47",
+      "completed": false
     }
   ],
   "counter": {
@@ -3558,79 +3630,9 @@
     "2026-09-01": 7,
     "2026-09-02": 2,
     "2026-09-03": 5,
-    "2026-09-04": 2
+    "2026-09-04": 3
   },
   "logs": [
-    {
-      "time": "2026-08-31 23:53:22",
-      "kind": "order",
-      "message": "订单083124 [播放] 开始下单 数量=1300"
-    },
-    {
-      "time": "2026-08-31 23:53:22",
-      "kind": "order",
-      "message": "订单083124 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1300"
-    },
-    {
-      "time": "2026-08-31 23:53:23",
-      "kind": "order",
-      "message": "订单083124 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-08-31 23:53:24",
-      "kind": "order",
-      "message": "订单083124 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-08-31 23:53:24",
-      "kind": "order",
-      "message": "订单083124 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"大仟羊绒工厂乐乐\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AAs3R0X5yv\"}]"
-    },
-    {
-      "time": "2026-08-31 23:53:24",
-      "kind": "order",
-      "message": "订单083124 [播放] 下单成功: 视频号-独家作品播放购买成功;大仟羊绒工厂乐乐"
-    },
-    {
-      "time": "2026-08-31 23:53:24",
-      "kind": "ok",
-      "message": "订单083124 [播放] 下单成功: 视频号-独家作品播放购买成功;大仟羊绒工厂乐乐"
-    },
-    {
-      "time": "2026-08-31 23:53:24",
-      "kind": "ok",
-      "message": "订单083124 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-01 02:02:36",
-      "kind": "info",
-      "message": "订单090101 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-01 02:02:36",
-      "kind": "order",
-      "message": "订单090101 创建: https://weixin.qq.com/sph/A7Z2PGegiz 目标={'like': 30, 'heart': 30, 'play': 10000, 'share': 200}"
-    },
-    {
-      "time": "2026-09-01 02:02:36",
-      "kind": "info",
-      "message": "订单090101 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-01 02:02:55",
-      "kind": "info",
-      "message": "订单090101 视频解析成功: 博主=文明鄞州 赞1 爱心1 评论1 转发6"
-    },
-    {
-      "time": "2026-09-01 02:02:55",
-      "kind": "order",
-      "message": "订单090101 [点赞] 开始下单 数量=30"
-    },
-    {
-      "time": "2026-09-01 02:02:55",
-      "kind": "order",
-      "message": "订单090101 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
-    },
     {
       "time": "2026-09-01 02:02:56",
       "kind": "order",
@@ -5060,6 +5062,76 @@
       "time": "2026-09-04 03:48:36",
       "kind": "ok",
       "message": "订单090402 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-04 04:30:25",
+      "kind": "info",
+      "message": "订单090403 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-04 04:30:25",
+      "kind": "order",
+      "message": "订单090403 创建: https://weixin.qq.com/sph/AlndOA2dVn 目标={'like': 30, 'heart': 30}"
+    },
+    {
+      "time": "2026-09-04 04:30:25",
+      "kind": "info",
+      "message": "订单090403 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-04 04:30:42",
+      "kind": "info",
+      "message": "订单090403 视频解析成功: 博主=转发即可发大财 赞1346 爱心1396 评论0 转发47000"
+    },
+    {
+      "time": "2026-09-04 04:30:42",
+      "kind": "order",
+      "message": "订单090403 [点赞] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-09-04 04:30:42",
+      "kind": "order",
+      "message": "订单090403 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
+    },
+    {
+      "time": "2026-09-04 04:30:44",
+      "kind": "order",
+      "message": "订单090403 [点赞] imt 登录成功(本地凭证) 余额:73.61元"
+    },
+    {
+      "time": "2026-09-04 04:30:46",
+      "kind": "order",
+      "message": "订单090403 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-09-04 04:30:46",
+      "kind": "order",
+      "message": "订单090403 [点赞] 发布悬赏任务: 点赞爱心 x 30, 单价0.06元"
+    },
+    {
+      "time": "2026-09-04 04:30:47",
+      "kind": "order",
+      "message": "订单090403 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-04 04:30:47",
+      "kind": "ok",
+      "message": "订单090403 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-04 04:30:47",
+      "kind": "order",
+      "message": "订单090403 [爱心] 开始下单 数量=30"
+    },
+    {
+      "time": "2026-09-04 04:30:47",
+      "kind": "ok",
+      "message": "订单090403 [爱心] 已并入点赞+爱心任务(数量=30)"
+    },
+    {
+      "time": "2026-09-04 04:30:47",
+      "kind": "ok",
+      "message": "订单090403 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
