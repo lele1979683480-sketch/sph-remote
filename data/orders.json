@@ -4773,6 +4773,77 @@
       "created_at": "2026-09-07 10:01:25",
       "updated_at": "2026-09-07 10:01:46",
       "completed": false
+    },
+    {
+      "order_no": "090712",
+      "url": "https://weixin.qq.com/sph/AQGxmkNTRH",
+      "video_name": "翠屏山庄农家饭店",
+      "title": "苏州市·翠屏山庄农家乐",
+      "targets": {
+        "play": 10000
+      },
+      "init": {
+        "like": 56,
+        "heart": 56,
+        "comment": 13,
+        "share": 40,
+        "play": 0
+      },
+      "cur": {
+        "like": 56,
+        "heart": 56,
+        "comment": 13,
+        "share": 40,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;翠屏山庄农家饭店",
+          "qty": 10000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-07 11:04:49",
+      "updated_at": "2026-09-07 11:05:09",
+      "completed": false
     }
   ],
   "counter": {
@@ -4789,69 +4860,9 @@
     "2026-09-04": 5,
     "2026-09-05": 2,
     "2026-09-06": 1,
-    "2026-09-07": 11
+    "2026-09-07": 12
   },
   "logs": [
-    {
-      "time": "2026-09-04 03:48:35",
-      "kind": "order",
-      "message": "订单090402 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"AA长润钢丸钢砂生产厂家\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AidbJD5XC9\"}]"
-    },
-    {
-      "time": "2026-09-04 03:48:36",
-      "kind": "order",
-      "message": "订单090402 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
-    },
-    {
-      "time": "2026-09-04 03:48:36",
-      "kind": "ok",
-      "message": "订单090402 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
-    },
-    {
-      "time": "2026-09-04 03:48:36",
-      "kind": "ok",
-      "message": "订单090402 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-04 04:30:25",
-      "kind": "info",
-      "message": "订单090403 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-04 04:30:25",
-      "kind": "order",
-      "message": "订单090403 创建: https://weixin.qq.com/sph/AlndOA2dVn 目标={'like': 30, 'heart': 30}"
-    },
-    {
-      "time": "2026-09-04 04:30:25",
-      "kind": "info",
-      "message": "订单090403 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-04 04:30:42",
-      "kind": "info",
-      "message": "订单090403 视频解析成功: 博主=转发即可发大财 赞1346 爱心1396 评论0 转发47000"
-    },
-    {
-      "time": "2026-09-04 04:30:42",
-      "kind": "order",
-      "message": "订单090403 [点赞] 开始下单 数量=30"
-    },
-    {
-      "time": "2026-09-04 04:30:42",
-      "kind": "order",
-      "message": "订单090403 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=30"
-    },
-    {
-      "time": "2026-09-04 04:30:44",
-      "kind": "order",
-      "message": "订单090403 [点赞] imt 登录成功(本地凭证) 余额:73.61元"
-    },
-    {
-      "time": "2026-09-04 04:30:46",
-      "kind": "order",
-      "message": "订单090403 [点赞] 使用已配置样图"
-    },
     {
       "time": "2026-09-04 04:30:46",
       "kind": "order",
@@ -6291,6 +6302,66 @@
       "time": "2026-09-07 10:01:46",
       "kind": "ok",
       "message": "订单090711 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-07 11:04:49",
+      "kind": "info",
+      "message": "订单090712 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-07 11:04:49",
+      "kind": "order",
+      "message": "订单090712 创建: https://weixin.qq.com/sph/AQGxmkNTRH 目标={'play': 10000}"
+    },
+    {
+      "time": "2026-09-07 11:04:49",
+      "kind": "info",
+      "message": "订单090712 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-07 11:05:06",
+      "kind": "info",
+      "message": "订单090712 视频解析成功: 博主=翠屏山庄农家饭店 赞56 爱心56 评论13 转发40"
+    },
+    {
+      "time": "2026-09-07 11:05:06",
+      "kind": "order",
+      "message": "订单090712 [播放] 开始下单 数量=10000"
+    },
+    {
+      "time": "2026-09-07 11:05:06",
+      "kind": "order",
+      "message": "订单090712 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=10000"
+    },
+    {
+      "time": "2026-09-07 11:05:07",
+      "kind": "order",
+      "message": "订单090712 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-07 11:05:08",
+      "kind": "order",
+      "message": "订单090712 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-07 11:05:08",
+      "kind": "order",
+      "message": "订单090712 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"翠屏山庄农家饭店\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AQGxmkNTRH\"}]"
+    },
+    {
+      "time": "2026-09-07 11:05:09",
+      "kind": "order",
+      "message": "订单090712 [播放] 下单成功: 视频号-独家作品播放购买成功;翠屏山庄农家饭店"
+    },
+    {
+      "time": "2026-09-07 11:05:09",
+      "kind": "ok",
+      "message": "订单090712 [播放] 下单成功: 视频号-独家作品播放购买成功;翠屏山庄农家饭店"
+    },
+    {
+      "time": "2026-09-07 11:05:09",
+      "kind": "ok",
+      "message": "订单090712 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
