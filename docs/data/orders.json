@@ -5714,6 +5714,77 @@
       "created_at": "2026-09-09 16:13:55",
       "updated_at": "2026-09-09 16:14:17",
       "completed": false
+    },
+    {
+      "order_no": "090906",
+      "url": "https://weixin.qq.com/sph/AKK5x4x00Y",
+      "video_name": "贾荣-大仟",
+      "title": "呼和浩特市·裕隆工业园",
+      "targets": {
+        "play": 2000
+      },
+      "init": {
+        "like": 77,
+        "heart": 87,
+        "comment": 1,
+        "share": 37,
+        "play": 0
+      },
+      "cur": {
+        "like": 77,
+        "heart": 87,
+        "comment": 1,
+        "share": 37,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;贾荣-大仟",
+          "qty": 2000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-09 16:17:38",
+      "updated_at": "2026-09-09 16:17:58",
+      "completed": false
     }
   ],
   "counter": {
@@ -5732,69 +5803,9 @@
     "2026-09-06": 1,
     "2026-09-07": 18,
     "2026-09-08": 1,
-    "2026-09-09": 5
+    "2026-09-09": 6
   },
   "logs": [
-    {
-      "time": "2026-09-07 08:04:04",
-      "kind": "info",
-      "message": "订单090709 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-07 08:04:04",
-      "kind": "order",
-      "message": "订单090709 创建: https://weixin.qq.com/sph/A7Umd8RM5Z 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-09-07 08:04:04",
-      "kind": "info",
-      "message": "订单090709 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-07 08:04:21",
-      "kind": "info",
-      "message": "订单090709 视频解析成功: 博主=家聿姐教你买好房 赞2 爱心1 评论0 转发2"
-    },
-    {
-      "time": "2026-09-07 08:04:21",
-      "kind": "order",
-      "message": "订单090709 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-07 08:04:21",
-      "kind": "order",
-      "message": "订单090709 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-09-07 08:04:22",
-      "kind": "order",
-      "message": "订单090709 [点赞] imt 登录成功(本地凭证) 余额:46.97元"
-    },
-    {
-      "time": "2026-09-07 08:04:23",
-      "kind": "order",
-      "message": "订单090709 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-09-07 08:04:23",
-      "kind": "order",
-      "message": "订单090709 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-09-07 08:04:25",
-      "kind": "order",
-      "message": "订单090709 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 08:04:25",
-      "kind": "ok",
-      "message": "订单090709 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 08:04:25",
-      "kind": "order",
-      "message": "订单090709 [爱心] 开始下单 数量=20"
-    },
     {
       "time": "2026-09-07 08:04:25",
       "kind": "ok",
@@ -7234,6 +7245,66 @@
       "time": "2026-09-09 16:14:17",
       "kind": "ok",
       "message": "订单090905 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-09 16:17:38",
+      "kind": "info",
+      "message": "订单090906 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-09 16:17:38",
+      "kind": "order",
+      "message": "订单090906 创建: https://weixin.qq.com/sph/AKK5x4x00Y 目标={'play': 2000}"
+    },
+    {
+      "time": "2026-09-09 16:17:38",
+      "kind": "info",
+      "message": "订单090906 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-09 16:17:56",
+      "kind": "info",
+      "message": "订单090906 视频解析成功: 博主=贾荣-大仟 赞77 爱心87 评论1 转发37"
+    },
+    {
+      "time": "2026-09-09 16:17:56",
+      "kind": "order",
+      "message": "订单090906 [播放] 开始下单 数量=2000"
+    },
+    {
+      "time": "2026-09-09 16:17:56",
+      "kind": "order",
+      "message": "订单090906 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=2000"
+    },
+    {
+      "time": "2026-09-09 16:17:57",
+      "kind": "order",
+      "message": "订单090906 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-09 16:17:58",
+      "kind": "order",
+      "message": "订单090906 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-09 16:17:58",
+      "kind": "order",
+      "message": "订单090906 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"贾荣-大仟\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AKK5x4x00Y\"}]"
+    },
+    {
+      "time": "2026-09-09 16:17:58",
+      "kind": "order",
+      "message": "订单090906 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
+    },
+    {
+      "time": "2026-09-09 16:17:58",
+      "kind": "ok",
+      "message": "订单090906 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
+    },
+    {
+      "time": "2026-09-09 16:17:58",
+      "kind": "ok",
+      "message": "订单090906 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
