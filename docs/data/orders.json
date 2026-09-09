@@ -5858,6 +5858,77 @@
       "created_at": "2026-09-09 16:41:11",
       "updated_at": "2026-09-09 16:41:36",
       "completed": false
+    },
+    {
+      "order_no": "090908",
+      "url": "https://weixin.qq.com/sph/AQz6yCSuTe",
+      "video_name": "贾荣-大仟",
+      "title": "上海市·国家会展中心",
+      "targets": {
+        "play": 3000
+      },
+      "init": {
+        "like": 207,
+        "heart": 205,
+        "comment": 2,
+        "share": 28,
+        "play": 0
+      },
+      "cur": {
+        "like": 207,
+        "heart": 205,
+        "comment": 2,
+        "share": 28,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;贾荣-大仟",
+          "qty": 3000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-09 16:45:36",
+      "updated_at": "2026-09-09 16:45:54",
+      "completed": false
     }
   ],
   "counter": {
@@ -5876,69 +5947,9 @@
     "2026-09-06": 1,
     "2026-09-07": 18,
     "2026-09-08": 1,
-    "2026-09-09": 7
+    "2026-09-09": 8
   },
   "logs": [
-    {
-      "time": "2026-09-07 09:43:43",
-      "kind": "ok",
-      "message": "订单090710 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-09-07 09:43:43",
-      "kind": "order",
-      "message": "订单090710 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-07 09:43:43",
-      "kind": "order",
-      "message": "订单090710 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-07 09:43:43",
-      "kind": "order",
-      "message": "订单090710 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-07 09:43:44",
-      "kind": "order",
-      "message": "订单090710 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-07 09:43:44",
-      "kind": "order",
-      "message": "订单090710 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"家聿姐教你买好房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AnyMEF7wEs\"}]"
-    },
-    {
-      "time": "2026-09-07 09:43:44",
-      "kind": "order",
-      "message": "订单090710 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-07 09:43:44",
-      "kind": "ok",
-      "message": "订单090710 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-07 09:43:44",
-      "kind": "ok",
-      "message": "订单090710 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-07 10:01:25",
-      "kind": "info",
-      "message": "订单090711 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-07 10:01:25",
-      "kind": "order",
-      "message": "订单090711 创建: https://weixin.qq.com/sph/AD6YH4PYLq 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-09-07 10:01:25",
-      "kind": "info",
-      "message": "订单090711 正在解析视频链接"
-    },
     {
       "time": "2026-09-07 10:01:41",
       "kind": "info",
@@ -7378,6 +7389,66 @@
       "time": "2026-09-09 16:41:36",
       "kind": "ok",
       "message": "订单090907 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-09 16:45:36",
+      "kind": "info",
+      "message": "订单090908 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-09 16:45:36",
+      "kind": "order",
+      "message": "订单090908 创建: https://weixin.qq.com/sph/AQz6yCSuTe 目标={'play': 3000}"
+    },
+    {
+      "time": "2026-09-09 16:45:36",
+      "kind": "info",
+      "message": "订单090908 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-09 16:45:53",
+      "kind": "info",
+      "message": "订单090908 视频解析成功: 博主=贾荣-大仟 赞207 爱心205 评论2 转发28"
+    },
+    {
+      "time": "2026-09-09 16:45:53",
+      "kind": "order",
+      "message": "订单090908 [播放] 开始下单 数量=3000"
+    },
+    {
+      "time": "2026-09-09 16:45:53",
+      "kind": "order",
+      "message": "订单090908 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=3000"
+    },
+    {
+      "time": "2026-09-09 16:45:53",
+      "kind": "order",
+      "message": "订单090908 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-09 16:45:54",
+      "kind": "order",
+      "message": "订单090908 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-09 16:45:54",
+      "kind": "order",
+      "message": "订单090908 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"贾荣-大仟\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AQz6yCSuTe\"}]"
+    },
+    {
+      "time": "2026-09-09 16:45:54",
+      "kind": "order",
+      "message": "订单090908 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
+    },
+    {
+      "time": "2026-09-09 16:45:54",
+      "kind": "ok",
+      "message": "订单090908 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
+    },
+    {
+      "time": "2026-09-09 16:45:54",
+      "kind": "ok",
+      "message": "订单090908 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
