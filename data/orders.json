@@ -5353,6 +5353,77 @@
       "created_at": "2026-09-08 13:18:05",
       "updated_at": "2026-09-08 13:18:24",
       "completed": false
+    },
+    {
+      "order_no": "090901",
+      "url": "https://weixin.qq.com/sph/A7AyJt0Gwd",
+      "video_name": "AA长润钢丸钢砂生产厂家",
+      "title": "一次性解决您买钢丸的所有痛点 #钢丸钢砂 #金属磨料 #源头工厂 #长润金属",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 3,
+        "heart": 4,
+        "comment": 0,
+        "share": 2,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 4,
+        "comment": 0,
+        "share": 2,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-09 09:28:18",
+      "updated_at": "2026-09-09 09:28:39",
+      "completed": false
     }
   ],
   "counter": {
@@ -5370,69 +5441,10 @@
     "2026-09-05": 2,
     "2026-09-06": 1,
     "2026-09-07": 18,
-    "2026-09-08": 1
+    "2026-09-08": 1,
+    "2026-09-09": 1
   },
   "logs": [
-    {
-      "time": "2026-09-07 02:42:04",
-      "kind": "info",
-      "message": "订单090704 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-07 02:42:04",
-      "kind": "order",
-      "message": "订单090704 创建: https://weixin.qq.com/sph/AURPL8cJTB 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-09-07 02:42:04",
-      "kind": "info",
-      "message": "订单090704 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-07 02:42:22",
-      "kind": "info",
-      "message": "订单090704 视频解析成功: 博主=杨姐侃房 赞2 爱心2 评论0 转发2"
-    },
-    {
-      "time": "2026-09-07 02:42:22",
-      "kind": "order",
-      "message": "订单090704 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-07 02:42:22",
-      "kind": "order",
-      "message": "订单090704 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-09-07 02:42:23",
-      "kind": "order",
-      "message": "订单090704 [点赞] imt 登录成功(本地凭证) 余额:55.55元"
-    },
-    {
-      "time": "2026-09-07 02:42:24",
-      "kind": "order",
-      "message": "订单090704 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-09-07 02:42:24",
-      "kind": "order",
-      "message": "订单090704 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "order",
-      "message": "订单090704 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "ok",
-      "message": "订单090704 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "order",
-      "message": "订单090704 [爱心] 开始下单 数量=20"
-    },
     {
       "time": "2026-09-07 02:42:25",
       "kind": "ok",
@@ -6872,6 +6884,66 @@
       "time": "2026-09-08 13:18:24",
       "kind": "ok",
       "message": "订单090801 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-09 09:28:18",
+      "kind": "info",
+      "message": "订单090901 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-09 09:28:18",
+      "kind": "order",
+      "message": "订单090901 创建: https://weixin.qq.com/sph/A7AyJt0Gwd 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-09-09 09:28:18",
+      "kind": "info",
+      "message": "订单090901 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-09 09:28:37",
+      "kind": "info",
+      "message": "订单090901 视频解析成功: 博主=AA长润钢丸钢砂生产厂家 赞3 爱心4 评论0 转发2"
+    },
+    {
+      "time": "2026-09-09 09:28:37",
+      "kind": "order",
+      "message": "订单090901 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-09 09:28:37",
+      "kind": "order",
+      "message": "订单090901 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-09 09:28:37",
+      "kind": "order",
+      "message": "订单090901 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-09 09:28:38",
+      "kind": "order",
+      "message": "订单090901 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-09 09:28:38",
+      "kind": "order",
+      "message": "订单090901 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"AA长润钢丸钢砂生产厂家\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/A7AyJt0Gwd\"}]"
+    },
+    {
+      "time": "2026-09-09 09:28:39",
+      "kind": "order",
+      "message": "订单090901 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-09 09:28:39",
+      "kind": "ok",
+      "message": "订单090901 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-09 09:28:39",
+      "kind": "ok",
+      "message": "订单090901 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
