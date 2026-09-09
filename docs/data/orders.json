@@ -5424,6 +5424,77 @@
       "created_at": "2026-09-09 09:28:18",
       "updated_at": "2026-09-09 09:28:39",
       "completed": false
+    },
+    {
+      "order_no": "090902",
+      "url": "https://weixin.qq.com/sph/A2ktT2v4ym",
+      "video_name": "AA长润钢丸钢砂生产厂家",
+      "title": "真的在隐藏实力吗 #办公室段子 #做梦 #幽默 #内容过于真实",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 1,
+        "heart": 4,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "cur": {
+        "like": 1,
+        "heart": 4,
+        "comment": 0,
+        "share": 0,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-09 10:19:08",
+      "updated_at": "2026-09-09 10:19:27",
+      "completed": false
     }
   ],
   "counter": {
@@ -5442,69 +5513,9 @@
     "2026-09-06": 1,
     "2026-09-07": 18,
     "2026-09-08": 1,
-    "2026-09-09": 1
+    "2026-09-09": 2
   },
   "logs": [
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "ok",
-      "message": "订单090704 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "order",
-      "message": "订单090704 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-07 02:42:25",
-      "kind": "order",
-      "message": "订单090704 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-07 02:42:26",
-      "kind": "order",
-      "message": "订单090704 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-07 02:42:27",
-      "kind": "order",
-      "message": "订单090704 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-07 02:42:27",
-      "kind": "order",
-      "message": "订单090704 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"杨姐侃房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AURPL8cJTB\"}]"
-    },
-    {
-      "time": "2026-09-07 02:42:27",
-      "kind": "order",
-      "message": "订单090704 [播放] 下单成功: 视频号-独家作品播放购买成功;杨姐侃房"
-    },
-    {
-      "time": "2026-09-07 02:42:27",
-      "kind": "ok",
-      "message": "订单090704 [播放] 下单成功: 视频号-独家作品播放购买成功;杨姐侃房"
-    },
-    {
-      "time": "2026-09-07 02:42:27",
-      "kind": "ok",
-      "message": "订单090704 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-07 04:24:58",
-      "kind": "info",
-      "message": "订单090705 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-07 04:24:58",
-      "kind": "order",
-      "message": "订单090705 创建: https://weixin.qq.com/sph/AxI2VKJfCP 目标={'play': 2000}"
-    },
-    {
-      "time": "2026-09-07 04:24:58",
-      "kind": "info",
-      "message": "订单090705 正在解析视频链接"
-    },
     {
       "time": "2026-09-07 04:25:17",
       "kind": "info",
@@ -6944,6 +6955,66 @@
       "time": "2026-09-09 09:28:39",
       "kind": "ok",
       "message": "订单090901 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-09 10:19:08",
+      "kind": "info",
+      "message": "订单090902 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-09 10:19:08",
+      "kind": "order",
+      "message": "订单090902 创建: https://weixin.qq.com/sph/A2ktT2v4ym 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-09-09 10:19:08",
+      "kind": "info",
+      "message": "订单090902 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-09 10:19:25",
+      "kind": "info",
+      "message": "订单090902 视频解析成功: 博主=AA长润钢丸钢砂生产厂家 赞1 爱心4 评论0 转发0"
+    },
+    {
+      "time": "2026-09-09 10:19:25",
+      "kind": "order",
+      "message": "订单090902 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-09 10:19:25",
+      "kind": "order",
+      "message": "订单090902 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-09 10:19:26",
+      "kind": "order",
+      "message": "订单090902 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-09 10:19:26",
+      "kind": "order",
+      "message": "订单090902 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-09 10:19:26",
+      "kind": "order",
+      "message": "订单090902 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"AA长润钢丸钢砂生产厂家\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/A2ktT2v4ym\"}]"
+    },
+    {
+      "time": "2026-09-09 10:19:27",
+      "kind": "order",
+      "message": "订单090902 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-09 10:19:27",
+      "kind": "ok",
+      "message": "订单090902 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-09 10:19:27",
+      "kind": "ok",
+      "message": "订单090902 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
