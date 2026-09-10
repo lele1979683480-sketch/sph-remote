@@ -5929,6 +5929,78 @@
       "created_at": "2026-09-09 16:45:36",
       "updated_at": "2026-09-09 16:45:54",
       "completed": false
+    },
+    {
+      "order_no": "091001",
+      "url": "https://weixin.qq.com/sph/ARk0WIybPL",
+      "video_name": "港真滴",
+      "title": "佛山市·轩隆雅园",
+      "targets": {
+        "play": 1000,
+        "share": 100
+      },
+      "init": {
+        "like": 10,
+        "heart": 8,
+        "comment": 0,
+        "share": 1,
+        "play": 0
+      },
+      "cur": {
+        "like": 10,
+        "heart": 8,
+        "comment": 0,
+        "share": 1,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;港真滴",
+          "qty": 1000
+        },
+        "share": {
+          "status": "success",
+          "step": "转发下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6386",
+          "platform_order_no": "",
+          "result": "视频号转发购买成功;https://weixin.qq.com/sph/ARk0WIybPL",
+          "qty": 100
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-10 07:38:43",
+      "updated_at": "2026-09-10 07:39:03",
+      "completed": false
     }
   ],
   "counter": {
@@ -5947,104 +6019,10 @@
     "2026-09-06": 1,
     "2026-09-07": 18,
     "2026-09-08": 1,
-    "2026-09-09": 8
+    "2026-09-09": 8,
+    "2026-09-10": 1
   },
   "logs": [
-    {
-      "time": "2026-09-07 10:01:41",
-      "kind": "info",
-      "message": "订单090711 视频解析成功: 博主=家聿姐教你买好房 赞3 爱心3 评论2 转发2"
-    },
-    {
-      "time": "2026-09-07 10:01:41",
-      "kind": "order",
-      "message": "订单090711 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-07 10:01:41",
-      "kind": "order",
-      "message": "订单090711 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-09-07 10:01:42",
-      "kind": "order",
-      "message": "订单090711 [点赞] imt 登录成功(本地凭证) 余额:43.37元"
-    },
-    {
-      "time": "2026-09-07 10:01:43",
-      "kind": "order",
-      "message": "订单090711 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-09-07 10:01:43",
-      "kind": "order",
-      "message": "订单090711 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "order",
-      "message": "订单090711 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "ok",
-      "message": "订单090711 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "order",
-      "message": "订单090711 [爱心] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "ok",
-      "message": "订单090711 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "order",
-      "message": "订单090711 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-07 10:01:44",
-      "kind": "order",
-      "message": "订单090711 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-07 10:01:45",
-      "kind": "order",
-      "message": "订单090711 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-07 10:01:46",
-      "kind": "order",
-      "message": "订单090711 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-07 10:01:46",
-      "kind": "order",
-      "message": "订单090711 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"家聿姐教你买好房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AD6YH4PYLq\"}]"
-    },
-    {
-      "time": "2026-09-07 10:01:46",
-      "kind": "order",
-      "message": "订单090711 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-07 10:01:46",
-      "kind": "ok",
-      "message": "订单090711 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-07 10:01:46",
-      "kind": "ok",
-      "message": "订单090711 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-07 11:04:49",
-      "kind": "info",
-      "message": "订单090712 订单已创建,开始处理"
-    },
     {
       "time": "2026-09-07 11:04:49",
       "kind": "order",
@@ -7449,6 +7427,101 @@
       "time": "2026-09-09 16:45:54",
       "kind": "ok",
       "message": "订单090908 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-10 07:38:43",
+      "kind": "info",
+      "message": "订单091001 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-10 07:38:43",
+      "kind": "order",
+      "message": "订单091001 创建: https://weixin.qq.com/sph/ARk0WIybPL 目标={'play': 1000, 'share': 100}"
+    },
+    {
+      "time": "2026-09-10 07:38:43",
+      "kind": "info",
+      "message": "订单091001 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-10 07:38:59",
+      "kind": "info",
+      "message": "订单091001 视频解析成功: 博主=港真滴 赞10 爱心8 评论0 转发1"
+    },
+    {
+      "time": "2026-09-10 07:38:59",
+      "kind": "order",
+      "message": "订单091001 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-10 07:38:59",
+      "kind": "order",
+      "message": "订单091001 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-10 07:39:00",
+      "kind": "order",
+      "message": "订单091001 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "order",
+      "message": "订单091001 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "order",
+      "message": "订单091001 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"港真滴\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/ARk0WIybPL\"}]"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "order",
+      "message": "订单091001 [播放] 下单成功: 视频号-独家作品播放购买成功;港真滴"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "ok",
+      "message": "订单091001 [播放] 下单成功: 视频号-独家作品播放购买成功;港真滴"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "order",
+      "message": "订单091001 [转发] 开始下单 数量=100"
+    },
+    {
+      "time": "2026-09-10 07:39:01",
+      "kind": "order",
+      "message": "订单091001 [转发] 开始处理(橘子平台 API 下单) 商品#6386 数量=100"
+    },
+    {
+      "time": "2026-09-10 07:39:02",
+      "kind": "order",
+      "message": "订单091001 [转发] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-10 07:39:03",
+      "kind": "order",
+      "message": "订单091001 [转发] 商品参数模板: ['作品链接/', '作品链接/']"
+    },
+    {
+      "time": "2026-09-10 07:39:03",
+      "kind": "order",
+      "message": "订单091001 [转发] 参数值: [{\"name\": \"作品链接/\", \"alias\": \"username\", \"value\": \"https://weixin.qq.com/sph/ARk0WIybPL\"}, {\"name\": \"作品链接/\", \"alias\": \"title\", \"value\": \"https://weixin.qq.com/sph/ARk0WIybPL\"}]"
+    },
+    {
+      "time": "2026-09-10 07:39:03",
+      "kind": "order",
+      "message": "订单091001 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/ARk0WIybPL"
+    },
+    {
+      "time": "2026-09-10 07:39:03",
+      "kind": "ok",
+      "message": "订单091001 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/ARk0WIybPL"
+    },
+    {
+      "time": "2026-09-10 07:39:03",
+      "kind": "ok",
+      "message": "订单091001 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
