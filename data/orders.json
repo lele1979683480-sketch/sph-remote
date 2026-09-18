@@ -7305,6 +7305,77 @@
       "created_at": "2026-09-18 03:27:31",
       "updated_at": "2026-09-18 03:27:51",
       "completed": false
+    },
+    {
+      "order_no": "091803",
+      "url": "https://weixin.qq.com/sph/AEAMu1LpfN",
+      "video_name": "AA长润钢丸钢砂生产厂家",
+      "title": "钢丸耐用上机稳定 #钢丸钢砂 #金属磨料 #长润金属 #源头工厂",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 3,
+        "heart": 5,
+        "comment": 1,
+        "share": 3,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 5,
+        "comment": 1,
+        "share": 3,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-18 03:31:01",
+      "updated_at": "2026-09-18 03:31:21",
+      "completed": false
     }
   ],
   "counter": {
@@ -7331,69 +7402,9 @@
     "2026-09-15": 3,
     "2026-09-16": 1,
     "2026-09-17": 2,
-    "2026-09-18": 2
+    "2026-09-18": 3
   },
   "logs": [
-    {
-      "time": "2026-09-10 08:54:34",
-      "kind": "order",
-      "message": "订单091003 [转发] 开始处理(橘子平台 API 下单) 商品#6386 数量=200"
-    },
-    {
-      "time": "2026-09-10 08:54:34",
-      "kind": "order",
-      "message": "订单091003 [转发] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-10 08:54:35",
-      "kind": "order",
-      "message": "订单091003 [转发] 商品参数模板: ['作品链接/', '作品链接/']"
-    },
-    {
-      "time": "2026-09-10 08:54:35",
-      "kind": "order",
-      "message": "订单091003 [转发] 参数值: [{\"name\": \"作品链接/\", \"alias\": \"username\", \"value\": \"https://weixin.qq.com/sph/AzSUmoeGbj\"}, {\"name\": \"作品链接/\", \"alias\": \"title\", \"value\": \"https://weixin.qq.com/sph/AzSUmoeGbj\"}]"
-    },
-    {
-      "time": "2026-09-10 08:54:36",
-      "kind": "order",
-      "message": "订单091003 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/AzSUmoeGbj"
-    },
-    {
-      "time": "2026-09-10 08:54:36",
-      "kind": "ok",
-      "message": "订单091003 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/AzSUmoeGbj"
-    },
-    {
-      "time": "2026-09-10 08:54:36",
-      "kind": "ok",
-      "message": "订单091003 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-11 03:19:37",
-      "kind": "info",
-      "message": "订单091101 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-11 03:19:37",
-      "kind": "order",
-      "message": "订单091101 创建: https://weixin.qq.com/sph/AwX90drH7l 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-09-11 03:19:37",
-      "kind": "info",
-      "message": "订单091101 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-11 03:19:53",
-      "kind": "info",
-      "message": "订单091101 视频解析成功: 博主=LorettaHK 赞1 爱心1 评论0 转发0"
-    },
-    {
-      "time": "2026-09-11 03:19:53",
-      "kind": "order",
-      "message": "订单091101 [点赞] 开始下单 数量=20"
-    },
     {
       "time": "2026-09-11 03:19:53",
       "kind": "order",
@@ -8833,6 +8844,66 @@
       "time": "2026-09-18 03:27:51",
       "kind": "ok",
       "message": "订单091802 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-18 03:31:01",
+      "kind": "info",
+      "message": "订单091803 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-18 03:31:01",
+      "kind": "order",
+      "message": "订单091803 创建: https://weixin.qq.com/sph/AEAMu1LpfN 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-09-18 03:31:01",
+      "kind": "info",
+      "message": "订单091803 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-18 03:31:19",
+      "kind": "info",
+      "message": "订单091803 视频解析成功: 博主=AA长润钢丸钢砂生产厂家 赞3 爱心5 评论1 转发3"
+    },
+    {
+      "time": "2026-09-18 03:31:19",
+      "kind": "order",
+      "message": "订单091803 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-18 03:31:19",
+      "kind": "order",
+      "message": "订单091803 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-18 03:31:20",
+      "kind": "order",
+      "message": "订单091803 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-18 03:31:20",
+      "kind": "order",
+      "message": "订单091803 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-18 03:31:20",
+      "kind": "order",
+      "message": "订单091803 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"AA长润钢丸钢砂生产厂家\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AEAMu1LpfN\"}]"
+    },
+    {
+      "time": "2026-09-18 03:31:21",
+      "kind": "order",
+      "message": "订单091803 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-18 03:31:21",
+      "kind": "ok",
+      "message": "订单091803 [播放] 下单成功: 视频号-独家作品播放购买成功;AA长润钢丸钢砂生产厂家"
+    },
+    {
+      "time": "2026-09-18 03:31:21",
+      "kind": "ok",
+      "message": "订单091803 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
