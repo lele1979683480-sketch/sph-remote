@@ -7739,6 +7739,78 @@
       "created_at": "2026-09-18 12:26:21",
       "updated_at": "2026-09-18 12:26:44",
       "completed": false
+    },
+    {
+      "order_no": "091809",
+      "url": "https://weixin.qq.com/sph/Aft8G8rfEp",
+      "video_name": "T5MALL",
+      "title": "T5上新｜10+新店，快乐起飞🛫 这个9月， 白云五号10店同开， 吃喝玩乐1站式配齐！ 🍣🥘🍜🍢☕️🍺💃🛍️👟👕 白云五号T5 MALL， 从早到晚，“飞“常好逛！✈️ #白云五号T5 #白云新城 #十店同开 #新店集结#一站式逛吃 #周末去哪儿",
+      "targets": {
+        "play": 10000,
+        "share": 200
+      },
+      "init": {
+        "like": 58,
+        "heart": 22,
+        "comment": 3,
+        "share": 36,
+        "play": 0
+      },
+      "cur": {
+        "like": 58,
+        "heart": 22,
+        "comment": 3,
+        "share": 36,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;T5MALL",
+          "qty": 10000
+        },
+        "share": {
+          "status": "success",
+          "step": "转发下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6386",
+          "platform_order_no": "",
+          "result": "视频号转发购买成功;https://weixin.qq.com/sph/Aft8G8rfEp",
+          "qty": 200
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-18 13:38:09",
+      "updated_at": "2026-09-18 13:38:33",
+      "completed": false
     }
   ],
   "counter": {
@@ -7765,104 +7837,9 @@
     "2026-09-15": 3,
     "2026-09-16": 1,
     "2026-09-17": 2,
-    "2026-09-18": 8
+    "2026-09-18": 9
   },
   "logs": [
-    {
-      "time": "2026-09-12 08:15:22",
-      "kind": "info",
-      "message": "订单091202 视频解析成功: 博主=靖恺电器 赞88 爱心72 评论4 转发226"
-    },
-    {
-      "time": "2026-09-12 08:15:22",
-      "kind": "order",
-      "message": "订单091202 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-12 08:15:22",
-      "kind": "order",
-      "message": "订单091202 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-12 08:15:23",
-      "kind": "order",
-      "message": "订单091202 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-12 08:15:23",
-      "kind": "order",
-      "message": "订单091202 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-12 08:15:23",
-      "kind": "order",
-      "message": "订单091202 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"靖恺电器\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AGpIPQ7q9l\"}]"
-    },
-    {
-      "time": "2026-09-12 08:15:24",
-      "kind": "order",
-      "message": "订单091202 [播放] 下单成功: 视频号-独家作品播放购买成功;靖恺电器"
-    },
-    {
-      "time": "2026-09-12 08:15:24",
-      "kind": "ok",
-      "message": "订单091202 [播放] 下单成功: 视频号-独家作品播放购买成功;靖恺电器"
-    },
-    {
-      "time": "2026-09-12 08:15:24",
-      "kind": "ok",
-      "message": "订单091202 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-14 03:32:27",
-      "kind": "info",
-      "message": "订单091401 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-14 03:32:27",
-      "kind": "order",
-      "message": "订单091401 创建: https://weixin.qq.com/sph/AoOhASIaTL 目标={'like': 20, 'heart': 20, 'play': 1000}"
-    },
-    {
-      "time": "2026-09-14 03:32:27",
-      "kind": "info",
-      "message": "订单091401 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-14 03:32:43",
-      "kind": "info",
-      "message": "订单091401 视频解析成功: 博主=LorettaHK 赞0 爱心0 评论0 转发0"
-    },
-    {
-      "time": "2026-09-14 03:32:43",
-      "kind": "order",
-      "message": "订单091401 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-14 03:32:43",
-      "kind": "order",
-      "message": "订单091401 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-09-14 03:32:44",
-      "kind": "order",
-      "message": "订单091401 [点赞] imt 登录成功(本地凭证) 余额:46.11元"
-    },
-    {
-      "time": "2026-09-14 03:32:45",
-      "kind": "order",
-      "message": "订单091401 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-09-14 03:32:45",
-      "kind": "order",
-      "message": "订单091401 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "order",
-      "message": "订单091401 [点赞] imt 下单成功: 操作成功"
-    },
     {
       "time": "2026-09-14 03:32:46",
       "kind": "ok",
@@ -9267,6 +9244,101 @@
       "time": "2026-09-18 12:26:44",
       "kind": "ok",
       "message": "订单091808 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-18 13:38:09",
+      "kind": "info",
+      "message": "订单091809 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-18 13:38:09",
+      "kind": "order",
+      "message": "订单091809 创建: https://weixin.qq.com/sph/Aft8G8rfEp 目标={'play': 10000, 'share': 200}"
+    },
+    {
+      "time": "2026-09-18 13:38:09",
+      "kind": "info",
+      "message": "订单091809 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-18 13:38:28",
+      "kind": "info",
+      "message": "订单091809 视频解析成功: 博主=T5MALL 赞58 爱心22 评论3 转发36"
+    },
+    {
+      "time": "2026-09-18 13:38:28",
+      "kind": "order",
+      "message": "订单091809 [播放] 开始下单 数量=10000"
+    },
+    {
+      "time": "2026-09-18 13:38:28",
+      "kind": "order",
+      "message": "订单091809 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=10000"
+    },
+    {
+      "time": "2026-09-18 13:38:28",
+      "kind": "order",
+      "message": "订单091809 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-18 13:38:29",
+      "kind": "order",
+      "message": "订单091809 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-18 13:38:29",
+      "kind": "order",
+      "message": "订单091809 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"T5MALL\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/Aft8G8rfEp\"}]"
+    },
+    {
+      "time": "2026-09-18 13:38:30",
+      "kind": "order",
+      "message": "订单091809 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-09-18 13:38:30",
+      "kind": "ok",
+      "message": "订单091809 [播放] 下单成功: 视频号-独家作品播放购买成功;T5MALL"
+    },
+    {
+      "time": "2026-09-18 13:38:30",
+      "kind": "order",
+      "message": "订单091809 [转发] 开始下单 数量=200"
+    },
+    {
+      "time": "2026-09-18 13:38:30",
+      "kind": "order",
+      "message": "订单091809 [转发] 开始处理(橘子平台 API 下单) 商品#6386 数量=200"
+    },
+    {
+      "time": "2026-09-18 13:38:31",
+      "kind": "order",
+      "message": "订单091809 [转发] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-18 13:38:32",
+      "kind": "order",
+      "message": "订单091809 [转发] 商品参数模板: ['作品链接/', '作品链接/']"
+    },
+    {
+      "time": "2026-09-18 13:38:32",
+      "kind": "order",
+      "message": "订单091809 [转发] 参数值: [{\"name\": \"作品链接/\", \"alias\": \"username\", \"value\": \"https://weixin.qq.com/sph/Aft8G8rfEp\"}, {\"name\": \"作品链接/\", \"alias\": \"title\", \"value\": \"https://weixin.qq.com/sph/Aft8G8rfEp\"}]"
+    },
+    {
+      "time": "2026-09-18 13:38:33",
+      "kind": "order",
+      "message": "订单091809 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/Aft8G8rfEp"
+    },
+    {
+      "time": "2026-09-18 13:38:33",
+      "kind": "ok",
+      "message": "订单091809 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/Aft8G8rfEp"
+    },
+    {
+      "time": "2026-09-18 13:38:33",
+      "kind": "ok",
+      "message": "订单091809 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
