@@ -7811,6 +7811,77 @@
       "created_at": "2026-09-18 13:38:09",
       "updated_at": "2026-09-18 13:38:33",
       "completed": false
+    },
+    {
+      "order_no": "091810",
+      "url": "https://weixin.qq.com/sph/AP6PVBL6AQ",
+      "video_name": "自流井老街官方",
+      "title": "自贡市·自流井老街",
+      "targets": {
+        "play": 3000
+      },
+      "init": {
+        "like": 22,
+        "heart": 24,
+        "comment": 3,
+        "share": 37,
+        "play": 0
+      },
+      "cur": {
+        "like": 22,
+        "heart": 24,
+        "comment": 3,
+        "share": 37,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;自流井老街官方",
+          "qty": 3000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-18 13:42:55",
+      "updated_at": "2026-09-18 13:43:15",
+      "completed": false
     }
   ],
   "counter": {
@@ -7837,69 +7908,9 @@
     "2026-09-15": 3,
     "2026-09-16": 1,
     "2026-09-17": 2,
-    "2026-09-18": 9
+    "2026-09-18": 10
   },
   "logs": [
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "ok",
-      "message": "订单091401 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "order",
-      "message": "订单091401 [爱心] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "ok",
-      "message": "订单091401 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "order",
-      "message": "订单091401 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-14 03:32:46",
-      "kind": "order",
-      "message": "订单091401 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-14 03:32:47",
-      "kind": "order",
-      "message": "订单091401 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-14 03:32:48",
-      "kind": "order",
-      "message": "订单091401 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-14 03:32:48",
-      "kind": "order",
-      "message": "订单091401 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"LorettaHK\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AoOhASIaTL\"}]"
-    },
-    {
-      "time": "2026-09-14 03:32:48",
-      "kind": "order",
-      "message": "订单091401 [播放] 下单成功: 视频号-独家作品播放购买成功;LorettaHK"
-    },
-    {
-      "time": "2026-09-14 03:32:48",
-      "kind": "ok",
-      "message": "订单091401 [播放] 下单成功: 视频号-独家作品播放购买成功;LorettaHK"
-    },
-    {
-      "time": "2026-09-14 03:32:48",
-      "kind": "ok",
-      "message": "订单091401 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-14 03:41:48",
-      "kind": "info",
-      "message": "订单091402 订单已创建,开始处理"
-    },
     {
       "time": "2026-09-14 03:41:48",
       "kind": "order",
@@ -9339,6 +9350,66 @@
       "time": "2026-09-18 13:38:33",
       "kind": "ok",
       "message": "订单091809 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-18 13:42:55",
+      "kind": "info",
+      "message": "订单091810 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-18 13:42:55",
+      "kind": "order",
+      "message": "订单091810 创建: https://weixin.qq.com/sph/AP6PVBL6AQ 目标={'play': 3000}"
+    },
+    {
+      "time": "2026-09-18 13:42:55",
+      "kind": "info",
+      "message": "订单091810 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-18 13:43:13",
+      "kind": "info",
+      "message": "订单091810 视频解析成功: 博主=自流井老街官方 赞22 爱心24 评论3 转发37"
+    },
+    {
+      "time": "2026-09-18 13:43:13",
+      "kind": "order",
+      "message": "订单091810 [播放] 开始下单 数量=3000"
+    },
+    {
+      "time": "2026-09-18 13:43:13",
+      "kind": "order",
+      "message": "订单091810 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=3000"
+    },
+    {
+      "time": "2026-09-18 13:43:14",
+      "kind": "order",
+      "message": "订单091810 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-18 13:43:14",
+      "kind": "order",
+      "message": "订单091810 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-18 13:43:15",
+      "kind": "order",
+      "message": "订单091810 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"自流井老街官方\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AP6PVBL6AQ\"}]"
+    },
+    {
+      "time": "2026-09-18 13:43:15",
+      "kind": "order",
+      "message": "订单091810 [播放] 下单成功: 视频号-独家作品播放购买成功;自流井老街官方"
+    },
+    {
+      "time": "2026-09-18 13:43:15",
+      "kind": "ok",
+      "message": "订单091810 [播放] 下单成功: 视频号-独家作品播放购买成功;自流井老街官方"
+    },
+    {
+      "time": "2026-09-18 13:43:15",
+      "kind": "ok",
+      "message": "订单091810 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
