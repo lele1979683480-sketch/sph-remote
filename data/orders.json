@@ -8095,6 +8095,77 @@
       "created_at": "2026-09-19 03:54:50",
       "updated_at": "2026-09-19 03:55:09",
       "completed": false
+    },
+    {
+      "order_no": "091904",
+      "url": "https://weixin.qq.com/sph/Ak5EpVkZiN",
+      "video_name": "数印学堂",
+      "title": "只要一步就能让你的画面“活”起来？秘诀是......#局部光油#UV打印#爱普生打印头#爱普生打印头喷墨解决方案",
+      "targets": {
+        "play": 1000
+      },
+      "init": {
+        "like": 9,
+        "heart": 8,
+        "comment": 0,
+        "share": 10,
+        "play": 0
+      },
+      "cur": {
+        "like": 9,
+        "heart": 8,
+        "comment": 0,
+        "share": 10,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;数印学堂",
+          "qty": 1000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-19 03:58:20",
+      "updated_at": "2026-09-19 03:58:41",
+      "completed": false
     }
   ],
   "counter": {
@@ -8122,69 +8193,9 @@
     "2026-09-16": 1,
     "2026-09-17": 2,
     "2026-09-18": 10,
-    "2026-09-19": 3
+    "2026-09-19": 4
   },
   "logs": [
-    {
-      "time": "2026-09-15 00:40:27",
-      "kind": "order",
-      "message": "订单091502 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-15 00:40:27",
-      "kind": "order",
-      "message": "订单091502 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
-    {
-      "time": "2026-09-15 00:40:28",
-      "kind": "order",
-      "message": "订单091502 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-15 00:40:28",
-      "kind": "order",
-      "message": "订单091502 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-15 00:40:28",
-      "kind": "order",
-      "message": "订单091502 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"贾荣-大仟\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/A3c98fjDhV\"}]"
-    },
-    {
-      "time": "2026-09-15 00:40:29",
-      "kind": "order",
-      "message": "订单091502 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
-    },
-    {
-      "time": "2026-09-15 00:40:29",
-      "kind": "ok",
-      "message": "订单091502 [播放] 下单成功: 视频号-独家作品播放购买成功;贾荣-大仟"
-    },
-    {
-      "time": "2026-09-15 00:40:29",
-      "kind": "ok",
-      "message": "订单091502 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-15 15:50:42",
-      "kind": "info",
-      "message": "订单091503 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-15 15:50:42",
-      "kind": "order",
-      "message": "订单091503 创建: https://weixin.qq.com/sph/AbZzkIdbZc 目标={'like': 20, 'heart': 20, 'play': 6000}"
-    },
-    {
-      "time": "2026-09-15 15:50:42",
-      "kind": "info",
-      "message": "订单091503 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-15 15:51:00",
-      "kind": "info",
-      "message": "订单091503 视频解析成功: 博主=惠佳陶哥 赞10 爱心11 评论5 转发3"
-    },
     {
       "time": "2026-09-15 15:51:00",
       "kind": "order",
@@ -9624,6 +9635,66 @@
       "time": "2026-09-19 03:55:09",
       "kind": "ok",
       "message": "订单091903 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-19 03:58:20",
+      "kind": "info",
+      "message": "订单091904 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-19 03:58:20",
+      "kind": "order",
+      "message": "订单091904 创建: https://weixin.qq.com/sph/Ak5EpVkZiN 目标={'play': 1000}"
+    },
+    {
+      "time": "2026-09-19 03:58:20",
+      "kind": "info",
+      "message": "订单091904 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-19 03:58:38",
+      "kind": "info",
+      "message": "订单091904 视频解析成功: 博主=数印学堂 赞9 爱心8 评论0 转发10"
+    },
+    {
+      "time": "2026-09-19 03:58:38",
+      "kind": "order",
+      "message": "订单091904 [播放] 开始下单 数量=1000"
+    },
+    {
+      "time": "2026-09-19 03:58:38",
+      "kind": "order",
+      "message": "订单091904 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
+    },
+    {
+      "time": "2026-09-19 03:58:39",
+      "kind": "order",
+      "message": "订单091904 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-19 03:58:40",
+      "kind": "order",
+      "message": "订单091904 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-19 03:58:40",
+      "kind": "order",
+      "message": "订单091904 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"数印学堂\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/Ak5EpVkZiN\"}]"
+    },
+    {
+      "time": "2026-09-19 03:58:41",
+      "kind": "order",
+      "message": "订单091904 [播放] 下单成功: 视频号-独家作品播放购买成功;数印学堂"
+    },
+    {
+      "time": "2026-09-19 03:58:41",
+      "kind": "ok",
+      "message": "订单091904 [播放] 下单成功: 视频号-独家作品播放购买成功;数印学堂"
+    },
+    {
+      "time": "2026-09-19 03:58:41",
+      "kind": "ok",
+      "message": "订单091904 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
