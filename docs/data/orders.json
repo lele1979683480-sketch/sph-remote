@@ -8752,6 +8752,77 @@
       "created_at": "2026-09-21 00:38:12",
       "updated_at": "2026-09-21 00:38:37",
       "completed": false
+    },
+    {
+      "order_no": "092103",
+      "url": "https://weixin.qq.com/sph/AoNdEWA15F",
+      "video_name": "惠州二奢Yaner",
+      "title": "惠州市·裕隆黄金奢侈品回收",
+      "targets": {
+        "play": 3000
+      },
+      "init": {
+        "like": 5,
+        "heart": 5,
+        "comment": 0,
+        "share": 7,
+        "play": 0
+      },
+      "cur": {
+        "like": 5,
+        "heart": 5,
+        "comment": 0,
+        "share": 7,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6862",
+          "platform_order_no": "",
+          "result": "视频号-独家作品播放购买成功;惠州二奢Yaner",
+          "qty": 3000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "heart": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-21 11:00:28",
+      "updated_at": "2026-09-21 11:00:50",
+      "completed": false
     }
   ],
   "counter": {
@@ -8781,69 +8852,9 @@
     "2026-09-18": 10,
     "2026-09-19": 7,
     "2026-09-20": 3,
-    "2026-09-21": 2
+    "2026-09-21": 3
   },
   "logs": [
-    {
-      "time": "2026-09-18 07:14:12",
-      "kind": "info",
-      "message": "订单091807 视频解析成功: 博主=LorettaHK 赞0 爱心0 评论0 转发0"
-    },
-    {
-      "time": "2026-09-18 07:14:12",
-      "kind": "order",
-      "message": "订单091807 [点赞] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-18 07:14:12",
-      "kind": "order",
-      "message": "订单091807 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=20"
-    },
-    {
-      "time": "2026-09-18 07:14:13",
-      "kind": "order",
-      "message": "订单091807 [点赞] imt 登录成功(本地凭证) 余额:92.41元"
-    },
-    {
-      "time": "2026-09-18 07:14:14",
-      "kind": "order",
-      "message": "订单091807 [点赞] 使用已配置样图"
-    },
-    {
-      "time": "2026-09-18 07:14:14",
-      "kind": "order",
-      "message": "订单091807 [点赞] 发布悬赏任务: 点赞爱心 x 20, 单价0.06元"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "order",
-      "message": "订单091807 [点赞] imt 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "ok",
-      "message": "订单091807 [点赞] 下单成功: 操作成功"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "order",
-      "message": "订单091807 [爱心] 开始下单 数量=20"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "ok",
-      "message": "订单091807 [爱心] 已并入点赞+爱心任务(数量=20)"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "order",
-      "message": "订单091807 [播放] 开始下单 数量=1000"
-    },
-    {
-      "time": "2026-09-18 07:14:16",
-      "kind": "order",
-      "message": "订单091807 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=1000"
-    },
     {
       "time": "2026-09-18 07:14:17",
       "kind": "order",
@@ -10283,6 +10294,66 @@
       "time": "2026-09-21 00:38:37",
       "kind": "ok",
       "message": "订单092102 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-21 11:00:28",
+      "kind": "info",
+      "message": "订单092103 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-21 11:00:28",
+      "kind": "order",
+      "message": "订单092103 创建: https://weixin.qq.com/sph/AoNdEWA15F 目标={'play': 3000}"
+    },
+    {
+      "time": "2026-09-21 11:00:28",
+      "kind": "info",
+      "message": "订单092103 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-21 11:00:47",
+      "kind": "info",
+      "message": "订单092103 视频解析成功: 博主=惠州二奢Yaner 赞5 爱心5 评论0 转发7"
+    },
+    {
+      "time": "2026-09-21 11:00:47",
+      "kind": "order",
+      "message": "订单092103 [播放] 开始下单 数量=3000"
+    },
+    {
+      "time": "2026-09-21 11:00:48",
+      "kind": "order",
+      "message": "订单092103 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=3000"
+    },
+    {
+      "time": "2026-09-21 11:00:48",
+      "kind": "order",
+      "message": "订单092103 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-21 11:00:49",
+      "kind": "order",
+      "message": "订单092103 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
+    },
+    {
+      "time": "2026-09-21 11:00:49",
+      "kind": "order",
+      "message": "订单092103 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"惠州二奢Yaner\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AoNdEWA15F\"}]"
+    },
+    {
+      "time": "2026-09-21 11:00:50",
+      "kind": "order",
+      "message": "订单092103 [播放] 下单成功: 视频号-独家作品播放购买成功;惠州二奢Yaner"
+    },
+    {
+      "time": "2026-09-21 11:00:50",
+      "kind": "ok",
+      "message": "订单092103 [播放] 下单成功: 视频号-独家作品播放购买成功;惠州二奢Yaner"
+    },
+    {
+      "time": "2026-09-21 11:00:50",
+      "kind": "ok",
+      "message": "订单092103 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
