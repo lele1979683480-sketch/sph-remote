@@ -9406,6 +9406,79 @@
       "created_at": "2026-09-29 07:28:41",
       "updated_at": "2026-09-29 07:29:05",
       "completed": false
+    },
+    {
+      "order_no": "092904",
+      "url": "https://weixin.qq.com/sph/ApFXsP5qnw",
+      "video_name": "二奢回收yoko",
+      "title": "惠州市·好岱中古汇·黄金奢侈品回收鉴定中心(惠州店)",
+      "targets": {
+        "like": 15,
+        "heart": 15,
+        "play": 3000
+      },
+      "init": {
+        "like": 3,
+        "heart": 3,
+        "comment": 0,
+        "share": 7,
+        "play": 0
+      },
+      "cur": {
+        "like": 3,
+        "heart": 3,
+        "comment": 0,
+        "share": 7,
+        "play": 0
+      },
+      "items": {
+        "play": {
+          "status": "success",
+          "step": "播放下单成功",
+          "error": "",
+          "platform": "juzi",
+          "goods_ref": "6467",
+          "platform_order_no": "",
+          "result": "SPH-小单播放购买成功;二奢回收yoko",
+          "qty": 3000
+        },
+        "share": {
+          "status": "wait",
+          "step": "等待中",
+          "error": "",
+          "platform": "",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "",
+          "qty": 0
+        },
+        "like": {
+          "status": "success",
+          "step": "点赞下单成功",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "操作成功",
+          "qty": 15
+        },
+        "heart": {
+          "status": "success",
+          "step": "已并入点赞+爱心任务",
+          "error": "",
+          "platform": "imt",
+          "goods_ref": "",
+          "platform_order_no": "",
+          "result": "与点赞合并为同一任务",
+          "qty": 15
+        }
+      },
+      "status": "processing",
+      "step": "已下单，等待数据达标",
+      "error": "",
+      "created_at": "2026-09-29 10:21:55",
+      "updated_at": "2026-09-29 10:22:20",
+      "completed": false
     }
   ],
   "counter": {
@@ -9439,114 +9512,9 @@
     "2026-09-22": 1,
     "2026-09-23": 1,
     "2026-09-25": 3,
-    "2026-09-29": 3
+    "2026-09-29": 4
   },
   "logs": [
-    {
-      "time": "2026-09-19 08:36:42",
-      "kind": "order",
-      "message": "订单091907 [爱心] 开始下单 数量=40"
-    },
-    {
-      "time": "2026-09-19 08:36:42",
-      "kind": "ok",
-      "message": "订单091907 [爱心] 已并入点赞+爱心任务(数量=40)"
-    },
-    {
-      "time": "2026-09-19 08:36:42",
-      "kind": "order",
-      "message": "订单091907 [播放] 开始下单 数量=5000"
-    },
-    {
-      "time": "2026-09-19 08:36:42",
-      "kind": "order",
-      "message": "订单091907 [播放] 开始处理(橘子平台 API 下单) 商品#6862 数量=5000"
-    },
-    {
-      "time": "2026-09-19 08:36:43",
-      "kind": "order",
-      "message": "订单091907 [播放] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "order",
-      "message": "订单091907 [播放] 商品参数模板: ['博主名称', '作品链接或标题']"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "order",
-      "message": "订单091907 [播放] 参数值: [{\"name\": \"博主名称\", \"alias\": \"博主名称\", \"value\": \"家聿姐教你买好房\"}, {\"name\": \"作品链接或标题\", \"alias\": \"作品链接或标题\", \"value\": \"https://weixin.qq.com/sph/AKwjZmxlZm\"}]"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "order",
-      "message": "订单091907 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "ok",
-      "message": "订单091907 [播放] 下单成功: 视频号-独家作品播放购买成功;家聿姐教你买好房"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "order",
-      "message": "订单091907 [转发] 开始下单 数量=100"
-    },
-    {
-      "time": "2026-09-19 08:36:44",
-      "kind": "order",
-      "message": "订单091907 [转发] 开始处理(橘子平台 API 下单) 商品#6386 数量=100"
-    },
-    {
-      "time": "2026-09-19 08:36:45",
-      "kind": "order",
-      "message": "订单091907 [转发] API 登录成功(第1次)"
-    },
-    {
-      "time": "2026-09-19 08:36:46",
-      "kind": "order",
-      "message": "订单091907 [转发] 商品参数模板: ['作品链接/', '作品链接/']"
-    },
-    {
-      "time": "2026-09-19 08:36:46",
-      "kind": "order",
-      "message": "订单091907 [转发] 参数值: [{\"name\": \"作品链接/\", \"alias\": \"username\", \"value\": \"https://weixin.qq.com/sph/AKwjZmxlZm\"}, {\"name\": \"作品链接/\", \"alias\": \"title\", \"value\": \"https://weixin.qq.com/sph/AKwjZmxlZm\"}]"
-    },
-    {
-      "time": "2026-09-19 08:36:46",
-      "kind": "order",
-      "message": "订单091907 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/AKwjZmxlZm"
-    },
-    {
-      "time": "2026-09-19 08:36:47",
-      "kind": "ok",
-      "message": "订单091907 [转发] 下单成功: 视频号转发购买成功;https://weixin.qq.com/sph/AKwjZmxlZm"
-    },
-    {
-      "time": "2026-09-19 08:36:47",
-      "kind": "ok",
-      "message": "订单091907 处理完成: 已下单，等待数据达标 (status=processing)"
-    },
-    {
-      "time": "2026-09-20 01:59:47",
-      "kind": "info",
-      "message": "订单092001 订单已创建,开始处理"
-    },
-    {
-      "time": "2026-09-20 01:59:47",
-      "kind": "order",
-      "message": "订单092001 创建: https://weixin.qq.com/sph/AWhznJ3a0p 目标={'like': 20, 'heart': 20, 'play': 2000}"
-    },
-    {
-      "time": "2026-09-20 01:59:47",
-      "kind": "info",
-      "message": "订单092001 正在解析视频链接"
-    },
-    {
-      "time": "2026-09-20 02:00:04",
-      "kind": "info",
-      "message": "订单092001 视频解析成功: 博主=T5MALL 赞2 爱心1 评论0 转发11"
-    },
     {
       "time": "2026-09-20 02:00:04",
       "kind": "order",
@@ -10941,6 +10909,111 @@
       "time": "2026-09-29 07:29:05",
       "kind": "ok",
       "message": "订单092903 处理完成: 已下单，等待数据达标 (status=processing)"
+    },
+    {
+      "time": "2026-09-29 10:21:55",
+      "kind": "info",
+      "message": "订单092904 订单已创建,开始处理"
+    },
+    {
+      "time": "2026-09-29 10:21:55",
+      "kind": "order",
+      "message": "订单092904 创建: https://weixin.qq.com/sph/ApFXsP5qnw 目标={'like': 15, 'heart': 15, 'play': 3000}"
+    },
+    {
+      "time": "2026-09-29 10:21:55",
+      "kind": "info",
+      "message": "订单092904 正在解析视频链接"
+    },
+    {
+      "time": "2026-09-29 10:22:12",
+      "kind": "info",
+      "message": "订单092904 视频解析成功: 博主=二奢回收yoko 赞3 爱心3 评论0 转发7"
+    },
+    {
+      "time": "2026-09-29 10:22:12",
+      "kind": "order",
+      "message": "订单092904 [点赞] 开始下单 数量=15"
+    },
+    {
+      "time": "2026-09-29 10:22:12",
+      "kind": "order",
+      "message": "订单092904 [点赞] 开始处理(imt 平台 API 下单) 任务=点赞爱心 数量=15"
+    },
+    {
+      "time": "2026-09-29 10:22:14",
+      "kind": "order",
+      "message": "订单092904 [点赞] imt 登录成功(本地凭证) 余额:14.53元"
+    },
+    {
+      "time": "2026-09-29 10:22:15",
+      "kind": "order",
+      "message": "订单092904 [点赞] 使用已配置样图"
+    },
+    {
+      "time": "2026-09-29 10:22:15",
+      "kind": "order",
+      "message": "订单092904 [点赞] 发布悬赏任务: 点赞爱心 x 15, 单价0.06元"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "order",
+      "message": "订单092904 [点赞] imt 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "ok",
+      "message": "订单092904 [点赞] 下单成功: 操作成功"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "order",
+      "message": "订单092904 [爱心] 开始下单 数量=15"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "ok",
+      "message": "订单092904 [爱心] 已并入点赞+爱心任务(数量=15)"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "order",
+      "message": "订单092904 [播放] 开始下单 数量=3000"
+    },
+    {
+      "time": "2026-09-29 10:22:17",
+      "kind": "order",
+      "message": "订单092904 [播放] 开始处理(橘子平台 API 下单) 商品#6467 数量=3000"
+    },
+    {
+      "time": "2026-09-29 10:22:18",
+      "kind": "order",
+      "message": "订单092904 [播放] API 登录成功(第1次)"
+    },
+    {
+      "time": "2026-09-29 10:22:19",
+      "kind": "order",
+      "message": "订单092904 [播放] 商品参数模板: ['SPH昵称', '作品标题/作品链接']"
+    },
+    {
+      "time": "2026-09-29 10:22:19",
+      "kind": "order",
+      "message": "订单092904 [播放] 参数值: [{\"name\": \"SPH昵称\", \"alias\": \"SPH昵称\", \"value\": \"二奢回收yoko\"}, {\"name\": \"作品标题/作品链接\", \"alias\": \"作品标题/作品链接\", \"value\": \"https://weixin.qq.com/sph/ApFXsP5qnw\"}]"
+    },
+    {
+      "time": "2026-09-29 10:22:20",
+      "kind": "order",
+      "message": "订单092904 [播放] 下单成功: SPH-小单播放购买成功;二奢回收yoko"
+    },
+    {
+      "time": "2026-09-29 10:22:20",
+      "kind": "ok",
+      "message": "订单092904 [播放] 下单成功: SPH-小单播放购买成功;二奢回收yoko"
+    },
+    {
+      "time": "2026-09-29 10:22:20",
+      "kind": "ok",
+      "message": "订单092904 处理完成: 已下单，等待数据达标 (status=processing)"
     }
   ]
 }
